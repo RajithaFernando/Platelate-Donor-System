@@ -1,3 +1,5 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script><!-- jQuery Library-->
+
 <!--validation -->
 <?php echo validation_errors();?>
 <?php echo form_open('users/register');?>
@@ -63,8 +65,8 @@
         <input type="text" class="form-control" name="employee_username">
     </div>
     <div class="form-group">
-        <label>Password</label>
-        <input type="password" class="form-control" name="employee_password">
+        <label for="">Password</label>
+        <input  type="password" class="form-control" name="employee_password" data-indicator="pwindicator">
     </div>
     <div class="form-group">
         <label>Confirm password</label>

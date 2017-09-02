@@ -12,7 +12,7 @@ class Users extends CI_Controller
         $this->form_validation->set_rules('employee_occupation', 'Occupation', 'required');
         $this->form_validation->set_rules('employee_email', 'Email', 'required|valid_email|callback_check_email_exists');
         $this->form_validation->set_rules('employee_username', 'Username', 'trim|required|callback_check_username_exists');
-        $this->form_validation->set_rules('employee_password','Password','required');
+        $this->form_validation->set_rules('employee_password','Password','required|callback_valid_password');
         $this->form_validation->set_rules('employee_password2', 'Confirm Password', 'matches[employee_password]');
 
         if ($this->form_validation->run() === FALSE) {
@@ -54,11 +54,12 @@ class Users extends CI_Controller
     }
 
     //login
+
     public function login()
     {
         $data['title'] = 'Sign In';
-        $this->form_validation->set_rules('username', 'Username', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('employee_username', 'Username', 'required');
+        $this->form_validation->set_rules('employee_password', 'Password', 'required');
 
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('template/header');
@@ -66,17 +67,17 @@ class Users extends CI_Controller
             $this->load->view('template/footer');
         } else {
             //get username
-            $username = $this->input->post('username');
+            $employee_username = $this->input->post('employee_username');
             //get password
-            $password = md5($this->input->post('password'));
+            $password = md5($this->input->post('employee_password'));
             //loggin user
-            $user_id = $this->user_model->login($username, $password);
-            if ($user_id) {
+            $employee_id = $this->user_model->login($employee_username, $password);
+            if ($employee_id) {
                 //create the session
                 //die('SUCCESS');
                 $user_data = array(
-                    'user_id'=>$user_id,
-                    'username'=>$username,
+                    'employee__id'=>$employee_id,
+                    'employee_username'=>$employee_username,
                     'logged_in'=>true
                 );
 
@@ -86,7 +87,9 @@ class Users extends CI_Controller
                 //set message
                 $this->session->set_flashdata('user_loggedin', 'You are now logged in');
 
-                redirect('posts');
+
+
+                redirect('users/register');
             } else {
                 //set message
                 $this->session->set_flashdata('login_failed', 'You are logged into fail');
@@ -108,6 +111,66 @@ class Users extends CI_Controller
         redirect('users/login');
     }
 
+    //    valid password
+    public function valid_password($employee_password)
+    {
+        $employee_password = trim($employee_password);
+        $regex_lowercase = '/[a-z]/';
+        $regex_uppercase = '/[A-Z]/';
+        $regex_number = '/[0-9]/';
+        $regex_special = '/[!@#$%^&*()\-_=+{};:,<.>§~]/';
+        if (empty($employee_password))
+        {
+            $this->form_validation->set_message('valid_password', 'The {field} field is required.');
+            return FALSE;
+        }
+        if (preg_match_all($regex_lowercase, $employee_password) < 1)
+        {
+            $this->form_validation->set_message('valid_password', 'The {field} field must be at least one lowercase letter.');
+            return FALSE;
+        }
+        if (preg_match_all($regex_uppercase, $employee_password) < 1)
+        {
+            $this->form_validation->set_message('valid_password', 'The {field} field must be at least one uppercase letter.');
+            return FALSE;
+        }
+        if (preg_match_all($regex_number, $employee_password) < 1)
+        {
+            $this->form_validation->set_message('valid_password', 'The {field} field must have at least one number.');
+            return FALSE;
+        }
+        if (preg_match_all($regex_special, $employee_password) < 1)
+        {
+            $this->form_validation->set_message('valid_password', 'The {field} field must have at least one special character.' . ' ' . htmlentities('!@#$%^&*()\-_=+{};:,<.>§~'));
+            return FALSE;
+        }
+        if (strlen($employee_password) < 5)
+        {
+            $this->form_validation->set_message('valid_password', 'The {field} field must be at least 5 characters in length.');
+            return FALSE;
+        }
+        if (strlen($employee_password) > 32)
+        {
+            $this->form_validation->set_message('valid_password', 'The {field} field cannot exceed 32 characters in length.');
+            return FALSE;
+        }
+        return TRUE;
+    }
 
+
+
+
+
+
+
+/*//    valid password
+    public function valid_password($employee_password){
+        $this->form_validation->set_message('valid_password', 'this is invalid password');
+        if ($this->user_model->valid_password($employee_password)) {
+            return true;
+        } else {
+            return false;
+        }
+    }*/
 }
 ?>

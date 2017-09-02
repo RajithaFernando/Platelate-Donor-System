@@ -43,5 +43,22 @@ class User_model extends CI_Model {
             return false;
         }
     }
+//    login user
+    public function login($employee_username,$password){
+        //validate
+        $this->db->where('employee_username',$employee_username);
+        $this->db->where('employee_password',$password);
+
+        $result= $this->db->get('employee');
+
+        if ($result->num_rows()==1){
+            return $result->row(0)->employee_id;
+            /*return $result->row(6)->employee_occupation;
+            return $result->row(1)->employee_name;*/
+        }
+        else{
+            return false;
+        }
+    }
 
 }
