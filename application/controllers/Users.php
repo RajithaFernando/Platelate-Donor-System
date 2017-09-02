@@ -1,6 +1,18 @@
 <?php
 class Users extends CI_Controller
 {
+
+    public function index(){
+        $data['title']= 'Current Users';
+        $data['users']=$this->user_model->get_users();
+
+        $this->load->view('template/header');
+        $this->load->view('users/current_users',$data);
+        $this->load->view('template/footer');
+
+
+    }
+
     public function register()
     {
         $data['title'] = 'Registration';
@@ -71,7 +83,11 @@ class Users extends CI_Controller
             //get password
             $password = md5($this->input->post('employee_password'));
             //loggin user
+
             $employee_id = $this->user_model->login($employee_username, $password);
+            $this->user_model->update_lastlogin($employee_id);
+
+
             if ($employee_id) {
                 //create the session
                 //die('SUCCESS');
@@ -156,6 +172,7 @@ class Users extends CI_Controller
         }
         return TRUE;
     }
+
 
 
 

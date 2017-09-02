@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-
+$route['users/current_users']='users/index';
 
 $route['default_controller'] = 'pages/view';
 

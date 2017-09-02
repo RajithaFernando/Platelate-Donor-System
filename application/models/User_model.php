@@ -23,6 +23,13 @@ class User_model extends CI_Model {
         //insert data
         return $this->db->insert('employee', $data);
     }
+//retrieve user
+    public function get_users(){
+        //$this->db->oder_by('employee_id','DESC');
+        $query=$this->db->get_where('employee',array('employeeIs_allowed'=>0));
+        return $query->result_array();
+
+    }
 
     // Check username exists
     public function check_username_exists($employee_username){
@@ -52,13 +59,21 @@ class User_model extends CI_Model {
         $result= $this->db->get('employee');
 
         if ($result->num_rows()==1){
+
             return $result->row(0)->employee_id;
-            /*return $result->row(6)->employee_occupation;
-            return $result->row(1)->employee_name;*/
+
         }
         else{
             return false;
         }
     }
+    //update last login time.
+    public function update_lastlogin($employee_id){
+        $data=array(
+            'lemployeelast_login'=> now()
+        );
+        $this->db->where('employee_id',$employee_id);
+        return $this->db->update('employee',$data);
 
+    }
 }
