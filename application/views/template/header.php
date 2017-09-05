@@ -29,6 +29,7 @@
                 <?php endif;?>
 
                 <?php if ($this->session->userdata('logged_in')):?>
+                    <li><a href="<?php echo base_url();?>donation/add_donation">Donation</a></li>
 
                     <li> <a href="<?php echo base_url();?>users/logout"><?php echo $_SESSION['employee_username'];?> Log out</a><i class="fa fa-fw fa-sign-out"></i></li>
                 <?php endif;?>
@@ -56,3 +57,6 @@
         <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_loggedout').'</p>';?>
     <?php endif; ?>
 
+    <?php  if ($this->session->flashdata('donation_successfull')):?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('donation_successfull').'</p>';?>
+    <?php endif; ?>
