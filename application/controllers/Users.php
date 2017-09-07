@@ -85,14 +85,14 @@ class Users extends CI_Controller
             //loggin user
 
             $employee_id = $this->user_model->login($employee_username, $password);
-            $this->user_model->update_lastlogin($employee_id);
+            //$this->user_model->update_lastlogin($employee_id);
 
 
             if ($employee_id) {
                 //create the session
                 //die('SUCCESS');
                 $user_data = array(
-                    'employee__id'=>$employee_id,
+                    'employee_id'=>$employee_id,
                     'employee_username'=>$employee_username,
                     'logged_in'=>true
                 );
@@ -172,22 +172,63 @@ class Users extends CI_Controller
         }
         return TRUE;
     }
-
-
-
-
-
-
-
-
-/*//    valid password
-    public function valid_password($employee_password){
-        $this->form_validation->set_message('valid_password', 'this is invalid password');
-        if ($this->user_model->valid_password($employee_password)) {
-            return true;
-        } else {
-            return false;
+//    edit user
+    public function edit(){
+        //check login
+        if (!$this->session->userdata('logged_in')){
+            redirect('users/login');
         }
-    }*/
+//        $employee_password = $_SESSION['employee_id'];
+        $employee_id =$this->session->userdata('employee_id');
+        $data['user']=$this->user_model->get_user($employee_id);
+        /*if (empty($data['user'])){
+            show_404();
+        }
+        */$data['title']='Edit Profile';
+
+        $this->load->view('template/header');
+        $this->load->view('users/edit_profile',$data);
+        $this->load->view('template/footer');
+
+
+    }
+    //update user
+    public function update(){
+        //check login
+        if (!$this->session->userdata('logged_in')){
+            redirect('users/login');
+        }
+        $employee_id=$this->session->userdata('employee_id');
+        $this->form_validation->set_rules('employee_firstname', 'Firstname', 'required');
+        $this->form_validation->set_rules('employee_lastname', 'Lastname', 'required');
+        $this->form_validation->set_rules('employee_gender', 'Gender', 'required');
+        $this->form_validation->set_rules('employee_teleNo', 'Telephone', 'required|max_length[10]|min_length[10]');
+        $this->form_validation->set_rules('employee_NIC', 'NIC', 'trim|required|min_length[10]|max_length[20]');
+        $this->form_validation->set_rules('employee_occupation', 'Occupation', 'required');
+        $this->form_validation->set_rules('employee_email', 'Email', 'required|valid_email|callback_check_email_exists');
+
+
+        $this->user_model->update_user($employee_id);
+
+        //set message
+        $this->session->set_flashdata('profile_updated','Your profile has been updated');
+
+        redirect('home');
+    }
+
+
+
+
+
+
+    /*//    valid password
+        public function valid_password($employee_password){
+            $this->form_validation->set_message('valid_password', 'this is invalid password');
+            if ($this->user_model->valid_password($employee_password)) {
+                return true;
+            } else {
+                return false;
+            }
+        }*/
 }
 ?>

@@ -9,10 +9,19 @@
     <!--    <script src="http://cdn.ckeditor.com/4.7.2/basic/ckeditor.js"></script>-->
     <script src="http://cdn.ckeditor.com/4.7.2/full/ckeditor.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script><!-- jQuery Library-->
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="<?php echo base_url();?>/">PDMS</a>
@@ -30,6 +39,7 @@
 
                 <?php if ($this->session->userdata('logged_in')):?>
                     <li><a href="<?php echo base_url();?>donation/add_donation">Donation</a></li>
+                    <li><a href="<?php echo base_url();?>users/edit">Edit Profile</a></li>
 
                     <li> <a href="<?php echo base_url();?>users/logout"><?php echo $_SESSION['employee_username'];?> Log out</a><i class="fa fa-fw fa-sign-out"></i></li>
                 <?php endif;?>
@@ -40,6 +50,14 @@
     </div>
 
 </nav>
+<!--<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+</div>
+-->
 <div class="container">
 <!--    --><?php //$this->load->view('template/adminSideNav');?>
     <?php  if ($this->session->flashdata('user_registered')):?>
@@ -59,4 +77,8 @@
 
     <?php  if ($this->session->flashdata('donation_successfull')):?>
         <?php echo '<p class="alert alert-success">'.$this->session->flashdata('donation_successfull').'</p>';?>
+    <?php endif; ?>
+
+    <?php  if ($this->session->flashdata('profile_updated')):?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('profile_updated').'</p>';?>
     <?php endif; ?>

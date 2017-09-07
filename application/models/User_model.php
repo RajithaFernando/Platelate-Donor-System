@@ -30,6 +30,11 @@ class User_model extends CI_Model {
         return $query->result_array();
 
     }
+    public function get_user($employee_id){
+        $query=$this->db->get_where('employee',array('employee_id'=>$employee_id));
+        return $query->row_array();
+
+    }
 
     // Check username exists
     public function check_username_exists($employee_username){
@@ -75,5 +80,18 @@ class User_model extends CI_Model {
         $this->db->where('employee_id',$employee_id);
         return $this->db->update('employee',$data);
 
+    }
+    //update profile
+    public function update_user($employee_id){
+        $data = array(
+            'employee_firstname' => $this->input->post('employee_firstname'),
+            'employee_lastname' => $this->input->post('employee_lastname'),
+            'employee_teleNo' => $this->input->post('employee_teleNo'),
+            'employee_NIC' => $this->input->post('employee_NIC'),
+            'employee_occupation' => $this->input->post('employee_occupation'),
+            'employee_email' => $this->input->post('employee_email'),
+        );
+        $this->db->where('employee_id',$employee_id);
+        return $this->db->update('employee',$data);
     }
 }

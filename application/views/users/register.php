@@ -60,9 +60,9 @@
             <option value="Machine_operator">Machine Operator</option>
         </select>
     </div>
-    <div class="form-group">
+    <div class="form-group has-warning">
         <label>Username</label>
-        <input type="text" class="form-control" name="employee_username">
+        <input type="text" class="form-control " name="employee_username">
     </div>
     <div class="form-group">
         <label for="">Password</label>
