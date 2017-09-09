@@ -2,7 +2,7 @@
 class Users extends CI_Controller
 {
 
-    public function index(){
+    public function current_users(){
         $data['title']= 'Current Users';
         $data['users']=$this->user_model->get_users();
 
@@ -203,7 +203,7 @@ class Users extends CI_Controller
         $this->form_validation->set_rules('employee_lastname', 'Lastname', 'required');
         $this->form_validation->set_rules('employee_gender', 'Gender', 'required');
         $this->form_validation->set_rules('employee_teleNo', 'Telephone', 'required|max_length[10]|min_length[10]');
-        $this->form_validation->set_rules('employee_NIC', 'NIC', 'trim|required|min_length[10]|max_length[20]');
+        $this->form_validation->set_rules('employee_NIC', 'NIC', 'trim|required|min_length[10]|max_length[12]');
         $this->form_validation->set_rules('employee_occupation', 'Occupation', 'required');
         $this->form_validation->set_rules('employee_email', 'Email', 'required|valid_email|callback_check_email_exists');
 

@@ -44,7 +44,7 @@
                 'PHI'=>'PHI',
             );
             //echo form_dropdown('employee_occupation', $employee_occupation, '');
-           echo form_dropdown('employee_occupation', $employee_occupation, '', 'required="required"'); //validation come to drop down
+           echo form_dropdown('employee_occupation', $employee_occupation, ''); //validation come to drop down
 
        echo "</p>";?>
         </div>
