@@ -88,7 +88,7 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseExamplePages">
                     <li>
-                        <a href="login.html">Donor Registration</a>
+                        <a href="<?php echo base_url()?>/donor/registerDonor">Donor Registration</a>
                     </li>
                     <li>
                         <a href="register.html">Donor Approval list</a>
