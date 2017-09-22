@@ -1,5 +1,10 @@
 <?php
 class Donor_model extends CI_Model{
+
+    public function __construct(){
+        $this->load->database();
+    }
+
     public function insertDonordata(){
         //data insert
         $data = array(
@@ -22,6 +27,14 @@ class Donor_model extends CI_Model{
         );
 
         return $this->db->insert('donor',$data);
+    }
+    public function get_donors(){
+        $this->db->order_by('donor.donorResponsetime','DESC');
+        $this->db->join('telephoneno','telephoneno.donorId=donor.donorId');
+        $query=$this->db->get('donor');
+        return $query->result_array();
+
+
     }
 
 }

@@ -29,12 +29,21 @@ class Donor extends CI_Controller{
         }
         else
         {
-            $this->load->model('Model_user');
+            $this->load->model('donor_model');
             $this->donor_model->insertDonordata();
 //            if($response){
             $this->session->set_flashdata('msg','Registered successfully');
-            redirect('donor/donor_registration');
+            redirect('donor/registerDonor');
         }
+
+    }
+    public function view_donor(){
+        $data['title']= 'Current Donors';
+        $data['donors']=$this->donor_model->get_donors();
+
+        $this->load->view('template/header');
+        $this->load->view('donor/view_donors',$data);
+        $this->load->view('template/footer');
 
     }
 }

@@ -97,7 +97,7 @@
                         <a href="<?php echo base_url()?>/donation/add_donation">Donation</a>
                     </li>
                     <li>
-                        <a href="blank.html">Blank Page</a>
+                        <a href="<?php echo base_url()?>/donor/view_donor">View Donor</a>
                     </li>
                 </ul>
             </li>
