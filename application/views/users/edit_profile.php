@@ -7,6 +7,11 @@
 <div class="col-md-6 col-md-offset-3">
     <h2><b><?= $title; ?></b></h2>
     <div class="form-group">
+        <label>User id</label>
+        <input type="text" class="form-control" name="employee_firstname" value="<?php echo $user['employee_id'];?>" disabled>
+    </div>
+
+    <div class="form-group">
         <label>First Name</label>
         <input type="text" class="form-control" name="employee_firstname" value="<?php echo $user['employee_firstname'];?>">
     </div>

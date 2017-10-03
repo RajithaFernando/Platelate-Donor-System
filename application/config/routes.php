@@ -4,8 +4,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 $route['donation/donation']='donation/donation';
+
+
 $route['users/current_users']='users/current_users';
-$route['users/edit_profile']='users/edit_profile';
+$route['users/update']='users/update';
+$route['users/edit']='users/edit';
+$route['users/(:any)']='users/view/$1';
+
+
+/*$route['users/edit']='users/edit';*/
+
 
 $route['default_controller'] = 'pages/view';
 

@@ -16,7 +16,7 @@
         <a class="btn btn-danger pull left">Block</a>
     </div>
     <div class="col-md-2">
-        <a class="btn btn-primary ">Edit</a>
+        <a class="btn btn-primary " href="<?php echo site_url('/users/'.$user['employee_id'])?>">Edit</a>
     </div>
     <br>
 </div>
