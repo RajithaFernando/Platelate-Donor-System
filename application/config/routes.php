@@ -13,6 +13,10 @@ $route['users/edit']='users/edit';
 $route['users/(:any)']='users/view/$1';
 
 
+
+$route['donors/view_donor']='donors/view_donor';
+
+
 /*$route['users/edit']='users/edit';*/
 
 

@@ -1,9 +1,9 @@
 <?php
-class Donor extends CI_Controller{
+class Donors extends CI_Controller{
 
     public function registerDonor(){
-        $data['title']= 'Donor Registration';
-        $this->form_validation->set_rules('donorid', 'Donor Id', 'required');
+        $data['title']= 'Donors Registration';
+        $this->form_validation->set_rules('donorid', 'Donors Id', 'required');
         $this->form_validation->set_rules('donorFname', 'First Name', 'required');
         $this->form_validation->set_rules('donorMname', 'Middle Name', 'required');
         $this->form_validation->set_rules('donorLname', 'Last Name', 'required');
@@ -39,7 +39,24 @@ class Donor extends CI_Controller{
     }
     public function view_donor(){
         $data['title']= 'Current Donors';
-        $data['donors']=$this->donor_model->get_donors();
+        //$data['donors']=$this->donor_model->get_donors();
+
+        $this->load->view('template/header');
+        $this->load->view('donor/selecte_donors',$data);
+        $this->load->view('template/footer');
+
+    }
+    public function select($bloodGroup){
+        $data['title']='Donors';
+        $this->form_validation->set_rules('donorBloodGroup','Blood Group','required');
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('template/header');
+            $this->load->view('donor/selecte_donors',$data);
+            $this->load->view('template/footer');
+
+        }
+
+        $data['donors']=$this->donor_model->get_donors($bloodGroup);
 
         $this->load->view('template/header');
         $this->load->view('donor/view_donors',$data);

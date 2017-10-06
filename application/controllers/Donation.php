@@ -15,7 +15,7 @@ class Donation extends CI_Controller
         $this->form_validation->set_rules('donationHemoCount', 'Donation Hemoglobin count:', 'required');
         $this->form_validation->set_rules('donationPlatelateCount', 'Donation Platelet count:', 'required');
         $this->form_validation->set_rules('donationNoOfUnitCollected', 'No of unit collected:', 'required');
-        $this->form_validation->set_rules('donorId', 'Donor ID:', 'required');
+        $this->form_validation->set_rules('donorId', 'Donors ID:', 'required');
         $this->form_validation->set_rules('MachineKitSerialNo', 'Machine Kit Serial No:', 'required');
         $this->form_validation->set_rules('MachineKitDOE', 'Machine Kit DOE:', 'required');
         $this->form_validation->set_rules('donorHeight', 'Height of donor:', 'required');
