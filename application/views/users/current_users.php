@@ -13,7 +13,8 @@
         <?php echo $user['employee_occupation'] ?>
     </div>
     <div class="col-md-2">
-        <a class="btn btn-danger pull left">Block</a>
+        <a class="btn btn-danger pull left" href="<?php echo site_url('/users/'.$user['employee_id'])?>"
+        >Block</a>
     </div>
     <div class="col-md-2">
         <a class="btn btn-primary " href="<?php echo site_url('/users/'.$user['employee_id'])?>">Edit</a>

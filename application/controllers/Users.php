@@ -1,3 +1,4 @@
+
 <?php
 class Users extends CI_Controller
 {
@@ -216,6 +217,30 @@ class Users extends CI_Controller
 
         redirect('home');
     }
+    //update user other
+    public function update_other($employee_id){
+        //check login
+        if (!$this->session->userdata('logged_in')){
+            redirect('users/login');
+        }
+        //$employee_id=$this->session->userdata('employee_id');
+        $this->form_validation->set_rules('employee_firstname', 'Firstname', 'required');
+        $this->form_validation->set_rules('employee_lastname', 'Lastname', 'required');
+        $this->form_validation->set_rules('employee_gender', 'Gender', 'required');
+        $this->form_validation->set_rules('employee_teleNo', 'Telephone', 'required|max_length[10]|min_length[10]');
+        $this->form_validation->set_rules('employee_NIC', 'NIC', 'trim|required|min_length[10]|max_length[12]');
+        $this->form_validation->set_rules('employee_occupation', 'Occupation', 'required');
+        $this->form_validation->set_rules('employee_email', 'Email', 'required|valid_email|callback_check_email_exists');
+
+
+        $this->user_model->update_user($employee_id);
+
+        //set message
+        $this->session->set_flashdata('profile_updated','Your profile has been updated');
+
+        redirect('home');
+    }
+
     //current_users view
     public function view($employee_id = NULL){
         $data['user']=$this->user_model->get_user($employee_id);
@@ -227,7 +252,12 @@ class Users extends CI_Controller
         $this->load->view('users/edit_profile',$data);
         $this->load->view('template/footer');
     }
+//    block users
+    public function block($employee_id){
+        $this->user_model->block_user($employee_id);
+        redirect('users/current_users');
 
+    }
     /*//    valid password
         public function valid_password($employee_password){
             $this->form_validation->set_message('valid_password', 'this is invalid password');

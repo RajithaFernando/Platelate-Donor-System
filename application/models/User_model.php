@@ -94,4 +94,12 @@ class User_model extends CI_Model {
         $this->db->where('employee_id',$employee_id);
         return $this->db->update('employee',$data);
     }
+//    block unauthorized users
+    public function block_users($employee_id){
+        $data = array(
+          'employeeIs_allowed'=>1
+        );
+        $this->db->where('employee_id',$employee_id);
+        return $this->db->update('employee',$data);
+    }
 }
