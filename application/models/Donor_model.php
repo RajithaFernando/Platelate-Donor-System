@@ -26,13 +26,18 @@ class Donor_model extends CI_Model{
 
         );
 
-        return $this->db->insert('Donors',$data);
+        return $this->db->insert('donor',$data);
     }
-    public function get_donors($bloodGroup){
+
+    public function get_donors($bloodGroup=FALSE){
+//        $this->db->select('donor.donorFname','donor.donorLname','donor.donorFname','telephoneno.landTeleNo');
         $this->db->order_by('donor.donorResponsetime','DESC');
         $this->db->join('telephoneno','telephoneno.donorId=donor.donorId');
         $this->db->where('donorBloodGroup',$bloodGroup);
-        $query=$this->db->get('Donors');
+
+//        $query =$this->db->get_where('donor',array('donorBloodGroup'=>$bloodGroup));
+
+        $query=$this->db->get('donor');
         return $query->result_array();
 
 

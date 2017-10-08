@@ -46,15 +46,18 @@ class Donors extends CI_Controller{
         $this->load->view('template/footer');
 
     }
-    public function select($bloodGroup){
+    public function select(){
         $data['title']='Donors';
-        $this->form_validation->set_rules('donorBloodGroup','Blood Group','required');
+        $this->form_validation->set_rules('bloodGroup','Blood Group','required');
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('template/header');
             $this->load->view('donor/selecte_donors',$data);
             $this->load->view('template/footer');
 
         }
+        $bloodGroup= $this->input->post('bloodGroup');
+
+//        $bloodGroup='A+';
 
         $data['donors']=$this->donor_model->get_donors($bloodGroup);
 

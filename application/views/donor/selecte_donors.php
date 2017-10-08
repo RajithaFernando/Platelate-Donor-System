@@ -4,7 +4,7 @@
     <div class="col-md-6 col-md-offset-3">
         <div class="form-group">
             <label>Blood Group</label>
-            <select name="donorBloodGroup" id="bloodgroup" selected="None">
+            <select name="bloodGroup" id="bloodgroup">
                 <option value="None">None</option>
                 <option value="A+">A+</option>
                 <option value="A+">A+</option>
