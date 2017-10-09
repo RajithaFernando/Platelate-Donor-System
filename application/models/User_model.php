@@ -65,7 +65,10 @@ class User_model extends CI_Model {
 
         if ($result->num_rows()==1){
 
+            $data = 'employee_id';
+            
             return $result->row(0)->employee_id;
+            return $result->row(0)->employee_occupation;
 
         }
         else{

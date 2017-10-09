@@ -33,8 +33,8 @@
         <label>NIC</label>
         <input type="text" class="form-control" name="employee_NIC">
     </div>
-   <!-- <div class="form-group">
-       <?php /*echo "<p>Occupation: ";
+   <div class="form-group">
+       <?php echo "<p>Occupation: ";
             $employee_occupation = array(
             ''  => 'select occupation',
             'Doctor'  => 'Doctor',
@@ -43,13 +43,13 @@
             'Machine_operator' => 'Machine_operator',
                 'PHI'=>'PHI',
             );
-            echo form_dropdown('employee_occupation', $employee_occupation, '');
-//            echo form_dropdown('employee_occupation', $employee_occupation, '', 'required="required"'); validation come to drop down
+            //echo form_dropdown('employee_occupation', $employee_occupation, '');
+           echo form_dropdown('employee_occupation', $employee_occupation, ''); //validation come to drop down
 
-       echo "</p>";*/?>
+       echo "</p>";?>
         </div>
-   -->
-    <div class="form-group">
+
+    <!--<div class="form-group">
         <label>Occupation</label>
         <select id="occupation" name="employee_occupation" selected="None">
             <option value="None">Select Occupation</option>
@@ -60,6 +60,7 @@
             <option value="Machine_operator">Machine Operator</option>
         </select>
     </div>
+    -->
     <div class="form-group has-warning">
         <label>Username</label>
         <input type="text" class="form-control " name="employee_username">
