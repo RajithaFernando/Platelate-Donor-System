@@ -4,9 +4,8 @@
     <div class="col-md-6 col-md-offset-3">
         <div class="form-group">
             <label>Blood Group</label>
-            <select name="bloodGroup" id="bloodgroup">
+            <select name="bloodGroup" id="bloodgroup" selected="None">
                 <option value="None">None</option>
-                <option value="A+">A+</option>
                 <option value="A+">A+</option>
                 <option value="A-">A-</option>
                 <option value="B+">B+</option>
@@ -23,3 +22,21 @@
         </div>
     </div>
 <?php echo form_close();?>
+<div class="container-wrapped">
+    <!--donor list display here-->
+    <legend><b>Donor list</b></legend>
+    <?php foreach ($donors as $donor):?>
+        <div class="row">
+            <div class="col-md-2">
+                <?php echo $donor['donorFname'] ?>  <?php echo $donor['donorLname'] ?>
+            </div>
+            <div class="col-md-3">
+                <?php echo $donor['landTeleNo'] ?>
+            </div>
+            <div class="col-md-2">
+                <a class="btn btn-primary ">View</a>
+            </div>
+        </div>
+        <br>
+    <?php endforeach;?>
+</div>

@@ -1,22 +1,22 @@
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script><!-- jQuery Library-->
 
 <!--validation -->
 <?php echo validation_errors();?>
-<?php echo form_open('users/register');?>
+<?php //echo form_open('users/register');?>
+<form method="post" id="register" action="<?php echo base_url()?>/users/register">
 <div class="col-md-6 col-md-offset-3">
     <h2><b><?= $title; ?></b></h2>
     <div class="form-group">
         <label>First Name</label>
-        <input type="text" class="form-control" name="employee_firstname">
+        <input type="text" class="form-control" name="employee_firstname" id="employee_firstname" required>
     </div>
     <div class="form-group">
         <label>Last Name</label>
-        <input type="text" class="form-control" name="employee_lastname">
+        <input type="text" class="form-control" name="employee_lastname" id="employee_lastname" required>
     </div>
     <div class="form-group">
         <label>Gender</label>
-        <input type="radio"  value="male" name="employee_gender" checked>Male
-        <input type="radio"  value="female" name="employee_gender">Female
+        <input type="radio"  value="male" name="employee_gender" required>Male
+        <input type="radio"  value="female" name="employee_gender" required>Female
     </div>
 
     <div class="form-group">
@@ -25,13 +25,14 @@
     </div>
     <div class="form-group">
         <label>Email</label>
-        <input type="text" class="form-control" name="employee_email">
+        <input type="email" class="form-control" name="employee_email" id="employee_email" data-error="Bruh, that email address is invalid" required>
+        <div class="help-block with-errors"></div>
     </div>
 
 
     <div class="form-group">
         <label>NIC</label>
-        <input type="text" class="form-control" name="employee_NIC">
+        <input type="text" class="form-control" name="employee_NIC" id="employee_NIC" data-minlength="12" required>
     </div>
    <div class="form-group">
        <?php echo "<p>Occupation: ";
@@ -63,17 +64,19 @@
     -->
     <div class="form-group has-warning">
         <label>Username</label>
-        <input type="text" class="form-control " name="employee_username">
+        <input type="text" class="form-control " name="employee_username" required>
     </div>
     <div class="form-group">
         <label for="">Password</label>
-        <input  type="password" class="form-control" name="employee_password" data-indicator="pwindicator">
+        <input  type="password" class="form-control" name="employee_password" id="employee_password" data-indicator="pwindicator" required>
     </div>
     <div class="form-group">
         <label>Confirm password</label>
-        <input type="password" class="form-control" name="employee_password2">
+        <input type="password" class="form-control" name="employee_password2" id="employeee_password2" data-match="#employee_password" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
+        <div class="help-block with-errors"></div>
     </div>
-    <button type="submit" class="btn btn-primary btn-block" name="">Submit</button>
+    <button type="submit" class="btn btn-primary btn-block" name="" >Submit</button>
 
 </div>
-<?php form_close();?>
+</form>
+<?php //form_close();?>
