@@ -28,7 +28,10 @@ class Donor_model extends CI_Model{
 
         return $this->db->insert('donor',$data);
     }
+    //view donors
 
+
+//retrive donors
     public function get_donors($bloodGroup=FALSE){
 
         $this->db->order_by('donor.donorResponsetime','DESC');

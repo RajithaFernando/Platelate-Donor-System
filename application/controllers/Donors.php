@@ -37,6 +37,7 @@ class Donors extends CI_Controller{
         }
 
     }
+//    view donors incomplete
     public function view_donor(){
         $data['title']= 'Current Donors';
         //$data['donors']=$this->donor_model->get_donors();

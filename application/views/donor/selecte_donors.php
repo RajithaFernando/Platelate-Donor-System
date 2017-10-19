@@ -21,10 +21,13 @@
             <button type="submit" class="btn btn-primary pull-left" >Search </button>
         </div>
     </div>
+<br>
+<br>
+<legend><b>Donor list</b></legend>
 <?php echo form_close();?>
 <div class="container-wrapped">
     <!--donor list display here-->
-    <legend><b>Donor list</b></legend>
+
     <?php foreach ($donors as $donor):?>
         <div class="row">
             <div class="col-md-2">
