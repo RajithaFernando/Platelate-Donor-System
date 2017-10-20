@@ -126,7 +126,7 @@ class Users extends CI_Controller
 
         //set message
         $this->session->set_flashdata('user_loggedout','You are now logged out');
-        redirect('users/login');
+        redirect('pages/view');
     }
 
     //    valid password

@@ -92,7 +92,7 @@
             </div><!-- end left -->
 
             <div class="right">
-                <a type="btn" href="Login.php" class="tpbut" style=" font-size: 17px;"><i class="fa fa-lock"></i>Login</a>
+                <a type="btn" href="<?php echo base_url()?>/users/login" class="tpbut" style=" font-size: 17px;" ><i class="fa fa-lock"></i> Login</a>
 
                 <ul class="topsocial">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>

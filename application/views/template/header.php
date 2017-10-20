@@ -11,38 +11,30 @@
     <meta name="author" content="">
     <title>Pdms</title>
     <!-- Bootstrap core CSS -->
-    <link href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet');?>">
-    <link href="<?php echo base_url('assets/css/bootstrap.min.css" rel="stylesheet');?>">
+    <link href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css');?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/bootstrap.min.css');?>" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="<?php echo base_url('assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css');?>">
+    <link href="<?php echo base_url('assets/vendor/font-awesome/css/font-awesome.min.css');?>" rel="stylesheet" type="text/css">
 
     <!-- Plugin CSS -->
-    <link href="<?php echo base_url('assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet');?>">
+    <link href="<?php echo base_url('assets/vendor/datatables/dataTables.bootstrap4.css');?>" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="<?php echo base_url('assets/css/sb-admin.css" rel="stylesheet');?>">
+    <link href="<?php echo base_url('assets/css/sb-admin.css');?>" rel="stylesheet">
 
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" >
     <a class="navbar-brand" href="<?php echo base_url();?>/">PDMS</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-        <?php /*if (!$this->session->userdata('logged_in')):*/?><!--
-
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <a href="<?php /*echo base_url();*/?>/users/login">login</a>
-            </li>
-        </ul>
-        -->
-<!--        --><?php //if ($this->session->userdata('logged_in')):?>
+    <div class="collapse navbar-collapse" id="navbarResponsive" style="background-color: #330000;">
+        <?php if ($this->session->userdata('logged_in')):?>
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard">
                 <a class="nav-link" href="#">
@@ -158,14 +150,14 @@
                     </div>
                 </form>
             </li>-->
-            <ul class="navbar-nav ml-auto">
+            <!--<ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url()?>/users/login">
+                    <a class="nav-link" href="<?php /*echo base_url()*/?>/users/login">
                         <i class="fa fa-fw fa-sign-out"></i>
                         Login</a>
                 </li>
             </ul>
-
+-->
             <ul class="navbar-nav ml-auto">
                 <?php echo $this->session->userdata('employee_username')?>
                     <li class="nav-item">
@@ -173,17 +165,18 @@
                             <i class="fa fa-fw fa-sign-out"></i>
                             Logout</a>
                     </li>
-                </ul>
+            </ul>
 
 
 
         </ul>
-
+        <?php endif;?>
 
     </div>
+
 </nav>
 
-<div class="content-wrapper">
+<div class="content-wrapper" style="">
 
     <div class="container-fluid">
         <!--    --><?php //$this->load->view('template/adminSideNav');?>
