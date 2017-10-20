@@ -5,10 +5,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | -------------------------------------------------------------------
 | AUTO-LOADER
 | -------------------------------------------------------------------
-| This file specifies which systems should be loaded by default.
+| This file specifies which systems should be loaded by de.
 |
 | In order to keep the framework as light-weight as possible only the
-| absolute minimal resources are loaded by default. For example,
+| absolute minimal resources are loaded by de. For example,
 | the database is not connected to automatically since no assumption
 | is made regarding whether you intend to use it.  This file lets
 | you globally define which systems you would like loaded with every

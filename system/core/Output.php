@@ -234,7 +234,7 @@ class CI_Output {
 	 * Set Content-Type Header
 	 *
 	 * @param	string	$mime_type	Extension of the file we're outputting
-	 * @param	string	$charset	Character set (default: NULL)
+	 * @param	string	$charset	Character set (de: NULL)
 	 * @return	CI_Output
 	 */
 	public function set_content_type($mime_type, $charset = NULL)
@@ -331,7 +331,7 @@ class CI_Output {
 	 * As of version 1.7.2, this is an alias for common function
 	 * set_status_header().
 	 *
-	 * @param	int	$code	Status code (default: 200)
+	 * @param	int	$code	Status code (de: 200)
 	 * @param	string	$text	Optional message
 	 * @return	CI_Output
 	 */
@@ -360,7 +360,7 @@ class CI_Output {
 	/**
 	 * Set Profiler Sections
 	 *
-	 * Allows override of default/config settings for
+	 * Allows override of de/config settings for
 	 * Profiler section display.
 	 *
 	 * @param	array	$sections	Profiler sections

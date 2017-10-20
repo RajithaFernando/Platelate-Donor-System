@@ -120,7 +120,7 @@ class CI_Calendar {
 	/**
 	 * Class constructor
 	 *
-	 * Loads the calendar language file and sets the default time reference.
+	 * Loads the calendar language file and sets the de time reference.
 	 *
 	 * @uses	CI_Lang::$is_loaded
 	 *

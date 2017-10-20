@@ -252,7 +252,7 @@ class CI_Form_validation {
 	// --------------------------------------------------------------------
 
 	/**
-	 * By default, form validation uses the $_POST array to validate
+	 * By de, form validation uses the $_POST array to validate
 	 *
 	 * If an array is set through this method, then this array will
 	 * be used instead of the $_POST array
@@ -916,7 +916,7 @@ class CI_Form_validation {
 	 * Get the value from a form
 	 *
 	 * Permits you to repopulate a form field with the value it was submitted
-	 * with, or, if that value doesn't exist, with the default
+	 * with, or, if that value doesn't exist, with the de
 	 *
 	 * @param	string	the field name
 	 * @param	string

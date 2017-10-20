@@ -6,8 +6,9 @@ class Pages extends CI_Controller{
             show_404();
         }
         $data['title']=ucfirst($page);
-//        $this->load->view('template/header');
-        $this->load->view('pages/'.$page,$data);
+        $this->load->view('pages/home');
+        //        $this->load->view('template/header');
+//        $this->load->view('pages/'.$page,$data);
 //        $this->load->view('template/footer');
     }
 }

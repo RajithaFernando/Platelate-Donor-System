@@ -1223,7 +1223,7 @@ class CI_Upload {
 		 *
 		 * Apparently XAMPP, CentOS, cPanel and who knows what
 		 * other PHP distribution channels EXPLICITLY DISABLE
-		 * ext/fileinfo, which is otherwise enabled by default
+		 * ext/fileinfo, which is otherwise enabled by de
 		 * since PHP 5.3 ...
 		 */
 		if (function_exists('finfo_file'))

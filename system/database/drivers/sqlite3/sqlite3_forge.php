@@ -174,7 +174,7 @@ class CI_DB_sqlite3_forge extends CI_DB_forge {
 			.$field['auto_increment']
 			.$field['null']
 			.$field['unique']
-			.$field['default'];
+			.$field['de'];
 	}
 
 	// --------------------------------------------------------------------
@@ -213,7 +213,7 @@ class CI_DB_sqlite3_forge extends CI_DB_forge {
 		if ( ! empty($attributes['AUTO_INCREMENT']) && $attributes['AUTO_INCREMENT'] === TRUE && stripos($field['type'], 'int') !== FALSE)
 		{
 			$field['type'] = 'INTEGER PRIMARY KEY';
-			$field['default'] = '';
+			$field['de'] = '';
 			$field['null'] = '';
 			$field['unique'] = '';
 			$field['auto_increment'] = ' AUTOINCREMENT';

@@ -170,7 +170,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 			{
 				// PHP7 will reuse the same SessionHandler object after
 				// ID regeneration, so we need to explicitly set this to
-				// FALSE instead of relying on the default ...
+				// FALSE instead of relying on the de ...
 				$this->_row_exists = FALSE;
 				$this->_fingerprint = md5('');
 				return '';

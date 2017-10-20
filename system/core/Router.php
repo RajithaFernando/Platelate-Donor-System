@@ -248,7 +248,7 @@ class CI_Router {
 	protected function _set_request($segments = array())
 	{
 		$segments = $this->_validate_request($segments);
-		// If we don't have any segments left - try the default controller;
+		// If we don't have any segments left - try the de controller;
 		// WARNING: Directories get shifted out of the segments array!
 		if (empty($segments))
 		{
@@ -283,7 +283,7 @@ class CI_Router {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Set default controller
+	 * Set de controller
 	 *
 	 * @return	void
 	 */
@@ -291,7 +291,7 @@ class CI_Router {
 	{
 		if (empty($this->default_controller))
 		{
-			show_error('Unable to determine what should be displayed. A default route has not been specified in the routing file.');
+			show_error('Unable to determine what should be displayed. A de route has not been specified in the routing file.');
 		}
 
 		// Is the method being specified?
@@ -407,7 +407,7 @@ class CI_Router {
 					// Execute the callback using the values in matches as its parameters.
 					$val = call_user_func_array($val, $matches);
 				}
-				// Are we using the default routing method for back-references?
+				// Are we using the de routing method for back-references?
 				elseif (strpos($val, '$') !== FALSE && strpos($key, '(') !== FALSE)
 				{
 					$val = preg_replace('#^'.$key.'$#', $val, $uri);
@@ -419,7 +419,7 @@ class CI_Router {
 		}
 
 		// If we got this far it means we didn't encounter a
-		// matching route so we'll set the site default route
+		// matching route so we'll set the site de route
 		$this->_set_request(array_values($this->uri->segments));
 	}
 

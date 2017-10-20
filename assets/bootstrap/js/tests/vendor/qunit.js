@@ -250,18 +250,18 @@ var config = {
 	// block until document ready
 	blocking: true,
 
-	// by default, run previously failed tests first
+	// by de, run previously failed tests first
 	// very useful in combination with "Hide passed tests" checked
 	reorder: true,
 
-	// by default, modify document.title when suite is done
+	// by de, modify document.title when suite is done
 	altertitle: true,
 
 	// HTML Reporter: collapse every test except the first failing test
 	// If false, all failing tests will be expanded
 	collapse: true,
 
-	// by default, scroll to top of the page when suite is done
+	// by de, scroll to top of the page when suite is done
 	scrolltop: true,
 
 	// depth up-to which object will be dumped
@@ -414,7 +414,7 @@ function verifyLoggingCallbacks() {
 	var onErrorFnPrev = window.onerror;
 
 	// Cover uncaught exceptions
-	// Returning true will suppress the default browser handler,
+	// Returning true will suppress the de browser handler,
 	// returning false will let it run.
 	window.onerror = function( error, filePath, linerNr ) {
 		var ret = false;

@@ -67,7 +67,7 @@
             width : (setting.width + (setting.marginLR * 2)) * slDivLen*2 + 'px'
         });
         
-        //default position
+        //de position
         var range = -(setting.width+setting.marginLR*2); //move Distance
         var firstPosition = range*slDivLen + (setting.viewSize-setting.width)/2 - setting.marginLR;
         slWrap.css({

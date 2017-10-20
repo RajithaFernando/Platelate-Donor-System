@@ -221,9 +221,9 @@ class CI_DB_pdo_informix_driver extends CI_DB_pdo_driver {
 				END AS "type",
 				"syscolumns"."collength" as "max_length",
 				CASE "sysdefaults"."type"
-					WHEN \'L\' THEN "sysdefaults"."default"
+					WHEN \'L\' THEN "sysdefaults"."de"
 					ELSE NULL
-				END AS "default"
+				END AS "de"
 			FROM "syscolumns", "systables", "sysdefaults"
 			WHERE "syscolumns"."tabid" = "systables"."tabid"
 				AND "systables"."tabid" = "sysdefaults"."tabid"

@@ -384,7 +384,7 @@ class CI_URI {
 	 *		gender => male
 	 *	 )
 	 *
-	 * @param	int	$n		Index (default: 3)
+	 * @param	int	$n		Index (de: 3)
 	 * @param	array	$default	Default values
 	 * @return	array
 	 */
@@ -402,7 +402,7 @@ class CI_URI {
 	 * segment array.
 	 *
 	 * @see		CI_URI::uri_to_assoc()
-	 * @param 	int	$n		Index (default: 3)
+	 * @param 	int	$n		Index (de: 3)
 	 * @param 	array	$default	Default values
 	 * @return 	array
 	 */
@@ -420,7 +420,7 @@ class CI_URI {
 	 *
 	 * @used-by	CI_URI::uri_to_assoc()
 	 * @used-by	CI_URI::ruri_to_assoc()
-	 * @param	int	$n		Index (default: 3)
+	 * @param	int	$n		Index (de: 3)
 	 * @param	array	$default	Default values
 	 * @param	string	$which		Array name ('segment' or 'rsegment')
 	 * @return	array

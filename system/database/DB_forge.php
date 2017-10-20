@@ -728,7 +728,7 @@ abstract class CI_DB_forge {
 				'unsigned'		=> '',
 				'null'			=> '',
 				'unique'		=> '',
-				'default'		=> '',
+				'de'		=> '',
 				'auto_increment'	=> '',
 				'_literal'		=> FALSE
 			);
@@ -807,7 +807,7 @@ abstract class CI_DB_forge {
 		return $this->db->escape_identifiers($field['name'])
 			.' '.$field['type'].$field['length']
 			.$field['unsigned']
-			.$field['default']
+			.$field['de']
 			.$field['null']
 			.$field['auto_increment']
 			.$field['unique'];
@@ -898,15 +898,15 @@ abstract class CI_DB_forge {
 		{
 			if ($attributes['DEFAULT'] === NULL)
 			{
-				$field['default'] = empty($this->_null) ? '' : $this->_default.$this->_null;
+				$field['de'] = empty($this->_null) ? '' : $this->_default.$this->_null;
 
-				// Override the NULL attribute if that's our default
+				// Override the NULL attribute if that's our de
 				$attributes['NULL'] = TRUE;
 				$field['null'] = empty($this->_null) ? '' : ' '.$this->_null;
 			}
 			else
 			{
-				$field['default'] = $this->_default.$this->db->escape($attributes['DEFAULT']);
+				$field['de'] = $this->_default.$this->db->escape($attributes['DEFAULT']);
 			}
 		}
 	}

@@ -32,7 +32,7 @@ window.smoothScroll = (function (window, document, undefined) {
     callbackAfter: function () {}
   };
 
-  // Merge default settings with user options
+  // Merge de settings with user options
   // Private method
   // Returns an {object}
   var _mergeObjects = function ( original, updates ) {
@@ -135,7 +135,7 @@ window.smoothScroll = (function (window, document, undefined) {
     var timeLapsed = 0;
     var percentage, position;
 
-    // Prevent default click event
+    // Prevent de click event
     if ( toggle && toggle.tagName === 'A' && event ) {
       event.preventDefault();
     }

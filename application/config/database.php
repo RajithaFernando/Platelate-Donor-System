@@ -2,10 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-$active_group = 'default';
+$active_group = 'de';
 $query_builder = TRUE;
 
-$db['default'] = array(
+$db['de'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',

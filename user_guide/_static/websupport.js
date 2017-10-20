@@ -122,7 +122,7 @@
 
   /**
    * Create a comp function. If the user has preferences stored in
-   * the sortBy cookie, use those, otherwise use the default.
+   * the sortBy cookie, use those, otherwise use the de.
    */
   function initComparator() {
     by = 'rating'; // Default to sort by rating.

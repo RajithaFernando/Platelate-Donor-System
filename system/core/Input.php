@@ -353,7 +353,7 @@ class CI_Input {
 	 * @param	string		$value		Cookie value
 	 * @param	int		$expire		Cookie expiration time in seconds
 	 * @param	string		$domain		Cookie domain (e.g.: '.yourdomain.com')
-	 * @param	string		$path		Cookie path (default: '/')
+	 * @param	string		$path		Cookie path (de: '/')
 	 * @param	string		$prefix		Cookie name prefix
 	 * @param	bool		$secure		Whether to only transfer cookies via SSL
 	 * @param	bool		$httponly	Whether to only makes the cookie accessible via HTTP (no javascript)
@@ -859,7 +859,7 @@ class CI_Input {
 	 * Return the request method
 	 *
 	 * @param	bool	$upper	Whether to return in upper or lower case
-	 *				(default: FALSE)
+	 *				(de: FALSE)
 	 * @return 	string
 	 */
 	public function method($upper = FALSE)

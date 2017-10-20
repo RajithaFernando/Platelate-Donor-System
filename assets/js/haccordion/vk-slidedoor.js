@@ -56,7 +56,7 @@
             // Default set width css dor slidedoor-wrap element
             $ele.width(mainwidth);
 
-            // Set CSS default open door for current dl elements
+            // Set CSS de open door for current dl elements
             $this.find(ops.dl + '.current').nextAll(ops.dl).elemsMove(ops.ddwidth);
 
             if (ops.autoplay) {

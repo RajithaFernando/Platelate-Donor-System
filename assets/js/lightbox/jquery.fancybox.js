@@ -176,7 +176,7 @@
 			prevEasing : 'swing',
 			prevMethod : 'changeOut',
 
-			// Enable default helpers
+			// Enable de helpers
 			helpers : {
 				overlay : true,
 				title   : true

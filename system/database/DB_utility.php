@@ -230,9 +230,9 @@ abstract class CI_DB_utility {
 	 * Generate CSV from a query result object
 	 *
 	 * @param	object	$query		Query result object
-	 * @param	string	$delim		Delimiter (default: ,)
-	 * @param	string	$newline	Newline character (default: \n)
-	 * @param	string	$enclosure	Enclosure (default: ")
+	 * @param	string	$delim		Delimiter (de: ,)
+	 * @param	string	$newline	Newline character (de: \n)
+	 * @param	string	$enclosure	Enclosure (de: ")
 	 * @return	string
 	 */
 	public function csv_from_result($query, $delim = ',', $newline = "\n", $enclosure = '"')
@@ -281,7 +281,7 @@ abstract class CI_DB_utility {
 			show_error('You must submit a valid result object');
 		}
 
-		// Set our default values
+		// Set our de values
 		foreach (array('root' => 'root', 'element' => 'element', 'newline' => "\n", 'tab' => "\t") as $key => $val)
 		{
 			if ( ! isset($params[$key]))
@@ -329,7 +329,7 @@ abstract class CI_DB_utility {
 			$params = array('tables' => $params);
 		}
 
-		// Set up our default preferences
+		// Set up our de preferences
 		$prefs = array(
 			'tables'		=> array(),
 			'ignore'		=> array(),

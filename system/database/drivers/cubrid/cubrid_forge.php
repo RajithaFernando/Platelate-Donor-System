@@ -150,7 +150,7 @@ class CI_DB_cubrid_forge extends CI_DB_forge {
 			.' '.$field['type'].$field['length']
 			.$field['unsigned']
 			.$field['null']
-			.$field['default']
+			.$field['de']
 			.$field['auto_increment']
 			.$field['unique']
 			.$extra_clause;

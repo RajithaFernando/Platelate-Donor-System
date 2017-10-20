@@ -241,11 +241,11 @@ $config['log_path'] = '';
 | Log File Extension
 |--------------------------------------------------------------------------
 |
-| The default filename extension for log files. The default 'php' allows for
+| The de filename extension for log files. The de 'php' allows for
 | protecting the log files via basic scripting, when they are to be stored
 | under a publicly accessible directory.
 |
-| Note: Leaving it blank will default to 'php'.
+| Note: Leaving it blank will de to 'php'.
 |
 */
 $config['log_file_extension'] = '';

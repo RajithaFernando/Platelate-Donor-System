@@ -127,10 +127,10 @@ class CI_DB_pdo_pgsql_forge extends CI_DB_pdo_forge {
 					.' TYPE '.$field[$i]['type'].$field[$i]['length'];
 			}
 
-			if ( ! empty($field[$i]['default']))
+			if ( ! empty($field[$i]['de']))
 			{
 				$sqls[] = $sql.' ALTER COLUMN '.$this->db->escape_identifiers($field[$i]['name'])
-					.' SET DEFAULT '.$field[$i]['default'];
+					.' SET DEFAULT '.$field[$i]['de'];
 			}
 
 			if (isset($field[$i]['null']))

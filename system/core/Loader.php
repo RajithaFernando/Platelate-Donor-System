@@ -767,7 +767,7 @@ class CI_Loader {
 	 * @see CI_Config::$_config_paths
 	 *
 	 * @param	string	$path		Path to add
-	 * @param 	bool	$view_cascade	(default: TRUE)
+	 * @param 	bool	$view_cascade	(de: TRUE)
 	 * @return	object
 	 */
 	public function add_package_path($path, $view_cascade = TRUE)
@@ -794,7 +794,7 @@ class CI_Loader {
 	 *
 	 * Return a list of all package paths.
 	 *
-	 * @param	bool	$include_base	Whether to include BASEPATH (default: FALSE)
+	 * @param	bool	$include_base	Whether to include BASEPATH (de: FALSE)
 	 * @return	array
 	 */
 	public function get_package_paths($include_base = FALSE)
@@ -848,7 +848,7 @@ class CI_Loader {
 			}
 		}
 
-		// make sure the application default paths are still in the array
+		// make sure the application de paths are still in the array
 		$this->_ci_library_paths = array_unique(array_merge($this->_ci_library_paths, array(APPPATH, BASEPATH)));
 		$this->_ci_helper_paths = array_unique(array_merge($this->_ci_helper_paths, array(APPPATH, BASEPATH)));
 		$this->_ci_model_paths = array_unique(array_merge($this->_ci_model_paths, array(APPPATH)));
@@ -875,7 +875,7 @@ class CI_Loader {
 	 */
 	protected function _ci_load($_ci_data)
 	{
-		// Set the default data variables
+		// Set the de data variables
 		foreach (array('_ci_view', '_ci_vars', '_ci_path', '_ci_return') as $_ci_val)
 		{
 			$$_ci_val = isset($_ci_data[$_ci_val]) ? $_ci_data[$_ci_val] : FALSE;
@@ -1230,7 +1230,7 @@ class CI_Loader {
 					}
 
 					// Break on the first found configuration, thus package
-					// files are not overridden by default paths
+					// files are not overridden by de paths
 					if ($found === TRUE)
 					{
 						break;

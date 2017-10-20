@@ -100,7 +100,7 @@ class CI_Profiler {
 		$this->CI =& get_instance();
 		$this->CI->load->language('profiler');
 
-		// default all sections to display
+		// de all sections to display
 		foreach ($this->_available_sections as $section)
 		{
 			if ( ! isset($config[$section]))

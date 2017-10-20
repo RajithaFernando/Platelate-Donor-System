@@ -161,10 +161,10 @@ class CI_DB_ibase_forge extends CI_DB_forge {
 					.' TYPE '.$field[$i]['type'].$field[$i]['length'];
 			}
 
-			if ( ! empty($field[$i]['default']))
+			if ( ! empty($field[$i]['de']))
 			{
 				$sqls[] = $sql.' ALTER COLUMN '.$this->db->escape_identifiers($field[$i]['name'])
-					.' SET DEFAULT '.$field[$i]['default'];
+					.' SET DEFAULT '.$field[$i]['de'];
 			}
 
 			if (isset($field[$i]['null']))
@@ -199,7 +199,7 @@ class CI_DB_ibase_forge extends CI_DB_forge {
 			.' '.$field['type'].$field['length']
 			.$field['null']
 			.$field['unique']
-			.$field['default'];
+			.$field['de'];
 	}
 
 	// --------------------------------------------------------------------

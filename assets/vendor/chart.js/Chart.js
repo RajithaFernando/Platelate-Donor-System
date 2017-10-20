@@ -202,7 +202,7 @@ function hslaString(hsla, alpha) {
 }
 
 // hwb is a bit different than rgb(a) & hsl(a) since there is no alpha specific syntax
-// (hwb have alpha optional & 1 is default value)
+// (hwb have alpha optional & 1 is de value)
 function hwbString(hwb, alpha) {
    if (alpha === undefined) {
       alpha = (hwb[3] !== undefined ? hwb[3] : 1);
@@ -1842,7 +1842,7 @@ module.exports = function(Chart) {
 		}
 	};
 
-	// Register the default config for this type
+	// Register the de config for this type
 	Chart.defaults.scatter = defaultConfig;
 
 	// Scatter charts use line controllers
@@ -2254,7 +2254,7 @@ module.exports = function(Chart) {
 
 		scales: {
 			xAxes: [{
-				type: 'linear', // bubble should probably use a linear scale by default
+				type: 'linear', // bubble should probably use a linear scale by de
 				position: 'bottom',
 				id: 'x-axis-0' // need an ID so datasets can reference the scale
 			}],
@@ -2462,7 +2462,7 @@ module.exports = function(Chart) {
 		// The total circumference of the chart.
 		circumference: Math.PI * 2.0,
 
-		// Need to override these to give a nice default
+		// Need to override these to give a nice de
 		tooltips: {
 			callbacks: {
 				title: function() {
@@ -2735,7 +2735,7 @@ module.exports = function(Chart) {
 				// Model
 				line._model = {
 					// Appearance
-					// The default behavior of lines is to break at null values, according
+					// The de behavior of lines is to break at null values, according
 					// to https://github.com/chartjs/Chart.js/issues/2435#issuecomment-216718158
 					// This option gives lines the ability to span gaps
 					spanGaps: dataset.spanGaps ? dataset.spanGaps : options.spanGaps,
@@ -3104,7 +3104,7 @@ module.exports = function(Chart) {
 			}
 		},
 
-		// Need to override these to give a nice default
+		// Need to override these to give a nice de
 		tooltips: {
 			callbacks: {
 				title: function() {
@@ -3416,7 +3416,7 @@ module.exports = function(Chart) {
 	Chart.Animation = Chart.Element.extend({
 		chart: null, // the animation associated chart instance
 		currentStep: 0, // the current animation step
-		numSteps: 60, // default number of steps
+		numSteps: 60, // de number of steps
 		easing: '', // the easing to use for this animation
 		render: null, // render function used by the animation service
 
@@ -3740,7 +3740,7 @@ module.exports = function(Chart) {
 	Chart.controllers = {};
 
 	/**
-	 * Initializes the given config with global and chart default values.
+	 * Initializes the given config with global and chart de values.
 	 */
 	function initConfig(config) {
 		config = config || {};
@@ -6452,7 +6452,7 @@ module.exports = function(Chart) {
 				chart.boxes = [];
 			}
 
-			// initialize item with default values
+			// initialize item with de values
 			item.fullWidth = item.fullWidth || false;
 			item.position = item.position || 'top';
 			item.weight = item.weight || 0;
@@ -7441,7 +7441,7 @@ module.exports = function(Chart) {
 				// Allow 3 pixels x2 padding either side for label readability
 				var tickWidth = me.getPixelForTick(1) - me.getPixelForTick(0) - 6;
 
-				// Max label rotation can be set or default to 90 - also act as a loop counter
+				// Max label rotation can be set or de to 90 - also act as a loop counter
 				while (labelWidth > tickWidth && labelRotation < tickOpts.maxRotation) {
 					var angleRadians = helpers.toRadians(labelRotation);
 					cosRotation = Math.cos(angleRadians);
@@ -9742,7 +9742,7 @@ module.exports = function(Chart) {
 		if (renderHeight === null || renderHeight === '') {
 			if (canvas.style.height === '') {
 				// If no explicit render height and style height, let's apply the aspect ratio,
-				// which one can be specified by the user but also by charts as default option
+				// which one can be specified by the user but also by charts as de option
 				// (i.e. options.aspectRatio). If not specified, use canvas aspect ratio of 2.
 				canvas.height = canvas.width / (config.options.aspectRatio || 2);
 			} else {
@@ -9902,7 +9902,7 @@ module.exports = function(Chart) {
 
 			// The canvas render size might have been changed (and thus the state stack discarded),
 			// we can't use save() and restore() to restore the initial state. So make sure that at
-			// least the canvas context is reset to the default state by setting the canvas width.
+			// least the canvas context is reset to the de state by setting the canvas width.
 			// https://www.w3.org/TR/2011/WD-html5-20110525/the-canvas-element.html
 			canvas.width = canvas.width;
 
@@ -9949,7 +9949,7 @@ module.exports = function(Chart) {
 },{}],40:[function(require,module,exports){
 'use strict';
 
-// By default, select the browser (DOM) platform.
+// By de, select the browser (DOM) platform.
 // @TODO Make possible to select another platform at build time.
 var implementation = require(39);
 
@@ -10887,7 +10887,7 @@ module.exports = function(Chart) {
 		display: false,
 		position: 'top',
 		fullWidth: true,
-		weight: 2000,        // by default greater than legend (1000) to be above
+		weight: 2000,        // by de greater than legend (1000) to be above
 		fontStyle: 'bold',
 		padding: 10,
 

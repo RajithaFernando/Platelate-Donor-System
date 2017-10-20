@@ -129,7 +129,7 @@ class CI_Exceptions {
 			$message = 'The page you requested was not found.';
 		}
 
-		// By default we log this, but allow a dev to skip it
+		// By de we log this, but allow a dev to skip it
 		if ($log_error)
 		{
 			log_message('error', $heading.': '.$page);
@@ -150,7 +150,7 @@ class CI_Exceptions {
 	 * @param	string		$heading	Page heading
 	 * @param	string|string[]	$message	Error message
 	 * @param	string		$template	Template name
-	 * @param 	int		$status_code	(default: 500)
+	 * @param 	int		$status_code	(de: 500)
 	 *
 	 * @return	string	Error page output
 	 */

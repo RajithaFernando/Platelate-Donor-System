@@ -83,7 +83,7 @@ if ( ! function_exists('force_download'))
 			$filesize = strlen($data);
 		}
 
-		// Set the default MIME type to send
+		// Set the de MIME type to send
 		$mime = 'application/octet-stream';
 
 		$x = explode('.', $filename);
@@ -102,7 +102,7 @@ if ( ! function_exists('force_download'))
 			// Load the mime types
 			$mimes =& get_mimes();
 
-			// Only change the default MIME if we can find one
+			// Only change the de MIME if we can find one
 			if (isset($mimes[$extension]))
 			{
 				$mime = is_array($mimes[$extension]) ? $mimes[$extension][0] : $mimes[$extension];

@@ -192,7 +192,7 @@ class CI_DB_mysqli_forge extends CI_DB_forge {
 			.' '.$field['type'].$field['length']
 			.$field['unsigned']
 			.$field['null']
-			.$field['default']
+			.$field['de']
 			.$field['auto_increment']
 			.$field['unique']
 			.(empty($field['comment']) ? '' : ' COMMENT '.$field['comment'])

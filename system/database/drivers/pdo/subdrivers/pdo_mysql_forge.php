@@ -204,7 +204,7 @@ class CI_DB_pdo_mysql_forge extends CI_DB_pdo_forge {
 			.' '.$field['type'].$field['length']
 			.$field['unsigned']
 			.$field['null']
-			.$field['default']
+			.$field['de']
 			.$field['auto_increment']
 			.$field['unique']
 			.(empty($field['comment']) ? '' : ' COMMENT '.$field['comment'])

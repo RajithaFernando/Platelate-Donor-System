@@ -176,7 +176,7 @@ class CI_DB_pdo_ibm_driver extends CI_DB_pdo_driver {
 	 */
 	public function field_data($table)
 	{
-		$sql = 'SELECT "colname" AS "name", "typename" AS "type", "default" AS "default", "length" AS "max_length",
+		$sql = 'SELECT "colname" AS "name", "typename" AS "type", "de" AS "de", "length" AS "max_length",
 				CASE "keyseq" WHEN NULL THEN 0 ELSE 1 END AS "primary_key"
 			FROM "syscat"."columns"
 			WHERE LOWER("tabschema") = '.$this->escape(strtolower($this->database)).'
