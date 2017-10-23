@@ -1,7 +1,7 @@
 
 <!--validation -->
 <?php echo validation_errors();?>
-<?php echo form_open('users/update_other');?>
+<?php echo form_open('users/update');?>
 <!--<input type="hidden" name="employee_id" value="--><?php //echo $user['employee_id'];?><!--">-->
 
 <div class="col-md-6 col-md-offset-3">

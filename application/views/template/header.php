@@ -28,7 +28,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" >
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" style="background-color: #330000;">
     <a class="navbar-brand" href="<?php echo base_url();?>/">PDMS</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive" style="background-color: #330000;">
         <?php if ($this->session->userdata('logged_in')):?>
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-            <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard">
+            <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard" style="background-color: #330000;">
                 <a class="nav-link" href="#">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">
@@ -176,7 +176,7 @@
 
 </nav>
 
-<div class="content-wrapper" style="">
+<div class="content-wrapper" style="background-color: #ebccd1">
 
     <div class="container-fluid">
         <!--    --><?php //$this->load->view('template/adminSideNav');?>
