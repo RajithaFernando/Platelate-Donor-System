@@ -13,13 +13,14 @@
         <?php echo $user['employee_occupation'] ?>
     </div>
     <div class="col-md-2">
-        <a  class="btn btn-danger pull left" data-toggle="modal" data-target="#block">Block</a>
+        <a  class="btn btn-danger btn-sm pull left" data-toggle="modal" data-target="#block">Block</a>
     </div>
     <div class="col-md-2">
-        <a class="btn btn-primary " href="<?php echo site_url('/users/'.$user['employee_id'])?>">Edit</a>
+        <a class="btn btn-primary btn-sm " href="<?php echo site_url('/users/'.$user['employee_id'])?>">Edit</a>
     </div>
     <br>
 </div>
+    <hr>
 <?php endforeach;?>
 
 <div class="modal fade" id="block" role="dialog">

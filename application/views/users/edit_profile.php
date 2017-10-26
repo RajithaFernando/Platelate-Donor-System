@@ -34,8 +34,8 @@
 
     <div class="form-group">
         <label>Occupation</label>
-        <select id="occupation" name="employee_occupation" selected="None">
-            <option value="None">Select Occupation</option>
+        <select id="occupation" name="employee_occupation" required>
+            <option value="">Select Occupation</option>
             <option value="Admin">Admin</option>
             <option value="Doctor">Doctor</option>
             <option value="Nurse">Nurse</option>

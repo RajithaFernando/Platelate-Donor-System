@@ -8,7 +8,7 @@
     <h2><b><?= $title; ?></b></h2>
     <div class="form-group">
         <label>User id</label>
-        <input type="text" class="form-control" name="employee_id" value="<?php echo $user['employee_id'];?>" disabled>
+        <input type="text" class="form-control" name="employee_id" value="<?php echo $user['employee_id'];?>" readonly>
     </div>
 
     <div class="form-group">
@@ -32,10 +32,10 @@
         <input type="text" class="form-control" name="employee_NIC" value="<?php echo $user['employee_NIC'];?>">
     </div>
 
-    <div class="form-group">
+    <div class="col-xs-5 selectContainer">
         <label>Occupation</label>
-        <select id="occupation" name="employee_occupation" selected="None">
-            <option value="None">Select Occupation</option>
+        <select id="occupation" name="employee_occupation" required >
+            <option value="">Select Occupation</option>
             <option value="Admin">Admin</option>
             <option value="Doctor">Doctor</option>
             <option value="Nurse">Nurse</option>
