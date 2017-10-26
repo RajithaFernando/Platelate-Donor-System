@@ -1,10 +1,10 @@
 
 <!--validation -->
 <?php echo validation_errors();?>
-<?php echo form_open('users/update');?>
+<?php echo form_open('users/update_other');?>
 <!--<input type="hidden" name="employee_id" value="--><?php //echo $user['employee_id'];?><!--">-->
-
-<div class="col-md-5 col-md-offset-3">
+<!--<>-->
+<div class="col-md-6 col-md-offset-3">
     <h2><b><?= $title; ?></b></h2>
     <div class="form-group">
         <label>User id</label>
