@@ -1,5 +1,9 @@
 <?php
 class Donors extends CI_Controller{
+    function __construct() {
+        parent::__construct();
+        $this->load->model('Donor_model');
+    }
 
     public function registerDonor(){
         $data['title']= 'Donors Registration';
@@ -15,11 +19,6 @@ class Donors extends CI_Controller{
         $this->form_validation->set_rules('donorDOB', 'DateOfBirth', 'required');
         $this->form_validation->set_rules('donorHeight', 'Height', 'required');
         $this->form_validation->set_rules('donorAvailable', 'donoravailable', 'required');
-
-
-
-
-
 
         if ($this->form_validation->run() == FALSE)
         {
@@ -76,5 +75,12 @@ class Donors extends CI_Controller{
         $this->load->view('template/header');
         $this->load->view('donor/search_donor',$data);
         $this->load->view('template/footer');
+    }
+
+//Suggetions donors
+    public function suggest_donors(){
+        $search = $this->input->post('search');
+        $query = $this->donor_model->get_donor($search);
+        echo json_encode($query);
     }
 }

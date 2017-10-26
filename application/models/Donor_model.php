@@ -44,5 +44,15 @@ class Donor_model extends CI_Model{
 
 
     }
-
+//retrive donors by nic
+    public  function get_donor($search){
+        /*$query=$this->db->get_where('donor',array('donorNIC'=>$search));
+        return $query->result_array();*/
+        $this->db->select("donorId,donorFname,donorLname,donorNIC");
+        $whereCondition = array('donorNIC'=>$search);
+        $this->db->where($whereCondition);
+        $this->db->from('donor');
+        $query = $this->db->get();
+        return $query->result();
+    }
 }
