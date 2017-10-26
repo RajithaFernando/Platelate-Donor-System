@@ -80,6 +80,10 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseExamplePages">
                     <li>
+                        <a href="<?php echo base_url()?>/donors/search_donor">Select Donor </a>
+                    </li>
+
+                    <li>
                         <a href="<?php echo base_url()?>/donors/registerDonor">Donor Registration</a>
                     </li>
                     <li>

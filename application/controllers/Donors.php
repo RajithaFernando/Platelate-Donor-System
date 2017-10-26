@@ -68,4 +68,13 @@ class Donors extends CI_Controller{
         $this->load->view('template/footer');
 
     }
+
+
+//    load search donor page
+    public function search_donor(){
+        $data['title']="Search Donor";
+        $this->load->view('template/header');
+        $this->load->view('donor/search_donor',$data);
+        $this->load->view('template/footer');
+    }
 }

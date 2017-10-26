@@ -14,7 +14,7 @@ $route['users/edit']='users/edit';
 $route['users/(:any)']='users/view/$1';
 
 
-
+$route['donors/search_donor']= 'donors/search_donor';
 $route['donors/view_donor']='donors/view_donor';
 
 

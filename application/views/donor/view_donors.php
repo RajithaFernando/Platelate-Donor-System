@@ -1,10 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: PC
- * Date: 9/15/2017
- * Time: 8:28 PM
- */?>
+
 <!--donor list display here-->
 <legend><b>Donor list</b></legend>
 <?php foreach ($donors as $donor):?>
