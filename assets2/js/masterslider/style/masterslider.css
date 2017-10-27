@@ -213,6 +213,14 @@
     font-size: 80%;
     line-height: 0;
 }
+.slidermar h2{
+
+	font: 	Arial;
+	float: right;
+	font-size: px;
+	color:maroon;
+
+}
 
 .ms-btn-m{
     padding: 12px 40px;

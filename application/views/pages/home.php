@@ -87,21 +87,34 @@
 
             <div class="left">
 
-                <a href="mailto:info@yourdomain.com"><i class="fa fa-envelope"></i>pdms@gmail.com</a> <i class="fa fa-phone-square"></i>&nbsp; +94 123 456 7890
-
+                <a href="mailto:info@yourdomain.com"><i class="fa fa-envelope"></i>pdms@gmail.com</a> <i class="fa fa-phone-square"></i>&nbsp; +94-011-2850 253
             </div><!-- end left -->
+            <ul class="nav navbar-nav navbar-right" style="width : 100px;">
+                <!-- <button type ="button" class="dropdown-toggle" data-toggle="dropdown" class="tpbut" style=" font-size: 17px;"><i class="fa fa-lock"></i>Login</button> -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><button style="width: 80px; height: 43px;"><b>Login</b></button></a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <div class="" style="width:300px; height: 250px; padding: 10px; padding-top: 50px;">
+                                <?php echo form_open('users/login'); ?>
+                                <div class="col-md-12">
+                                    <h3 class="text-center"><b>Please Sign In
+                                        <!-- <?php echo $title; ?> -->
+                                    </h3>
+                                    <div class="form-group">
+                                        <input type="text" name="employee_username" class="form-control" placeholder="Enter Username" required autofocus>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="employee_password" class="form-control" placeholder="Enter Password" required autofocus>
 
-            <div class="right">
-                <a type="btn" href="<?php echo base_url()?>/users/login" class="tpbut" style=" font-size: 17px;" ><i class="fa fa-lock"></i> Login</a>
-
-                <ul class="topsocial">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                </ul>
-
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block" style="background-color: #330000;">Login</button>
+                                </div>
+                                <?php echo form_close(); ?>
+                            </div>
+                        </ul>
+                    </li>
+      </ul>    
+</div>
             </div><!-- end right -->
 
         </div>
@@ -112,15 +125,16 @@
 
     <!-- masterslider -->
     <div class="slidermar">
-        <h2>Maharagama cancer hospital blood bank</h2>
+        <h2><b style="float:right; margin-right:100px; color:maroon; font-size:40px;">Maharagama Cancer Hospital Blood Bank</b></h2>
 
         <div class="master-slider ms-skin-default" id="masterslider">
 
-            <div class="ms-slide slide-1" data-delay="9">
+            <div  class="ms-slide slide-1" data-delay="3">
 
-                <div class="slide-pattern"></div>
+                <div  class="slide-pattern"></div>
 
-                <img src="js/masterslider/51-1000x300.jpg"  alt=""/>
+                <img  src="<?php echo base_url();?>/assets2/js/masterslider/51-1000x300.jpg"  alt=""/>
+                
 
 
 
@@ -128,22 +142,20 @@
             </div><!-- end slide 1 -->
 
 
-            <div class="ms-slide slide-2" data-delay="9">
+            <div class="ms-slide slide-2" data-delay="3">
 
                 <div class="slide-pattern"></div>
 
-                <img src="js/masterslider/51-1000x300.jpg"  alt=""/>
-
-
+                 <img src="<?php echo base_url();?>/assets2/js/masterslider/1.jpg"  alt=""/>
 
             </div><!-- end slide 2 -->
 
 
-            <div class="ms-slide slide-3" data-delay="9">
+            <div class="ms-slide slide-3" data-delay="3">
 
                 <div class="slide-pattern"></div>
 
-                <img src="js/masterslider/51-1000x300.jpg"  alt=""/>
+                 <img src="<?php echo base_url();?>/assets2/js/masterslider/3.jpg"  alt=""/>
 
 
 
@@ -154,59 +166,6 @@
     </div>
     <!-- end of masterslider -->
 
-
-
-    <div class="clearfix margin_top10"></div>
-
-
-    <div class="featured_section1">
-        <div class="container">
-
-            <div class="one_third animate" data-anim-type="fadeInLeft">
-
-                <h3>Awesome Beautiful Featured
-                    Power Pack Themes</h3>
-
-                <p class="aliright">Lorem Ipsum as their default model text
-                    andasearchfor lorem ipsum will uncover many
-                    web sites versions have over the years</p>
-
-                <a href="#" class="button one">Get Started Now!</a>
-
-            </div><!-- end section -->
-
-            <div class="two_third last">
-
-                <div class="one_third animate" data-anim-type="fadeIn" data-anim-delay="300">
-
-                    <i class="fa fa-bullhorn"></i>
-                    <h4>30 Diffrent Websites</h4>
-                    <p class="smtfont">Discover a undoubtable sectionsefined  and manymore websites always.</p>
-
-                </div><!-- end section -->
-
-                <div class="one_third animate" data-anim-type="fadeIn" data-anim-delay="400">
-
-                    <i class="fa fa-lightbulb-o"></i>
-                    <h4>Tons of Features</h4>
-                    <p class="smtfont">Discover a undoubtable sectionsefined  and manymore websites always.</p>
-
-                </div><!-- end section -->
-
-                <div class="one_third last animate" data-anim-type="fadeIn" data-anim-delay="500">
-
-                    <i class="fa fa-star-o"></i>
-                    <h4>FREE Updates</h4>
-                    <p class="smtfont">Discover a undoubtable sectionsefined  and manymore websites always.</p>
-
-                </div><!-- end section -->
-
-            </div>
-
-        </div>
-    </div><!-- end featured section 1 -->
-
-
     <div class="clearfix divider_line margin_top10 margin_bottom10"></div>
 
 
@@ -215,770 +174,44 @@
 
             <div class="one_fourth_less animate" data-anim-type="fadeIn" data-anim-delay="300">
 
-                <img src="http://placehold.it/275x220" alt="" class="rimg" /> <h4>Responsive</h4>
-                <p>Many desktop package web page editors in use the model search many web sites.</p>
-                <a href="#" class="button two">Read More</a>
+                <img src="<?php echo base_url(); ?>assets2/js/image/download.jpg" alt="" class="rimg" /> <h4 style="color:#FFF63F; font-size:30px;">Our Vision</h4>
+                <p style="color:maroon; font-size:18px;">To reduce the cancer burden primarily through focusing on advocacy by integrate with key national and international health development agendas to increase the resources for cancer prevention, early detection, cancer treatment and care.</p>
+                
 
             </div><!-- end section -->
 
             <div class="one_fourth_less animate" data-anim-type="fadeIn" data-anim-delay="400">
 
-                <img src="http://placehold.it/275x220" alt="" class="rimg" /> <h4>Modern Design</h4>
-                <p>Many desktop package web page editors in use the model search many web sites.</p>
-                <a href="#" class="button two">Read More</a>
+                <img src="<?php echo base_url(); ?>assets2/js/image/mission-and-vision-NEW-3-2.jpg" alt="" class="rimg" /> <h4 style="color:#FFF63F; font-size:30px;">Our Mission</h4>
+                <p style="color:maroon; font-size:18px;">To provide comprehensive care through evidence based best practices ensuring patients safety, research education and training.</p>
+                
 
             </div><!-- end section -->
 
             <div class="one_fourth_less active animate" data-anim-type="fadeIn" data-anim-delay="500">
 
-                <img src="http://placehold.it/275x220" alt="" class="rimg" /> <h4>Diffrent Themes</h4>
-                <p>Many desktop package web page editors in use the model search many web sites.</p>
-                <a href="#" class="button two">Read More</a>
+                <img src="<?php echo base_url(); ?>assets2/js/image/hqdefault.jpg" alt="" class="rimg" /> <h4 style="color:#FFF63F; font-size:30px;">History</h4>
+                <p style="color:maroon; font-size:18px;">The National Cancer Institute of Maharagama, Sri Lanka was established in 1956 as a radiation treatment center for cancer victims, which consisted of three radiation therapy unit with ten wards for in wards patients.</p>
+                
 
             </div><!-- end section -->
 
             <div class="one_fourth_less last animate" data-anim-type="fadeIn" data-anim-delay="600">
 
-                <img src="http://placehold.it/275x220" alt="" class="rimg" /> <h4>Easy to Use</h4>
-                <p>Many desktop package web page editors in use the model search many web sites.</p>
-                <a href="#" class="button two">Read More</a>
-
+                <img src="<?php echo base_url(); ?>assets2/js/image/images.jpg" alt="" class="rimg" /> <h4 style="color:#FFF63F; font-size:30px;">About Us</h4>
+                <p style="color:maroon; font-size:18px;"> The blood bank is led by an expert Consultant and includes a team of 10 doctors. The blood bank is the center of coordination for the handling of blood samples and donations.</p>
+              
             </div><!-- end section -->
 
         </div>
     </div><!-- end featured section 2 -->
 
 
-    <div class="clearfix margin_top12"></div>
+    
 
 
-    <div class="featured_section3">
-        <div class="container">
-
-            <div class="onecol_forty">
-                <img src="images/site-img5.png" alt="" class="one animate" data-anim-type="fadeInLeft" data-anim-delay="200" />
-                <img src="images/site-img5-2.png" alt="" class="two animate" data-anim-type="fadeInRight" data-anim-delay="200" />
-            </div>
-
-            <div class="onecol_sixty last animate" data-anim-type="fadeIn" data-anim-delay="500">
-    	<span><em>Choose from Different Layouts and Templates</em>
-		<b>Start Creating a Whole Great</b>
-		<strong>New Layout.</strong></span>
-                <p class="bigtfont">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour randomised words enerators onthe Internet tend to repea predefined chunks as necessary making words combine with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable generated Lorem Ipsum is therefore always.</p>
-                <br /><br /><br />
-                <a href="#" class="button three">Get Started Now!</a>
-
-            </div>
-
-        </div>
-    </div><!-- end featured section 3 -->
-
-
-    <div class="clearfix margin_top12"></div>
-
-
-    <div class="featured_section4">
-        <div class="container">
-
-            <div class="tabs detached hide-title cross-fade animate" data-anim-type="fadeIn" data-anim-delay="100">
-
-                <section>
-                    <h1><span aria-hidden="true" class="icon-paper-plane"></span></h1>
-
-                    <h3 class="color1">Hope you Enjoy it.</h3>
-
-                    <p class="less1">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature discovered the undoubtable source. Lorem Ipsum comes from sections.</p>
-
-
-                </section><!-- end section -->
-
-                <section id="nested-instance">
-                    <h1><span aria-hidden="true" class="icon-badge"></span></h1>
-
-                    <h3 class="color1">30 Diffrent Demos</h3>
-
-                    <p class="less1">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years.</p>
-
-
-                </section><!-- end section -->
-
-                <section>
-                    <h1><span aria-hidden="true" class="icon-umbrella"></span></h1>
-
-                    <h3 class="color1">Onepage. Left &amp Right Menus</h3>
-
-                    <p class="less1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-                </section><!-- end section -->
-
-                <section>
-                    <h1><span aria-hidden="true" class="icon-cup"></span></h1>
-
-                    <h3 class="color1">Tons of Features</h3>
-
-                    <p class="less1">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-
-                </section><!-- end section -->
-
-            </div>
-
-        </div>
-    </div><!-- end featured section 4 -->
-
-
-    <div class="clearfix margin_top12"></div>
-
-
-    <div class="works01">
-
-        <div id="grid-container" class="cbp-l-grid-fullWidth">
-
-            <div class="cbp-item">
-                <a href="http://placehold.it/800x600" class="cbp-caption cbp-lightbox" data-title="Model as Structures<br>reasonable always">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="http://placehold.it/800x600" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap center">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body midletext">
-                                <h3>Model as Structures</h3>
-                                <h6>reasonable always</h6>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- end item -->
-
-            <div class="cbp-item">
-                <a href="http://placehold.it/800x600" class="cbp-caption cbp-lightbox" data-title="Looking Publishing<br>reasonable always">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="http://placehold.it/800x600" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap center">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body midletext">
-                                <h3>Looking Publishing</h3>
-                                <h6>reasonable always</h6>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- end item -->
-
-            <div class="cbp-item">
-                <a href="http://placehold.it/800x600" class="cbp-caption cbp-lightbox" data-title="Webpage as Packages<br>reasonable always">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="http://placehold.it/800x600" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap center">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body midletext">
-                                <h3>Webpage as Packages</h3>
-                                <h6>reasonable always</h6>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- end item -->
-
-            <div class="cbp-item">
-                <a href="http://placehold.it/800x600" class="cbp-caption cbp-lightbox" data-title="Software Versions<br>reasonable always">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="http://placehold.it/800x600" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap center">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body midletext">
-                                <h3>Software Versions</h3>
-                                <h6>reasonable always</h6>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- end item -->
-
-
-            <div class="cbp-item">
-                <a href="http://placehold.it/800x600" class="cbp-caption cbp-lightbox" data-title="Printer took Galley<br>reasonable always">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="http://placehold.it/800x600" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap center">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body midletext">
-                                <h3>Printer took Galley</h3>
-                                <h6>reasonable always</h6>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- end item -->
-
-            <div class="cbp-item">
-                <a href="http://placehold.it/800x600" class="cbp-caption cbp-lightbox" data-title="Popularise Release<br>reasonable always">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="http://placehold.it/800x600" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap center">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body midletext">
-                                <h3>Popularise Release</h3>
-                                <h6>reasonable always</h6>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- end item -->
-
-            <div class="cbp-item">
-                <a href="http://placehold.it/800x600" class="cbp-caption cbp-lightbox" data-title="Classical Through<br>reasonable always">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="http://placehold.it/800x600" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap center">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body midletext">
-                                <h3>Classical Through</h3>
-                                <h6>reasonable always</h6>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- end item -->
-
-            <div class="cbp-item">
-                <a href="http://placehold.it/800x600" class="cbp-caption cbp-lightbox" data-title="Alteration Words<br>reasonable always">
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="http://placehold.it/800x600" alt="">
-                    </div>
-                    <div class="cbp-caption-activeWrap center">
-                        <div class="cbp-l-caption-alignLeft">
-                            <div class="cbp-l-caption-body midletext">
-                                <h3>Alteration Words</h3>
-                                <h6>reasonable always</h6>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- end item -->
-
-        </div>
-
-        <!--<div class="cbp-l-loadMore-text">
-            <div data-href="ajax/loadMore.html" class="cbp-l-loadMore-text-link">LOADING...</div>
-        </div>-->
-
-
-    </div><!-- end works section -->
-
-
-    <div class="clearfix"></div>
-
-
-    <div class="featured_section5">
-        <div class="container">
-
-            <div class="counters5 animate" data-anim-type="fadeIn" data-anim-delay="300">
-
-                <div class="one_fourth"> <h4>Clients</h4> <span id="target21">0</span> <div class="hsmline"></div> </div><!-- end section -->
-
-                <div class="one_fourth"> <h4>Projects</h4> <span id="target22">0</span> <div class="hsmline"></div> </div><!-- end section -->
-
-                <div class="one_fourth"> <h4>Awards</h4> <span id="target23">0</span> <div class="hsmline"></div> </div><!-- end section -->
-
-                <div class="one_fourth last"> <h4>Likes</h4> <span id="target24">0</span> <div class="hsmline"></div> </div><!-- end section -->
-
-            </div>
-
-        </div>
-    </div><!-- end featured section 5 -->
-
-
-    <div class="clearfix"></div>
-
-
-    <div class="featured_section6">
-        <div class="container">
-
-            <div class="one_fourth animate" data-anim-type="fadeInUp" data-anim-delay="100">
-
-                <i class="fa fa-desktop"></i>
-                <h4>Pricing Tables</h4>
-                <p>Many desktop publish packages web page editors now use.</p>
-
-            </div><!-- end section -->
-
-            <div class="one_fourth animate" data-anim-type="fadeInUp" data-anim-delay="200">
-
-                <i class="fa fa-line-chart"></i>
-                <h4>New Sections</h4>
-                <p>Many desktop publish packages web page editors now use.</p>
-
-            </div><!-- end section -->
-
-            <div class="one_fourth animate" data-anim-type="fadeInUp" data-anim-delay="300">
-
-                <i class="fa fa-picture-o"></i>
-                <h4>More Websites</h4>
-                <p>Many desktop publish packages web page editors now use.</p>
-
-            </div><!-- end section -->
-
-            <div class="one_fourth last animate" data-anim-type="fadeInUp" data-anim-delay="400">
-
-                <i class="fa fa-magic"></i>
-                <h4>Build your Own</h4>
-                <p>Many desktop publish packages web page editors now use.</p>
-
-            </div><!-- end section -->
-
-            <div class="clearfix"></div>
-
-            <div class="one_fourth btm animate" data-anim-type="fadeInUp" data-anim-delay="500">
-
-                <i class="fa fa-diamond"></i>
-                <h4>Flexibility</h4>
-                <p>Many desktop publish packages web page editors now use.</p>
-
-            </div><!-- end section -->
-
-            <div class="one_fourth btm animate" data-anim-type="fadeInUp" data-anim-delay="600">
-
-                <i class="fa fa-youtube-play"></i>
-                <h4>Video Sections</h4>
-                <p>Many desktop publish packages web page editors now use.</p>
-
-            </div><!-- end section -->
-
-            <div class="one_fourth btm animate" data-anim-type="fadeInUp" data-anim-delay="700">
-
-                <i class="fa fa-crop"></i>
-                <h4>PSD Files</h4>
-                <p>Many desktop publish packages web page editors now use.</p>
-
-            </div><!-- end section -->
-
-            <div class="one_fourth btm last animate" data-anim-type="fadeInUp" data-anim-delay="800">
-
-                <i class="fa fa-comments-o"></i>
-                <h4>Cross Check</h4>
-                <p>Many desktop publish packages web page editors now use.</p>
-
-            </div><!-- end section -->
-
-            <div class="cdarrow animate" data-anim-type="fadeInDown" data-anim-delay="500"></div>
-
-        </div>
-    </div><!-- end featured section 6 -->
-
-    <div class="fltiphone animate" data-anim-type="fadeInRight" data-anim-delay="500"></div>
-
-
-    <div class="clearfix margin_top12"></div>
-
-
-    <div class="featured_section7">
-        <div class="container">
-
-            <h2 class="title21">Meet our Team <em>Our industry experts help scale grow and succeed.</em></h2>
-
-            <div class="one_half left animate" data-anim-type="fadeInLeft" data-anim-delay="100">
-
-                <img src="http://placehold.it/245x300" alt="" />
-
-                <br />
-                <h4>John Casalena</h4>
-                <p class="smtfont">Founder &amp; CEO</p>
-                <div class="hsmline2"></div>
-                <br /><br />
-                <p>Lorem Ipsum as their default model texta anvarious versions have over the years</p>
-                <br />
-
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-
-                <br /><br />
-                <a href="#" class="button four">Read More</a>
-
-            </div><!-- end section -->
-
-            <div class="one_half right animate" data-anim-type="fadeInRight" data-anim-delay="100">
-
-                <img src="http://placehold.it/245x300" alt="" />
-
-                <br />
-                <h4>Andrew Buttar</h4>
-                <p class="smtfont">Vice President</p>
-                <div class="hsmline2 two"></div>
-                <br /><br />
-                <p>Lorem Ipsum as their default model texta anvarious versions have over the years</p>
-                <br />
-
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-
-                <br /><br />
-                <a href="#" class="button four">Read More</a>
-
-            </div><!-- end section -->
-
-            <div class="one_half left animate" data-anim-type="fadeInLeft" data-anim-delay="100">
-
-                <img src="http://placehold.it/245x300" alt="" />
-
-                <br />
-                <h4>Alan Frenkel</h4>
-                <p class="smtfont">Creative Officer</p>
-                <div class="hsmline2"></div>
-                <br /><br />
-                <p>Lorem Ipsum as their default model texta anvarious versions have over the years</p>
-                <br />
-
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-
-                <br /><br />
-                <a href="#" class="button four">Read More</a>
-
-            </div><!-- end section -->
-
-            <div class="one_half right animate" data-anim-type="fadeInRight" data-anim-delay="100">
-
-                <img src="http://placehold.it/245x300" alt="" />
-
-                <br />
-                <h4>Keely Ancrile</h4>
-                <p class="smtfont">Lead Support</p>
-                <div class="hsmline2 two"></div>
-                <br /><br />
-                <p>Lorem Ipsum as their default model texta anvarious versions have over the years</p>
-                <br />
-
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-
-                <br /><br />
-                <a href="#" class="button four">Read More</a>
-
-            </div><!-- end section -->
-
-        </div>
-    </div><!-- end featured section 7 -->
-
-
-    <div class="clearfix margin_top12"></div>
-
-
-    <div class="featured_section8 animate" data-anim-type="fadeIn" data-anim-delay="200">
-
-        <div class="puhtext">
-
-            <b>Everything you need to build an</b>
-            <strong>Awesome Website! on TF.</strong>
-
-            <p>All the Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the you need to be sure there isn't anything embarrassing hidden in the middle alteration in some form Internet.</p>
-
-            <div class="hsmline3 margin_top4 animate" data-anim-type="fadeInRight" data-anim-delay="500"></div>
-
-        </div>
-
-    </div><!-- end featured section 8 -->
-
-
-    <div class="clearfix"></div>
-
-
-    <div class="featured_section9">
-        <div class="container">
-
-            <div class="left animate" data-anim-type="fadeIn" data-anim-delay="300">
-
-                <i class="fa fa-lightbulb-o"></i>
-                <h2>Multiple Designed</h2>
-                <h1>Powerful Themes</h1>
-
-                <a href="#"><i class="fa fa-caret-right"></i> Read More</a>
-
-            </div><!-- end section -->
-
-            <div class="center animate" data-anim-type="fadeIn" data-anim-delay="400">
-
-                <i class="fa fa-eye"></i>
-                <h2>Smooth &amp; Reliable</h2>
-                <h1>Parallax Effects</h1>
-
-                <a href="#"><i class="fa fa-caret-right"></i> Read More</a>
-
-            </div><!-- end section -->
-
-            <div class="right animate" data-anim-type="fadeIn" data-anim-delay="500">
-
-                <i class="fa fa-mobile"></i>
-                <h2>Looks Great on</h2>
-                <h1>Mobile Devices</h1>
-
-                <a href="#"><i class="fa fa-caret-right"></i> Read More</a>
-
-            </div><!-- end section -->
-
-        </div>
-    </div><!-- end featured section 9 -->
-
-
-    <div class="clearfix"></div>
-
-
-    <div class="featured_section10">
-        <div class="container">
-
-            <h2 class="title21">Best Packages <em>Readable content of a page when looking at its layout.</em></h2>
-
-            <div class="one_fourth animate" data-anim-type="fadeIn" data-anim-delay="300">
-                <div class="pricingtable9">
-
-                    <h3>STANDARD</h3>
-                    <strong>$4</strong>
-                    <b>/month</b>
-
-                    <br /><br />
-                    <a href="#" class="button five">BUY NOW!</a>
-
-                    <span>
-
-                <i class="fa fa-check"></i> Curabitur fringilla tincidun<br />
-                <i class="fa fa-check"></i> Sed lect pharetra oncus<br />
-                <i class="fa fa-check"></i> Integer erat facilisis porta<br />
-                <i class="fa fa-check"></i> Maecenas vestibum
-
-            </span>
-
-                </div>
-            </div><!-- end section -->
-
-            <div class="one_fourth animate" data-anim-type="fadeIn" data-anim-delay="400">
-                <div class="pricingtable9">
-
-                    <h3>PERSONAL</h3>
-                    <strong>$8</strong>
-                    <b>/month</b>
-
-                    <br /><br />
-                    <a href="#" class="button five">BUY NOW!</a>
-
-                    <span>
-
-                <i class="fa fa-check"></i> Curabitur fringilla tincidun<br />
-                <i class="fa fa-check"></i> Sed lect pharetra oncus<br />
-                <i class="fa fa-check"></i> Integer erat facilisis porta<br />
-                <i class="fa fa-check"></i> Maecenas vestibum
-
-            </span>
-
-                </div>
-            </div><!-- end section -->
-
-            <div class="one_fourth animate" data-anim-type="fadeIn" data-anim-delay="500">
-                <div class="pricingtable9">
-
-                    <h3>BUSINESS</h3>
-                    <strong>$27</strong>
-                    <b>/month</b>
-
-                    <br /><br />
-                    <a href="#" class="button five">BUY NOW!</a>
-
-                    <span>
-
-                <i class="fa fa-check"></i> Curabitur fringilla tincidun<br />
-                <i class="fa fa-check"></i> Sed lect pharetra oncus<br />
-                <i class="fa fa-check"></i> Integer erat facilisis porta<br />
-                <i class="fa fa-check"></i> Maecenas vestibum
-
-            </span>
-
-                </div>
-            </div><!-- end section -->
-
-            <div class="one_fourth last animate" data-anim-type="fadeIn" data-anim-delay="600">
-                <div class="pricingtable9">
-
-                    <h3>UNLIMITED</h3>
-                    <strong>$45</strong>
-                    <b>/month</b>
-
-                    <br /><br />
-                    <a href="#" class="button five">BUY NOW!</a>
-
-                    <span>
-
-                <i class="fa fa-check"></i> Curabitur fringilla tincidun<br />
-                <i class="fa fa-check"></i> Sed lect pharetra oncus<br />
-                <i class="fa fa-check"></i> Integer erat facilisis porta<br />
-                <i class="fa fa-check"></i> Maecenas vestibum
-
-            </span>
-
-                </div>
-            </div><!-- end section -->
-
-        </div>
-    </div><!-- end featured section 10 -->
-
-
-    <div class="clearfix margin_top12"></div>
-
-
-    <div class="featured_section11 animate" data-anim-type="fadeIn" data-anim-delay="200">
-        <div class="container">
-
-            <h2 class="title21">Latest from Blog <em>Readable content of a page when looking at its layout.</em></h2>
-
-            <div class="one_third">
-
-                <img src="http://placehold.it/359x220" alt="" class="rimg" />
-
-                <span class="bdate"><a href="#">Jan <strong>27</strong> 2015</a></span>
-
-                <h4>Contrary popular simply piece</h4>
-                <p>Default model and search as for ipsum will many web sites still in their infancy versions have the over the years.</p>
-
-                <a href="#" class="button six">Read More</a>
-
-            </div><!-- end section -->
-
-            <div class="one_third">
-
-                <img src="http://placehold.it/359x220" alt="" class="rimg" />
-
-                <span class="bdate"><a href="#">Jan <strong>28</strong> 2015</a></span>
-
-                <h4>Publish packages web page</h4>
-                <p>Default model and search as for ipsum will many web sites still in their infancy versions have the over the years.</p>
-
-                <a href="#" class="button six">Read More</a>
-
-            </div><!-- end section -->
-
-            <div class="one_third last">
-
-                <img src="http://placehold.it/359x220" alt="" class="rimg" />
-
-                <span class="bdate"><a href="#">Jan <strong>29</strong> 2015</a></span>
-
-                <h4>Have evolved over the years</h4>
-                <p>Default model and search as for ipsum will many web sites still in their infancy versions have the over the years.</p>
-
-                <a href="#" class="button six">Read More</a>
-
-            </div><!-- end section -->
-
-        </div>
-    </div><!-- end featured section 11 -->
-
-
-    <div class="clearfix margin_top12"></div>
-
-
-    <div class="featured_section12 animate" data-anim-type="fadeIn" data-anim-delay="200">
-        <div class="container">
-
-            <h2 class="title21">What our People Say</h2>
-
-            <div id="owl-demo12" class="owl-carousel">
-
-                <div class="peosays">
-
-                    <div class="one_half">
-                        <div class="box">" Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years.</div>
-
-                        <div class="who">
-
-                            <img src="http://placehold.it/44x44" alt="" />
-                            <strong>Michile Johnson</strong> manager - websitename.com
-
-                        </div>
-                    </div><!-- end section -->
-
-                    <div class="one_half last">
-                        <div class="box">" Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years.</div>
-
-                        <div class="who">
-
-                            <img src="http://placehold.it/44x44" alt="" />
-                            <strong>Katie Abbigail</strong> team - websitename.com
-
-                        </div>
-                    </div><!-- end section -->
-
-                </div><!-- end a slide section -->
-
-                <div class="peosays">
-
-                    <div class="one_half">
-                        <div class="box">" Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years.</div>
-
-                        <div class="who">
-
-                            <img src="http://placehold.it/44x44" alt="" />
-                            <strong>Devon Joaquin</strong> manager - websitename.com
-
-                        </div>
-                    </div><!-- end section -->
-
-                    <div class="one_half last">
-                        <div class="box">" Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years.</div>
-
-                        <div class="who">
-
-                            <img src="http://placehold.it/44x44" alt="" />
-                            <strong>Darby Kaitlynn</strong> team - websitename.com
-
-                        </div>
-                    </div><!-- end section -->
-
-                </div><!-- end a slide section -->
-
-                <div class="peosays">
-
-                    <div class="one_half">
-                        <div class="box">" Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years.</div>
-
-                        <div class="who">
-
-                            <img src="http://placehold.it/44x44" alt="" />
-                            <strong>Chaim Hayden</strong> manager - websitename.com
-
-                        </div>
-                    </div><!-- end section -->
-
-                    <div class="one_half last">
-                        <div class="box">" Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years.</div>
-
-                        <div class="who">
-
-                            <img src="http://placehold.it/44x44" alt="" />
-                            <strong>Brooke Marisa</strong> team - websitename.com
-
-                        </div>
-                    </div><!-- end section -->
-
-                </div><!-- end a slide section -->
-
-            </div>
-
-        </div>
-    </div><!-- end featured section 12 -->
-
-
-    <div class="clearfix"></div>
+    
+ <div class="clearfix"></div>
 
 
     <div class="client_logos animate" data-anim-type="fadeIn" data-anim-delay="100">
@@ -1000,71 +233,51 @@
 
     <footer class="footer">
         <div class="container">
+            <h5 style="color:#8B2323; font-size:40px; margin-top:-40px; margin-bottom:40px;">Contact Us</h5>
 
-            <div class="one_fourth animate" data-anim-type="fadeInUp" data-anim-delay="100">
-                <ul class="faddress">
-                    <li><img src="<?php echo base_url('assets2/images/footer-logo.png');?>" alt="" /></li>
-                    <li><i class="fa fa-map-marker fa-lg"></i>&nbsp; 2901 Marmora Road, Glassgow,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seattle, WA 98122-1090</li>
-                    <li><i class="fa fa-phone"></i>&nbsp; 1 -234 -456 -7890</li>
-                    <li><i class="fa fa-print"></i>&nbsp; 1 -234 -456 -7890</li>
-                    <li><a href="mailto:info@yourdomain.com"><i class="fa fa-envelope"></i>&nbsp; info@yourdomain.com</a></li>
-                    <li><img src="<?php echo base_url('assets2/images/footer-wmap.png');?>" alt="" /></li>
-                </ul>
-            </div><!-- end address -->
+          
 
             <div class="one_fourth animate" data-anim-type="fadeInUp" data-anim-delay="200">
                 <div class="qlinks">
 
-                    <h4>Useful Links</h4>
+                    <h4 style="color:yellow;">Blood Bank</h4>
 
-                    <ul>
-                        <li><a href="#"><i class="fa fa-angle-right"></i> Home Page Variations</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i> Awsome Slidershows</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i> Features and Typography</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i> Different &amp; Unique Pages</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i> Single and Portfolios</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i> Recent Blogs or News</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i> Layered PSD Files</a></li>
-                    </ul>
-
+                    <ul class="faddress">
+                    <li><img src="<?php echo base_url('assets2/images/footer-logo.png');?>" alt="" /></li>
+                    <li><i class="fa fa-map-marker fa-lg"></i>&nbsp;National Cancer Hospital Blood Bank,Maharagama,Srilanka,<br></li>
+                    <li><i class="fa fa-phone"></i>&nbsp; 011-2369931</li>
+                    <li><i class="fa fa-print"></i>&nbsp; 011–2842 051</li>
+                    <li><a href="mailto:info@yourdomain.com"><i class="fa fa-envelope"></i>&nbsp; info@pdmsMaharagama.com</a></li>
+                    <li><img src="<?php echo base_url('assets2/images/footer-wmap.png');?>" alt="" /></li>
+                </ul>
                 </div>
             </div><!-- end links -->
 
-            <div class="one_fourth animate" data-anim-type="fadeInUp" data-anim-delay="300">
-                <div class="siteinfo">
 
-                    <h4>Twitter Feeds</h4>
+            <div class="one_fourth animate" data-anim-type="fadeInUp" data-anim-delay="200">
+                <div class="qlinks">
 
-                    <ul class="twitter_feeds_three">
+                    <h4 style="color:yellow;">Cancer Hospital</h4>
 
-                        <li class="bhline"><i class="fa fa-twitter fa-lg"></i> <a href="https://twitter.com/gsrthemes9" target="_blank">gsrthemes9</a>: Hoxa - Responsive html5 Professional Theme
-                            <em>.9 days ago &nbsp;.<a href="#">reply</a> &nbsp;.<a href="#">retweet</a> &nbsp;.<a href="#">favorite</a></em></li>
-
-                        <li><i class="fa fa-twitter fa-lg"></i> <a href="https://twitter.com/gsrthemes9" target="_blank">gsrthemes9</a>: elos - Responsive HTML5 / CSS3, Simple, Clean and Professional Multipurpose Use.
-                            <em>.12 days ago &nbsp;.<a href="#">reply</a> &nbsp;.<a href="#">retweet</a> &nbsp;.<a href="#">favorite</a></em></li>
-
-                    </ul>
-
+                    <ul class="faddress">
+                    <li><img src="<?php echo base_url('assets2/images/footer-logo.png');?>" alt="" /></li>
+                    <li><i class="fa fa-phone"></i>&nbsp; 011-2691111</li>
+                    <li><i class="fa fa-print"></i>&nbsp; 011-2369931</li>
+                    <li><a href="mailto:info@yourdomain.com"><i class="fa fa-envelope"></i>&nbsp; info@ncisl.health.gov.lk</a></li>
+                    <li><img src="<?php echo base_url('assets2/images/footer-wmap.png');?>" alt="" /></li>
+                </ul>
                 </div>
-            </div><!-- end site info -->
+            </div><!-- end links -->
+
+            <h5 style="color:yellow;">Hospital Location Map</h5>
 
             <div class="one_fourth last animate" data-anim-type="fadeInUp" data-anim-delay="400">
 
-                <h4>Flickr Photos</h4>
 
-                <div id="flickr_badge_wrapper">
-
-                    <a href="#" target="_blank"><img src="http://placehold.it/70x70" alt=""></a>
-                    <a href="#" target="_blank"><img src="http://placehold.it/70x70" alt=""></a>
-                    <a href="#" target="_blank"><img src="http://placehold.it/70x70" alt=""></a>
-                    <a href="#" target="_blank"><img src="http://placehold.it/70x70" alt=""></a>
-                    <a href="#" target="_blank"><img src="http://placehold.it/70x70" alt=""></a>
-                    <a href="#" target="_blank"><img src="http://placehold.it/70x70" alt=""></a>
-                    <a href="#" target="_blank"><img src="http://placehold.it/70x70" alt=""></a>
-                    <a href="#" target="_blank"><img src="http://placehold.it/70x70" alt=""></a>
-                    <a href="#" target="_blank"><img src="http://placehold.it/70x70" alt=""></a>
-
-                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10576.307385525843!2d79.
+                92368511573365!3d6.841151007124166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25075423f1c03%
+                3A0xc24046c99d1423e4!2z4La04LeS4LeF4LeS4Laa4LePIOC2u-C3neC3hOC2vSwg4La44LeE4La74Lac4La4!5e0!3m2!1ssi!2slk!
+                4v1509014866315" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>"
 
             </div><!-- end flickr -->
 
@@ -1079,7 +292,7 @@
 
                 <div class="one_half animate" data-anim-type="fadeInRight" data-anim-delay="300">
 
-                    Copyright © 2015 LinStar.com. All rights reserved.  <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
+                    Copyright © 2017 pdmsMaharagama.com. All rights reserved.  <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
 
                 </div>
 
@@ -1156,6 +369,11 @@
         responsiveSwitch: 'tablist',
         saveState: sessionStorage,
     });
+
+</script>
+
+<script type="text/javascript">
+    $()
 </script>
 <script src="<?php echo base_url('assets2/js/aninum/jquery.animateNumber.min.js');?>"></script>
 <script src="<?php echo base_url('assets2/js/carouselowl/owl.carousel.js');?>"></script>
