@@ -44,6 +44,19 @@ class Donor_model extends CI_Model{
 
 
     }
+//****************************
+//    update date according to the 14 days
+    public function update_date(){
+        $data = array(
+            'dateAvailable'=>1,
+        );
+        $this->db->where(date('y-m-d')-'donationDate'>=14 );
+        $this->db->update('donation',$data);
+    }
+
+
+
+
 //retrive donors by nic
     public  function get_donor($search){
         /*$query=$this->db->get_where('donor',array('donorNIC'=>$search));

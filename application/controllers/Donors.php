@@ -61,6 +61,8 @@ class Donors extends CI_Controller{
 //        $bloodGroup='A+';
 
         $data['donors']=$this->donor_model->get_donors($bloodGroup);
+//        *******************
+        $this->donor_model->update_date();
 
         $this->load->view('template/header');
         $this->load->view('donor/selecte_donors',$data);
