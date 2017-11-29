@@ -34,7 +34,7 @@
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">NIC Number</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="NIC Number" name="donorNIC">
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="NIC Number" name="donorNIC" maxlength="10||12">
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Gender</label>
@@ -45,8 +45,8 @@
             <input type="address" class="form-control" id="exampleInputEmail1" placeholder="Address" name="donorAddress">
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Occupation</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Occupation" name="donorOccupation">
+            <label for="exampleInputEmail1">Distance</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Distance" name="donorDistance">
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Email Address</label>
