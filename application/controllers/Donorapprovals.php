@@ -5,15 +5,19 @@
 			parent::__construct();
 			$this->load->helper('url');
 			$this->load->helper('form');
-			$this->load->model('donorapproval_model');
+            $this->load->model('donorapproval_model');
+
 
 		}
 
 		public function index(){
-			$data['registered_donors'] = $this->donationapproval_model->load_donors_registered_for_donation();
+			$data['registered_donors'] = $this->donorapproval_model->load_donors_registered_for_donation();
 			$this->load->helper('html');
-			$this->load->view('status',$data);	
-		}
+            $this->load->view('template/header');
+			$this->load->view('donor/donor_status',$data);
+            $this->load->view('template/footer');
+
+        }
 
 		//public function ()){}
 

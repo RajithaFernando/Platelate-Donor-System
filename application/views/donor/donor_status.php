@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
-<head>
+<head>-->
 	<title></title>
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/donor_status.css" >
-</head>
-<body class="main">
+<!--</head>
+<body class="main">-->
 
 
    
@@ -139,5 +139,5 @@
 	
 	
 
-</body>
-</html>                                          
+<!--</body>
+</html>                                          -->

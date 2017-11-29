@@ -87,7 +87,7 @@
                         <a href="<?php echo base_url()?>/donors/registerDonor">Donor Registration</a>
                     </li>
                     <li>
-                        <a href="register.html">Donor Approval list</a>
+                        <a href="<?php echo base_url()?>/donorapprovals">Donor Approval list</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url()?>/donation/add_donation">Donation</a>
