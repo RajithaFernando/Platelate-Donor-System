@@ -1,5 +1,5 @@
 <?php //include 'partial/header.php' ?>
-
+<!-- testing -->
     <div class = "col-md-6 col-md-offset-3">
 
 <!--        <h1>Donor Registration</h1>-->
@@ -61,20 +61,7 @@
             <input type="double" class="form-control" id="exampleInputEmail1" placeholder="Height" name="donorHeight">
         </div>
 
-        <div class="form-group">
-            <label>Blood Group</label>
-            <select name="donorBloodGroup" id="bloodgroup">
-                <option value="A+">A+</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B-">B-</option>
-                <option value="AB+">AB+</option>
-                <option value="AB-">AB-</option>
-                <option value="O+">O+</option>
-                <option value="O-">O-</option>
-            </select>
 
-        </div>
 
         <div class="form-group">
             <label>Available Times</label>

@@ -38,7 +38,7 @@ class Donor_model extends CI_Model{
         $this->db->order_by('donor.donorResponsetime','DESC');
         $this->db->join('telephoneno','telephoneno.donorId=donor.donorId');
 //        $arraycheck =array();
-        $this->db->where('lastDonationDate <=',$now);
+        $this->db->where('nextDonationDate <=',$now);
         $this->db->where('donorBloodGroup',$bloodGroup);
 
 

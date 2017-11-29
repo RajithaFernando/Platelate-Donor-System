@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-
+$route['donorapprovals']='donorapprovals';
 $route['donation/donation']='donation/donation';
 
 $route['users/login']='users/login';
