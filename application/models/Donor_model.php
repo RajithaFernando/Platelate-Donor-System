@@ -34,8 +34,11 @@ class Donor_model extends CI_Model{
 //retrive donors
     public function get_donors($bloodGroup=FALSE){
 
+        $now = date('Y-m-d');
         $this->db->order_by('donor.donorResponsetime','DESC');
         $this->db->join('telephoneno','telephoneno.donorId=donor.donorId');
+//        $arraycheck =array();
+        $this->db->where('lastDonationDate <=',$now);
         $this->db->where('donorBloodGroup',$bloodGroup);
 
 
