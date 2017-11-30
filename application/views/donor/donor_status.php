@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title></title>
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/status.css" >
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/donor_status.css" >
 </head>
 <body class="main">
 
