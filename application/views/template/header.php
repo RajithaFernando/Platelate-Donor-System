@@ -23,6 +23,25 @@
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url('assets/css/sb-admin.css');?>" rel="stylesheet">
 
+    <script>
+        var xmlhttp=new XMLHttpRequest();
+        xmlhttp.onreadystatechange=function(){
+            if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                alert(xmlhttp.responseText);
+                console.log(xmlhttp.responseText);// you will see OKKK in console
+            }
+        }
+        xmlhttp.open("GET","../sms/send_sms",true); // first try `../index.php/example` ( extension depends if you enable/disable url rewrite in apache.conf ) , if this won't work then try base_url/index.php/example ( where you can specify base_url by static or with CodeIgniter helpher function )
+        xmlhttp.send();
+    </script>
+
+    <!--<script>
+
+            ;
+        }
+
+        setInterval('autoRefresh()', 5000); // this will reload page after every 5 secounds; Method I
+    </script>-->
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -80,7 +99,7 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseExamplePages">
                     <li>
-                        <a href="<?php echo base_url()?>/donors/search_donor">Select Donor </a>
+                        <a href="<?php echo base_url()?>/donors/search_donor">Search Donor </a>
                     </li>
 
                     <li>
@@ -93,7 +112,7 @@
                         <a href="<?php echo base_url()?>/donation/add_donation">Donation</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url()?>/donors/view_donor">Selecte Donor</a>
+                        <a href="<?php echo base_url()?>/donors/view_donor">Select Donor</a>
                     </li>
                 </ul>
             </li>

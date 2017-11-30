@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-
+$route['example']='example';
+$route['sms/send_sms']='sms/send_sms';
 $route['donorapprovals']='donorapprovals';
 $route['donation/donation']='donation/donation';
 
