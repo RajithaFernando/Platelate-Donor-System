@@ -22,7 +22,15 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url('assets/css/sb-admin.css');?>" rel="stylesheet">
+    <?php
+/*    header("refresh: 3;");
+    echo base_url(sms/send_sms);
+    */?>
+    <?php
 
+    //header("Refresh: 5; url=base_url()sms/send_sms");
+
+    echo 'Logged in successfully.'; ?>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -142,7 +150,7 @@
 
         <ul class="navbar-nav ml-auto">
 <!--            search bar-->
-<!--           <li class="nav-item">
+           <li class="nav-item">
                 <form class="form-inline my-2 my-lg-0 mr-lg-2">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for...">
@@ -153,7 +161,7 @@
                 </span>
                     </div>
                 </form>
-            </li>-->
+            </li>
             <!--<ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="<?php /*echo base_url()*/?>/users/login">
@@ -183,7 +191,7 @@
 <div class="content-wrapper" style="background-color: #ebccd1">
 
     <div class="container-fluid">
-        <!--    --><?php //$this->load->view('template/adminSideNav');?>
+        <?php //$this->load->view('template/adminSideNav');?>
         <?php  if ($this->session->flashdata('user_registered')):?>
             <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>';?>
         <?php endif; ?>

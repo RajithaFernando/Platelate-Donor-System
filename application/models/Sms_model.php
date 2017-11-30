@@ -6,7 +6,13 @@
  * Time: 11:20 AM
  */
 class Sms_model extends CI_Model{
-    var $password_sms = "7742";
+    public function get_eligible_donors(){
+        $now = date('Y-m-d');
+        $this->db->where('nextDonationDate <=',$now);
+        $query=$this->db->get('donor');
+        return $query->result_array();
+
+    }
     public function send($from,$to,$message,$password_sms){
         $text=urlencode($message);
         $baseurl ="http://www.textit.biz/sendmsg";
@@ -24,5 +30,6 @@ class Sms_model extends CI_Model{
         }
 
     }
+
 }
 ?>
