@@ -37,8 +37,9 @@
             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="NIC Number" name="donorNIC" maxlength="10||12">
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Gender</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Gender" name="donorGender">
+            <label>Gender</label>
+            <input type="radio" class="gender" value="Male" name="gender"><label for="Male" class="light">Male</label>
+            <input type="radio" class="gender" value="Female" name="gender"><label for="Female" class="light">Female</label>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Address</label>
