@@ -1,0 +1,143 @@
+.main{
+  margin: 0px;
+
+}
+#main{
+  width: 100%
+}
+
+.labelone  {
+  color: #000000;
+  float: left;
+ 
+  vertical-align: center;
+  width: 15%;
+  margin-bottom: 7px;
+
+}
+
+.txtone{
+  margin-bottom: 7px;
+}
+
+.radiobtn{
+  margin:10px 0 10px 0;
+  color: #000000;
+  font-size: 20px;
+ 
+ 
+
+}
+
+h1{ 
+  
+  color: red;
+  
+  background-color: #FFFFFF;
+  text-align:center;
+  padding: 10px  10px ;
+  margin: 2px 02px 3px 02px;
+  border: none;
+  border-radius: 4px;  
+  box-shadow: #565656 0px 0px 2px;
+  font-weight: bold;
+  font-family: "Nunito" Sans-serif;
+  font-size: 31px;
+}
+
+.Reg_donors{
+  padding: 10px 10px;
+ margin: 1px 1px 3px 3px;
+  text-align: center;
+  font-size: 31px;
+  width: 94.4%;
+  color: #FFFFFF;
+  background-color: #FFA500;
+  border: none;
+  border-radius: 4px;
+  box-shadow: #565656 0px 0px 2px;
+  font-weight: bold;
+  font-family: "Nunito" Sans-serif;
+}
+.left{
+ 
+  float:left;
+  width:67%;
+  background-color:#DAF7A6 ;
+  min-height:800px;
+  
+  padding-left: 3%;
+  padding-top: 1px;
+ 
+
+}
+.right{
+  float:right;
+  width: 30%;
+  background-color:#C8DA45;
+  min-height:800px;
+  border-color: #000000;
+  display: block;
+  padding-top: 1px;
+  
+}
+
+.Reg_donors_container{
+  /*border : #FFA500 solid 3px;*/
+  
+    
+}
+.donor_box{
+  background-color: #32CD32;
+  margin: 0 2px  2px 2px;
+  border:solid 1px #F5DEB3;
+  border-radius: 4px;
+  padding:5px;
+}
+.id{
+  display: inline;
+  float: left;
+  width: 30%;
+  padding-left: 10px
+   color: #FFFFFF;
+  font-size: 14px;
+  text-align: left;
+  
+}
+.name{
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 14px;
+
+}
+.details{
+  height: 360px;
+}
+
+.details div{
+  padding-top: 10px;
+  display: block;
+  
+}
+.button{
+   border: none;
+    
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  
+    cursor: pointer;
+}
+
+.button #cancel{
+  margin: 0 20px 0 150px;
+}
+
+
+  
+
+#ifdeffer2 label, #ifdeffer1 label{
+  display: block;
+  vertical-align:middle;
