@@ -23,15 +23,6 @@
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url('assets/css/sb-admin.css');?>" rel="stylesheet">
 
-    <?php
-/*    header("refresh: 3;");
-    echo base_url(sms/send_sms);
-    */?>
-    <?php
-
-    //header("Refresh: 5; url=base_url()sms/send_sms");
-
-    echo 'Logged in successfully.'; ?>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
