@@ -103,6 +103,9 @@
                     <li>
                         <a href="<?php echo base_url()?>/donors/view_donor">Selecte Donor</a>
                     </li>
+                     <li>
+                        <a href="<?php echo base_url()?>/donors/donor_profile">Donor Profile</a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">

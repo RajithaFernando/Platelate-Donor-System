@@ -85,4 +85,11 @@ class Donors extends CI_Controller{
         $query = $this->donor_model->get_donor($search);
         echo json_encode($query);
     }
+    // load donor profile
+     public function donor_profile(){
+        $data['title']="Search Donor";
+        $this->load->view('template/header');
+        $this->load->view('donor/donor-profile',$data);
+        $this->load->view('template/footer');
+    }
 }
