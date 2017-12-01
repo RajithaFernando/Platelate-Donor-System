@@ -17,6 +17,8 @@ $route['users/block/(:any)']='users/block/$1';
 $route['users/(:any)']='users/view/$1';
 
 
+
+$route['donors/add_points/(:any)']='donors/add_points/$1';
 $route['donors/search_donor']= 'donors/search_donor';
 $route['donors/view_donor']='donors/view_donor';
 

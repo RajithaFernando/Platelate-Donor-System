@@ -22,8 +22,7 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url('assets/css/sb-admin.css');?>" rel="stylesheet">
-
-    <script>
+    <!--<script>
         var xmlhttp=new XMLHttpRequest();
         xmlhttp.onreadystatechange=function(){
             if (xmlhttp.readyState==4 && xmlhttp.status==200){
@@ -33,14 +32,6 @@
         }
         xmlhttp.open("GET","../sms/send_sms",true); // first try `../index.php/example` ( extension depends if you enable/disable url rewrite in apache.conf ) , if this won't work then try base_url/index.php/example ( where you can specify base_url by static or with CodeIgniter helpher function )
         xmlhttp.send();
-    </script>
-
-    <!--<script>
-
-            ;
-        }
-
-        setInterval('autoRefresh()', 5000); // this will reload page after every 5 secounds; Method I
     </script>-->
 </head>
 
@@ -199,7 +190,7 @@
 
 </nav>
 
-<div class="content-wrapper" style="background-color: #ebccd1">
+<div class="content-wrapper" style="background-color: #EFEFF0">
 
     <div class="container-fluid">
         <?php //$this->load->view('template/adminSideNav');?>

@@ -62,6 +62,35 @@ class Donor_model extends CI_Model{
         $query = $this->db->get();
         return $query->result();
     }
+//add poin to donor according to their response type
+    public function  add_points($donorId){
+        $responsetype=$this->input->post('donorResponse');
+        /*$this->db->select('donorResponsetime');
+        $previousvalue =$this->db->get_where('donor',array('donorId'=>$donorId));*/
 
+        if ($responsetype=="response"){
+            $query=$this->db->query("UPDATE donor SET donorResponsetime = (donorResponsetime+2) WHERE donorId='$donorId';");
+            return $query;
+            /*            $data = array(
+                'donorResponsetime'=>$previousvalue+2
+            );
+            $this->db->where('donorId',$donorId);
+            return $this->db->update('donor',$data);*/
 
+        }
+        elseif ($responsetype=="accepted"){
+            $query=$this->db->query("UPDATE donor SET donorResponsetime = (donorResponsetime+5) WHERE donorId='$donorId';");
+            return $query;
+
+        }
+        elseif($responsetype=="not_response"){
+            $query=$this->db->query("UPDATE donor SET donorResponsetime = (donorResponsetime-2) WHERE donorId='$donorId';");
+            return $query;
+
+        }
+        else{
+            return false;
+        }
+
+    }
 }
