@@ -68,6 +68,21 @@
             <label for="exampleInputEmail1">Date Of Birth</label>
             <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Date Of Birth" name="donorDOB">
         </div>
+        
+        <div class="form-group">
+        <label>Blood Group</label></td>
+        <select name="donorBloodGroup" >
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>O+</option>
+            <option>O-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+        </select>
+
+        </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Height</label>
             <input type="double" class="form-control" id="exampleInputEmail1" placeholder="Height" name="donorHeight">
