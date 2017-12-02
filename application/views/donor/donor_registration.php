@@ -35,8 +35,7 @@
 
 
         <div class="form-group">
-            <label for="exampleInputEmail1">Middle Name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Middle Name" name="donorMname">
+          
             
             <label for="donorMname" class="control-label">Middle Name</label>
             <input type="text" class="form-control" id="donorMname" placeholder="Middle Name" name="donorMname" data-error="Please enter Middle Name" required>
@@ -45,8 +44,7 @@
 
 
         <div class="form-group">
-            <label for="exampleInputEmail1">Last Name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Last Name" name="donorLname">
+           
            
             <label for="donorLname" class="control-label">Last Name</label>
             <input type="text" class="form-control" id="donorLname" placeholder="Last Name" name="donorLname" data-error='Please enter Last Name' required>
@@ -58,7 +56,7 @@
             <label>NIC</label>
             <input type="radio" onclick="javascript:nic();" name="nic" value="" id="oldnic" ><label for="oldnic">Old NIC</label>
             <input type="radio" onclick="javascript:nic();" name="nic" value="" id="newnic"><label for="newnic">New NIC</label>
-            <label for="donorNIC" class="control-label">NIC Number</label>
+          
             
         </div>
         
@@ -73,9 +71,7 @@
         </div>
 
         <div class="form-group">
-            <label>Gender</label>
-            <input type="radio" class="gender" value="Male" name="gender"><label for="Male" class="light">Male</label>
-            <input type="radio" class="gender" value="Female" name="gender"><label for="Female" class="light">Female</label>
+            
            
             
            <label class="control-label">Gender</label>
@@ -86,9 +82,7 @@
         
 
         <div class="form-group">
-            <label for="exampleInputEmail1">Address</label>
-            <input type="address" class="form-control" id="exampleInputEmail1" placeholder="Address" name="donorAddress">
-            
+                    
                 <label for="donorAddress" class="control-label">Address</label><br>
             <div style="display: table; width:1000px">    
                 <div style="display: table-cell;">
@@ -120,13 +114,12 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Distance</label>
+            
             <label for="donorDistance">Distance</label>
             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Distance" name="donorDistance">
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Email Address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email Address" name="donorEmail">
+           
     
             <label for="donorEmail">Email Address</label>
             <input type="email" class="form-control" id="donorEmail" placeholder="Email Address" name="donorEmail">
@@ -172,7 +165,7 @@
         </div>
 
 
-        <button type="submit" class="btn btn-default">Submit</button>
+        
      
         <button type="submit" class="btn btn-primary">Submit</button>
 
