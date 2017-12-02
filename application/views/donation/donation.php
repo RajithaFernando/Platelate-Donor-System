@@ -61,18 +61,18 @@
     <div class="form-group">
         <label>Machine No:</label></td>
         <select name="machineNo" >
-            <option>M1</option>
-            <option>M2</option>
-            <option>M3</option>
-            <option>M4</option>
+            <option>Hemonetics</option>
+            <option>Amicus</option>
+            <option>Spectra Optia</option>
+            
         </select>
 
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label >Donation PCV:</label></td>
         <input type="text" class="form-control" name="donationPCV" ></td>
     </div>
-
+ -->
     <!-- <div class="btn">
         <input type="submit" value="Submit" class="btn"/>
         <input type="reset" value="Cancel" class="btn"/> </div>
