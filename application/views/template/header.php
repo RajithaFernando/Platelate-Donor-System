@@ -22,7 +22,7 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url('assets/css/sb-admin.css');?>" rel="stylesheet">
-    <!--<script>
+<!--    <script>
         var xmlhttp=new XMLHttpRequest();
         xmlhttp.onreadystatechange=function(){
             if (xmlhttp.readyState==4 && xmlhttp.status==200){
@@ -110,9 +110,6 @@
                     </li>
                     <li>
                         <a href="<?php echo base_url()?>/donors/deffer_donor"> Check Donors</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url()?>/donors/profile_donor">Donor profile</a>
                     </li>
                      <li>
                         <a href="<?php echo base_url()?>/donors/donor_profile">Donor Profile</a>

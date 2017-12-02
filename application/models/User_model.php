@@ -116,7 +116,8 @@ class User_model extends CI_Model {
             'employeeIs_allowed'=>0
         );
         $this->db->where('employee_id',$employee_id);
-        return $this->db->update('employee',$data);
+        $this->db->update('employee',$data);
+        return;
     }
 
 }
