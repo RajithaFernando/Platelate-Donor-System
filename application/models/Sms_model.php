@@ -8,6 +8,8 @@
 class Sms_model extends CI_Model{
     public function get_eligible_donors(){
         $now = date('Y-m-d');
+        $this->db->select('telphoneno.mobileTeleNo');
+        $this->db->join('telephoneno','telephoneno.donorId=donor.donorId','left');
         $this->db->where('nextDonationDate <=',$now);
         $query=$this->db->get('donor');
         return $query->result_array();

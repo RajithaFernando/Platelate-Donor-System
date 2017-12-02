@@ -31,34 +31,25 @@ class Donor_model extends CI_Model{
     //view donors
 
 
-//retrive donors
-    public function get_donors($bloodGroup=FALSE){
-
-        $now = date('Y-m-d');
-        $this->db->order_by('donor.donorResponsetime','DESC');
-        $this->db->join('telephoneno','telephoneno.donorId=donor.donorId');
-//        $arraycheck =array();
-        $this->db->where('nextDonationDate <=',$now);
-        $this->db->where('donorBloodGroup',$bloodGroup);
-
-
-        $query=$this->db->get('donor');
-        return $query->result_array();
+//retrive donors accroding to blood group
+    public function get_donors($bloodGroup){
+//        get current date to compare 14 days
+            $now = date('Y-m-d');
+            $approve='approve';
+            $this->db->order_by('donor.donorResponsetime','ASC');
+            $this->db->order_by('donor.donorDistance','DESC');
+            $this->db->join('telephoneno','telephoneno.donorId=donor.donorId','left');
+            $this->db->join('donorstatus','donorstatus.donorId=donor.donorId','left');
+//            *****donor should check in donor or ststus table
+            $this->db->where('donorstatus.donorStatusType',$approve);
+            $this->db->where('nextDonationDate <=',$now);
+            $this->db->where('donorBloodGroup',$bloodGroup);
+            $query=$this->db->get('donor');
+            return $query->result_array();
+            //echo $this->db->affected_rows('donor');
 
 
     }
-//****************************
-//    update date according to the 14 days
-    public function update_date(){
-        $data = array(
-            'dateAvailable'=>1,
-        );
-        $this->db->where(date('y-m-d')-'donationDate'>=14 );
-        $this->db->update('donation',$data);
-    }
-
-
-
 
 //retrive donors by nic
     public  function get_donor($search){
@@ -70,5 +61,36 @@ class Donor_model extends CI_Model{
         $this->db->from('donor');
         $query = $this->db->get();
         return $query->result();
+    }
+//add poin to donor according to their response type
+    public function  add_points($donorId){
+        $responsetype=$this->input->post('donorResponse');
+        /*$this->db->select('donorResponsetime');
+        $previousvalue =$this->db->get_where('donor',array('donorId'=>$donorId));*/
+
+        if ($responsetype=="response"){
+            $query=$this->db->query("UPDATE donor SET donorResponsetime = (donorResponsetime+2) WHERE donorId='$donorId';");
+            return $query;
+            /*            $data = array(
+                'donorResponsetime'=>$previousvalue+2
+            );
+            $this->db->where('donorId',$donorId);
+            return $this->db->update('donor',$data);*/
+
+        }
+        elseif ($responsetype=="accepted"){
+            $query=$this->db->query("UPDATE donor SET donorResponsetime = (donorResponsetime+5) WHERE donorId='$donorId';");
+            return $query;
+
+        }
+        elseif($responsetype=="not_response"){
+            $query=$this->db->query("UPDATE donor SET donorResponsetime = (donorResponsetime-2) WHERE donorId='$donorId';");
+            return $query;
+
+        }
+        else{
+            return false;
+        }
+
     }
 }

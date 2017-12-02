@@ -58,12 +58,7 @@ class Donors extends CI_Controller{
 
         $bloodGroup= $this->input->post('bloodGroup');
 
-//        $bloodGroup='A+';
-
         $data['donors']=$this->donor_model->get_donors($bloodGroup);
-//        *******************
-//        $this->donor_model->update_date();
-
         $this->load->view('template/header');
         $this->load->view('donor/selecte_donors',$data);
         $this->load->view('template/footer');
@@ -85,6 +80,19 @@ class Donors extends CI_Controller{
         $query = $this->donor_model->get_donor($search);
         echo json_encode($query);
     }
+<<<<<<< HEAD
+
+//    given point to donor according to their response way
+    public  function  add_points($donorId=NULL){
+        $this->load->model('donor_model');
+        if($this->donor_model->add_points($donorId)){
+            echo "success";
+        }
+
+    }
+
+
+=======
     // load donor profile
      public function donor_profile(){
         $data['title']="Search Donor";
@@ -92,4 +100,5 @@ class Donors extends CI_Controller{
         $this->load->view('donor/donor-profile-list',$data);
         $this->load->view('template/footer');
     }
+>>>>>>> sumudu
 }

@@ -12,7 +12,7 @@
     <title>Pdms</title>
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css');?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/css/bootstrap.min.css');?>" rel="stylesheet">
+<!--    <link href="--><?php //echo base_url('assets/css/bootstrap.min.css');?><!--" rel="stylesheet">-->
 
     <!-- Custom fonts for this template -->
     <link href="<?php echo base_url('assets/vendor/font-awesome/css/font-awesome.min.css');?>" rel="stylesheet" type="text/css">
@@ -22,16 +22,17 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url('assets/css/sb-admin.css');?>" rel="stylesheet">
-
-    <?php
-/*    header("refresh: 3;");
-    echo base_url(sms/send_sms);
-    */?>
-    <?php
-
-    //header("Refresh: 5; url=base_url()sms/send_sms");
-
-    echo 'Logged in successfully.'; ?>
+    <!--<script>
+        var xmlhttp=new XMLHttpRequest();
+        xmlhttp.onreadystatechange=function(){
+            if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                alert(xmlhttp.responseText);
+                console.log(xmlhttp.responseText);// you will see OKKK in console
+            }
+        }
+        xmlhttp.open("GET","../sms/send_sms",true); // first try `../index.php/example` ( extension depends if you enable/disable url rewrite in apache.conf ) , if this won't work then try base_url/index.php/example ( where you can specify base_url by static or with CodeIgniter helpher function )
+        xmlhttp.send();
+    </script>-->
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -42,10 +43,10 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive" style="background-color: #330000;">
+    <div class="collapse navbar-collapse" id="navbarResponsive" >
         <?php if ($this->session->userdata('logged_in')):?>
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-            <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard" style="background-color: #330000;">
+            <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard">
                 <a class="nav-link" href="#">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">
@@ -79,17 +80,20 @@
                     <li>
                         <a href="<?php echo base_url()?>/users/current_users">Current Employee</a>
                     </li>
+                    <li>
+                        <a href="<?php echo base_url()?>/users/check_block_users">Unauthorized Employee</a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-file"></i>
                     <span class="nav-link-text">
-                Donor Details</span>
+                Donors</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseExamplePages">
                     <li>
-                        <a href="<?php echo base_url()?>/donors/search_donor">Select Donor </a>
+                        <a href="<?php echo base_url()?>/donors/search_donor">Search Donor </a>
                     </li>
 
                     <li>
@@ -102,7 +106,13 @@
                         <a href="<?php echo base_url()?>/donation/add_donation">Donation</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url()?>/donors/view_donor">Selecte Donor</a>
+                        <a href="<?php echo base_url()?>/donors/view_donor">Donor select by blood group</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url()?>/donors/deffer_donor"> Check Donors</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url()?>/donors/profile_donor">Donor profile</a>
                     </li>
                      <li>
                         <a href="<?php echo base_url()?>/donors/donor_profile">Donor Profile</a>
@@ -192,7 +202,7 @@
 
 </nav>
 
-<div class="content-wrapper" style="background-color: #ebccd1">
+<div class="content-wrapper" style="background-color: #EFEFF0">
 
     <div class="container-fluid">
         <?php //$this->load->view('template/adminSideNav');?>

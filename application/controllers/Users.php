@@ -105,8 +105,8 @@ class Users extends CI_Controller
                 $this->session->set_flashdata('user_loggedin', 'You are now logged in');
 
 
-
-                redirect('users/register');
+//*********************
+                redirect('users/dashboard');
             } else {
                 //set message
                 $this->session->set_flashdata('login_failed', 'You are logged into fail');
@@ -114,6 +114,11 @@ class Users extends CI_Controller
                 redirect('users/login');
             }
         }
+    }
+    public function dashboard(){
+        $this->load->view('template/header');
+        $this->load->view('template/adminSideNav');
+        $this->load->view('template/footer');
     }
     //log user out
 
@@ -268,5 +273,28 @@ class Users extends CI_Controller
                 return false;
             }
         }*/
+//retrive block users
+    public function check_block_users(){
+        $data['title']= 'Unautharized Users';
+
+        $data['users']=$this->user_model->check_block_users();
+        if (empty($data['users'])){
+            show_404();
+        }
+
+        $this->load->view('template/header');
+        $this->load->view('users/check_block_users',$data);
+        $this->load->view('template/footer');
+
+    }
+//    unblock user
+    public function unblock($employee_id= NULL){
+        if($this->user_model->unblock_user($employee_id)){
+            echo "success";
+        }
+//        redirect('users/current_users');
+
+    }
+
 }
 ?>
