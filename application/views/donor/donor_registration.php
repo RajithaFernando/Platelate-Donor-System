@@ -34,19 +34,20 @@
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">NIC Number</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="NIC Number" name="donorNIC">
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="NIC Number" name="donorNIC" maxlength="10||12">
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Gender</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Gender" name="donorGender">
+            <label>Gender</label>
+            <input type="radio" class="gender" value="Male" name="gender"><label for="Male" class="light">Male</label>
+            <input type="radio" class="gender" value="Female" name="gender"><label for="Female" class="light">Female</label>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Address</label>
             <input type="address" class="form-control" id="exampleInputEmail1" placeholder="Address" name="donorAddress">
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Occupation</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Occupation" name="donorOccupation">
+            <label for="exampleInputEmail1">Distance</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Distance" name="donorDistance">
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Email Address</label>
@@ -65,8 +66,8 @@
 
         <div class="form-group">
             <label>Available Times</label>
-            <input type="radio" class="availableTimes" value="weekday" name="donorAvailable"><label for="weekday" class="light">Week day</label><br>
-            <input type="radio" class="availableTimes" value="weekend" name="donorAvailable"><label for="weekend" class="light">week end</label><br>
+            <input type="radio" class="availableTimes" value="weekday" name="donorAvailable"><label for="weekday" class="light">Week day</label>
+            <input type="radio" class="availableTimes" value="weekend" name="donorAvailable"><label for="weekend" class="light">week end</label>
             <input type="radio" class="availableTimes" value="anyday" name="donorAvailable"><label for="anyday" class="light">Any day</label>
 
         </div>
