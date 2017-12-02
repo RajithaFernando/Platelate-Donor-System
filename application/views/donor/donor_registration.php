@@ -27,8 +27,7 @@
 
 
         <div class="form-group">
-            <label for="exampleInputEmail1">First Name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="First Name" name="donorFname">
+            
             <label for="donorFname" class="control-label">First Name</label>
             <input type="text" class="form-control" id="donorFname" placeholder="First Name" name="donorFname" data-error="please enter First Name" required>
         <div class="help-block with-errors"></div>   
@@ -38,6 +37,7 @@
         <div class="form-group">
             <label for="exampleInputEmail1">Middle Name</label>
             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Middle Name" name="donorMname">
+            
             <label for="donorMname" class="control-label">Middle Name</label>
             <input type="text" class="form-control" id="donorMname" placeholder="Middle Name" name="donorMname" data-error="Please enter Middle Name" required>
         <div class="help-block with-errors"></div>  
@@ -47,6 +47,7 @@
         <div class="form-group">
             <label for="exampleInputEmail1">Last Name</label>
             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Last Name" name="donorLname">
+           
             <label for="donorLname" class="control-label">Last Name</label>
             <input type="text" class="form-control" id="donorLname" placeholder="Last Name" name="donorLname" data-error='Please enter Last Name' required>
         <div class="help-block with-errors"></div>  
@@ -58,6 +59,7 @@
             <input type="radio" onclick="javascript:nic();" name="nic" value="" id="oldnic" ><label for="oldnic">Old NIC</label>
             <input type="radio" onclick="javascript:nic();" name="nic" value="" id="newnic"><label for="newnic">New NIC</label>
             <label for="donorNIC" class="control-label">NIC Number</label>
+            
         </div>
         
         <div class="form-group" id="magu1" style="display:none;">
@@ -74,6 +76,8 @@
             <label>Gender</label>
             <input type="radio" class="gender" value="Male" name="gender"><label for="Male" class="light">Male</label>
             <input type="radio" class="gender" value="Female" name="gender"><label for="Female" class="light">Female</label>
+           
+            
            <label class="control-label">Gender</label>
         <input type="radio"  value="male" name="employee_gender" required>Male
         <input type="radio"  value="female" name="employee_gender" required>Female
@@ -123,12 +127,12 @@
         <div class="form-group">
             <label for="exampleInputEmail1">Email Address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email Address" name="donorEmail">
+    
             <label for="donorEmail">Email Address</label>
             <input type="email" class="form-control" id="donorEmail" placeholder="Email Address" name="donorEmail">
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Date Of Birth</label>
-            <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Date Of Birth" name="donorDOB">
+            
             <label for="donorDOB">Date Of Birth</label>
             <input type="date" class="form-control" id="donorDOB" placeholder="Date Of Birth" name="donorDOB">
         </div>
@@ -149,8 +153,7 @@
 
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Height</label>
-            <input type="double" class="form-control" id="exampleInputEmail1" placeholder="Height" name="donorHeight">
+            
             <label for="donorHeight">Height</label>
             <input type="double" class="form-control" id="donorHeight" placeholder="Height" name="donorHeight">
         </div>
@@ -170,6 +173,7 @@
 
 
         <button type="submit" class="btn btn-default">Submit</button>
+     
         <button type="submit" class="btn btn-primary">Submit</button>
 
         <?php echo form_close(); ?>
