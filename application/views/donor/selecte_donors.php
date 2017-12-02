@@ -1,5 +1,5 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!--<script src="--><?php //echo base_url()?><!--/assets2/js/jquery.min.js"></script>-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<script src="<?php echo base_url()?>/assets2/js/jquery.min.js"></script>
 
 
 <!--validation -->
@@ -64,12 +64,12 @@
                     <input type="radio" class="responseTimes" value="response" name="donorResponse" id="responsetype"  required>Response &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" class="responseTimes" value="accepted" name="donorResponse" id="responsetype" required>Accepted &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" class="responseTimes" value="not_response" name="donorResponse" id="responsetype" required>Not Response &nbsp;&nbsp;&nbsp;&nbsp;
-                    <button class="btn btn-primary pull-right " id="response_btn">submit</button>
+                    <button class="btn btn-primary" id="response_btn">submit</button>
                 </div>
 
 <!--                --><?php //echo form_close();?>
-                <input type="donorId" value="<?php echo $donor['donorId']?>" ="
-">
+<!--                <input type="text" value="--><?php //echo $donor['donorId']?><!--" name="donorId" id="donorId" hidden>-->
+
 
             </td>
         </tr>

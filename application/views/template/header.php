@@ -12,7 +12,7 @@
     <title>Pdms</title>
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css');?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/css/bootstrap.min.css');?>" rel="stylesheet">
+<!--    <link href="--><?php //echo base_url('assets/css/bootstrap.min.css');?><!--" rel="stylesheet">-->
 
     <!-- Custom fonts for this template -->
     <link href="<?php echo base_url('assets/vendor/font-awesome/css/font-awesome.min.css');?>" rel="stylesheet" type="text/css">
@@ -43,10 +43,10 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive" style="background-color: #330000;">
+    <div class="collapse navbar-collapse" id="navbarResponsive" >
         <?php if ($this->session->userdata('logged_in')):?>
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-            <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard" style="background-color: #330000;">
+            <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard">
                 <a class="nav-link" href="#">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">
@@ -80,13 +80,16 @@
                     <li>
                         <a href="<?php echo base_url()?>/users/current_users">Current Employee</a>
                     </li>
+                    <li>
+                        <a href="<?php echo base_url()?>/users/check_block_users">Unauthorized Employee</a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-file"></i>
                     <span class="nav-link-text">
-                Donor Details</span>
+                Donors</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseExamplePages">
                     <li>
@@ -103,7 +106,13 @@
                         <a href="<?php echo base_url()?>/donation/add_donation">Donation</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url()?>/donors/view_donor">Select Donor</a>
+                        <a href="<?php echo base_url()?>/donors/view_donor">Donor select by blood group</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url()?>/donors/deffer_donor"> Check Donors</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url()?>/donors/profile_donor">Donor profile</a>
                     </li>
                 </ul>
             </li>

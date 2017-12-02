@@ -102,4 +102,21 @@ class User_model extends CI_Model {
         $this->db->where('employee_id',$employee_id);
         return $this->db->update('employee',$data);
     }
+//    check blocked users
+    public function check_block_users(){
+        $query=$this->db->get_where('employee',array('employeeIs_allowed'=>1));
+        return $query->result_array();
+
+    }
+
+
+//    unblock users
+    public function unblock_user($employee_id){
+        $data = array(
+            'employeeIs_allowed'=>0
+        );
+        $this->db->where('employee_id',$employee_id);
+        return $this->db->update('employee',$data);
+    }
+
 }
