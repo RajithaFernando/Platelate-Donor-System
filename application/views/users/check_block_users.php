@@ -45,9 +45,10 @@
     $("#unblock_btn").click(function(){
 //        alert("anvmb");
         $.ajax({
-            type:"get",
+            type:"post",
             url:"<?php echo site_url('/users/check_block_users/'.$user['employee_id'])?>",
             success:function(data){
+                console.log("hh");
                 if(data=="success"){
                     alert("successfully recorded.");
                     window.scrollTo(0,0);

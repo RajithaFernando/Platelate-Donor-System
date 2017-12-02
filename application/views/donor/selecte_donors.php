@@ -47,7 +47,7 @@
         </tr>
     </thead>
     <tbody>
-    <?php foreach ($donors as $donor):?>
+    <?php foreach ($donors as $donor) : ?>
         <tr>
             <td>
                 <?php echo $donor['donorFname'] ?>  <?php echo $donor['donorLname'] ?>
