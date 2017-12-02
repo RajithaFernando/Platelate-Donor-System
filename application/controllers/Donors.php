@@ -80,7 +80,7 @@ class Donors extends CI_Controller{
         $query = $this->donor_model->get_donor($search);
         echo json_encode($query);
     }
-<<<<<<< HEAD
+
 
 //    given point to donor according to their response way
     public  function  add_points($donorId=NULL){
@@ -92,13 +92,20 @@ class Donors extends CI_Controller{
     }
 
 
-=======
+
     // load donor profile
-     public function donor_profile(){
+     public function donor_profile_list(){
         $data['title']="Search Donor";
         $this->load->view('template/header');
         $this->load->view('donor/donor-profile-list',$data);
         $this->load->view('template/footer');
     }
->>>>>>> sumudu
+    // load donor profile
+     public function donor_profile(){
+        $data['title']="Search Donor";
+        $this->load->view('template/header');
+        $this->load->view('donor/donor_profile',$data);
+        $this->load->view('template/footer');
+    }
+
 }

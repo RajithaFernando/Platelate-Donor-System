@@ -10,7 +10,7 @@
 <div class="container">
 
 <ul>
-  <li>
+  <li><a href="<?php echo base_url()?>/donors/donor_profile"> 
     <div class="row equipo-item">
     <div class="col-md-3 separador-vertical"><img src="//placehold.it/500x500" class="img-responsive center-block" style="width: 100px; height: 100px;"></div> 
     <div class="col-md-9">
@@ -19,7 +19,7 @@
       rhfghdfhg
     </p>  
     </div>
-    </div>
+    </div></a>
   </li>
   <li>
     <div class="row equipo-item">
@@ -41,6 +41,10 @@
 
 </div>
 <style type="text/css">
+  *{
+    margin: 0px;
+    padding: 0px;
+  }
   .container{
     color: white;
   }
