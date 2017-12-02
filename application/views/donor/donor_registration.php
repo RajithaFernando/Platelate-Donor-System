@@ -90,5 +90,24 @@
 
     </div>
 
+    <script type="text/javascript">
+        
+            function nic(){
+                if (document.getElementById('oldnic').checked) {
+                    document.getElementById('magu2').style.display = 'block';
+                    document.getElementById('magu1').style.display = 'none';     
+                }
+                else {
+                    document.getElementById('magu2').style.display = 'none';
+                    document.getElementById('magu1').style.display = 'block';
+                }
+            }
+    
+
+    </script>
+
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js"></script>
+
+
 
 <?php //include 'partial/footer.php' ?>
