@@ -89,7 +89,7 @@ class Donors extends CI_Controller{
      public function donor_profile(){
         $data['title']="Search Donor";
         $this->load->view('template/header');
-        $this->load->view('donor/donor-profile',$data);
+        $this->load->view('donor/donor-profile-list',$data);
         $this->load->view('template/footer');
     }
 }
