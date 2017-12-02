@@ -82,6 +82,7 @@ class Donors extends CI_Controller{
         echo json_encode($query);
     }
 
+
 //    given point to donor according to their response way
     public  function  add_points($donorId=NULL)
     {
@@ -92,7 +93,7 @@ class Donors extends CI_Controller{
 
     }
     // load donor profile
-     public function donor_profile(){
+     public function donor_profile_list(){
         $data['title']="Search Donor";
         $this->load->view('template/header');
         $this->load->view('donor/donor-profile-list',$data);

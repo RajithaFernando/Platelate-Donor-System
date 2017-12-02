@@ -102,7 +102,7 @@
                         <a href="<?php echo base_url()?>/donors/deffer_donor"> Check Donors</a>
                     </li>
                      <li>
-                        <a href="<?php echo base_url()?>/donors/donor_profile">Donor Profile</a>
+                        <a href="<?php echo base_url()?>/donors/donor_profile_list">Donor Profile</a>
                     </li>
                 </ul>
             </li>
