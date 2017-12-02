@@ -18,8 +18,7 @@
         <h2><b><?= $title; ?></b></h2>
 
         <div class="form-group">
-            <label for="exampleInputEmail1">Donor Id</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Donor Id" name="donorid">
+            
             <label for="donorid" class="control-label">Donor Id</label>
             <input type="text" class="form-control" id="donorid" placeholder="Donor Id" name="donorid" data-error="THIS MUST AUTO INCREMENT" required>
         <div class="help-block with-errors"></div>
