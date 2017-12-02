@@ -33,8 +33,19 @@
             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Last Name" name="donorLname">
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">NIC Number</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="NIC Number" name="donorNIC" maxlength="10||12">
+            <label>NIC</label>
+            <input type="radio" onclick="javascript:nic();" name="nic" value="" id="oldnic" ><label for="oldnic">Old NIC</label>
+            <input type="radio" onclick="javascript:nic();" name="nic" value="" id="newnic"><label for="newnic">New NIC</label>
+        </div>
+        
+        <div class="form-group" id="magu1" style="display:none;">
+            <label for="exampleInputEmail1">Old NIC</label>
+            <input type="text" class="form-control" id="onic" placeholder="Old NIC" name="donorOnic">
+        </div> 
+
+        <div class="form-group" id="magu2" style="display:none;">
+            <label for="exampleInputEmail1">New NIC</label>
+            <input type="text" class="form-control" id="nnic" placeholder="New NIC" name="donorNnic">
         </div>
         <div class="form-group">
             <label>Gender</label>
@@ -78,6 +89,25 @@
         <?php echo form_close(); ?>
 
     </div>
+
+    <script type="text/javascript">
+        
+            function nic(){
+                if (document.getElementById('oldnic').checked) {
+                    document.getElementById('magu2').style.display = 'block';
+                    document.getElementById('magu1').style.display = 'none';     
+                }
+                else {
+                    document.getElementById('magu2').style.display = 'none';
+                    document.getElementById('magu1').style.display = 'block';
+                }
+            }
+    
+
+    </script>
+
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js"></script>
+
 
 
 <?php //include 'partial/footer.php' ?>
