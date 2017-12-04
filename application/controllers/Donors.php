@@ -7,15 +7,15 @@ class Donors extends CI_Controller{
 
     public function registerDonor(){
         $data['title']= 'Donors Registration';
-        $this->form_validation->set_rules('donorid', 'Donors Id', 'required');
+        $this->form_validation->set_rules('donorid', 'Donor Id', 'required');
         $this->form_validation->set_rules('donorFname', 'First Name', 'required');
         $this->form_validation->set_rules('donorMname', 'Middle Name', 'required');
         $this->form_validation->set_rules('donorLname', 'Last Name', 'required');
-        $this->form_validation->set_rules('donorNIC', 'NIC Number', 'required');
+        $this->form_validation->set_rules('donorNIC', 'NIC', 'required|max_length[10]');
         $this->form_validation->set_rules('donorGender', 'Gender', 'required');
         $this->form_validation->set_rules('donorAddress', 'Address', 'required');
         $this->form_validation->set_rules('donorDistance', 'Distance', 'required');
-        $this->form_validation->set_rules('donorEmail', 'Email Address', 'required');
+        $this->form_validation->set_rules('donorEmail', 'Email Address', 'trim|required|valid_email');
         $this->form_validation->set_rules('donorDOB', 'DateOfBirth', 'required');
         $this->form_validation->set_rules('donorBloodGroup', 'Blood Group', 'required');
         $this->form_validation->set_rules('donorHeight', 'Height', 'required');
@@ -29,11 +29,11 @@ class Donors extends CI_Controller{
         }
         else
         {
-            $this->load->model('donor_model');
+            $this->load->model('Donor_model');
             $this->donor_model->insertDonordata();
 //            if($response){
             $this->session->set_flashdata('msg','Registered successfully');
-            redirect('donor/registerDonor');
+            redirect('Donors/registerDonor');
         }
 
     }

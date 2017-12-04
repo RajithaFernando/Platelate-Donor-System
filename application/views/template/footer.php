@@ -7,7 +7,7 @@
 <footer class="sticky-footer">
     <div class="container">
         <div class="text-center">
-            <small>Copyright &copy; Your Website 2017</small>
+            <small>Copyright &copy;  pdmsMaharagama.com 2017</small>
         </div>
     </div>
 </footer>
