@@ -43,7 +43,7 @@
             <option value="Machine_operator">Machine Operator</option>
         </select>
     </div>
-    <button type="submit" class="btn btn-primary btn-block" name="">Submit</button>
+    <button type="submit" class="btn btn-primary " name="">Submit</button>
 
 </div>
 <?php form_close();?>

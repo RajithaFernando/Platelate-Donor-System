@@ -120,9 +120,9 @@
         <input type="reset" value="Cancel" class="btn"/> </div>
     </div>
      -->
-    <button type="submit" class="btn btn-primary btn-block" name="">Submit</button>
+    <button style="margin-left:10px;" type="submit" class="btn btn-primary " name="">Cancel</button>
 
-    <button type="reset" class="btn btn-primary btn-block" name="">Cancel</button>
+    <button style="margin-left:250px;" type="reset" class="btn btn-primary " name="">Submit</button>
 
 </div>
 <?php form_close();?>
