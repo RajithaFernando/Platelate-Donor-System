@@ -62,6 +62,8 @@ class Donor_model extends CI_Model{
         $query = $this->db->get();
         return $query->result();
     }
+
+
 //add poin to donor according to their response type
     public function  add_points($donorId){
         $responsetype=$this->input->post('donorResponse');

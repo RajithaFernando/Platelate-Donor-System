@@ -61,7 +61,8 @@ class Donors extends CI_Controller{
 
         $data['donors']=$this->donor_model->get_donors($bloodGroup);
         $this->load->view('template/header');
-        $this->load->view('donor/selecte_donors',$data);
+        $this->load->view('donor/selecte_donors');
+        $this->load->view('donor/select_donors_part2',$data);
         $this->load->view('template/footer');
 
     }
@@ -83,10 +84,11 @@ class Donors extends CI_Controller{
     }
 
 
-//    given point to donor according to their response way
-    public  function  add_points($donorId=NULL)
+//    given point to donor according to their response way in ajax
+    public  function  add_points()
     {
         $this->load->model('donor_model');
+        $donorId=$this->input->post('donorId');
         if ($this->donor_model->add_points($donorId)) {
             echo "success";
         }
