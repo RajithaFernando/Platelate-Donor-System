@@ -119,6 +119,7 @@
         <input type="reset" value="Cancel" class="btn"/> </div>
     </div>
      -->
+<<<<<<< HEAD
 
     <div class="form-row">
       <div class="col-md-6">
@@ -133,6 +134,11 @@
     </div>
 
 
+=======
+    <button style="margin-left:10px;" type="submit" class="btn btn-primary " name="">Cancel</button>
+
+    <button style="margin-left:250px;" type="reset" class="btn btn-primary " name="">Submit</button>
+>>>>>>> sumudu
 
 </div >
 </div>
