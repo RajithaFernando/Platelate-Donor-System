@@ -10,9 +10,9 @@
 
         <hr>
         <?php echo validation_errors(); ?>
-        <?php echo form_open('donor/registerDonor') ?>
+        <?php echo form_open('Donors/registerDonor') ?>
 
-        <form METHOD="post" data-toggle="validator" role="form" action="<?php echo base_url()?>/donor/registerDonor" >
+        <form METHOD="post" data-toggle="validator" role="form" action="<?php echo base_url()?>/Donors/registerDonor" >
 <!--         <?php //echo form_open('donor/donor_registration') ?>
  -->
         <h2><b><?= $title; ?></b></h2>
@@ -49,17 +49,40 @@
             <input type="text" class="form-control" id="donorLname" placeholder="Last Name" name="donorLname" data-error='Please enter Last Name' required>
         <div class="help-block with-errors"></div>  
         </div>
+
+
+
+
+          <div class="form-group">
+           
+           
+            <label for="donorNIC" class="control-label">NIC</label>
+            <input type="text" class="form-control" id="donorNIC" placeholder="NIC" name="donorNIC" data-error='Please enter NIC' required>
+        <div class="help-block with-errors"></div>  
+        </div>
         
 
-        <div class="form-group">
+        
+
+         <div class="form-group">
+            <label>Gender</label>
+                    <br>
+            <input type="radio" class="c" value="male" name="donorGender"><label for="male" >Male</label>
+                    <br>
+            <input type="radio" class="c" value="female" name="donorGender"><label for="female">Female</label>
+
+        </div>
+        
+
+       <!-- <div class="form-group">
             <label>NIC</label>
             <input type="radio" onclick="javascript:nic();" name="nic" value="" id="oldnic" ><label for="oldnic">Old NIC</label>
             <input type="radio" onclick="javascript:nic();" name="nic" value="" id="newnic"><label for="newnic">New NIC</label>
           
             
-        </div>
+        </div>-->
         
-        <div class="form-group" id="magu1" style="display:none;">
+        <!--<div class="form-group" id="magu1" style="display:none;">
             <label for="exampleInputEmail1">Old NIC</label>
             <input type="text" class="form-control" id="onic" placeholder="Old NIC" name="donorOnic">
         </div> 
@@ -73,14 +96,14 @@
             
            
             
-           <label class="control-label">Gender</label>
-        <input type="radio"  value="male" name="employee_gender" required>Male
-        <input type="radio"  value="female" name="employee_gender" required>Female
+        <label class="control-label">Gender</label>
+        <input type="radio"  value="male" name="donorGender">Male
+        <input type="radio"  value="female" name="donorGender">Female
         <div class="help-block with-errors"></div>  
-        </div>
+        </div>-->
         
 
-        <div class="form-group">
+        <!--<div class="form-group">
                     
                 <label for="donorAddress" class="control-label">Address</label><br>
             <div style="display: table; width:1000px">    
@@ -111,7 +134,26 @@
                 <input type="address" class="form-control" id="donorAddress" placeholder="city" name="donorAddress">
                 </div>
             </div>
+        </div>-->
+
+          <div class="form-group">
+           
+           
+            <label for="donorLname" class="control-label">Address</label>
+            <input type="text" class="form-control" id="donorAddress" placeholder="Address" name="donorAddress" data-error='Please enter Address' required>
+        <div class="help-block with-errors"></div>  
         </div>
+        
+
+
+
+
+
+
+
+
+
+
         <div class="form-group">
             
             <label for="donorDistance">Distance</label>
