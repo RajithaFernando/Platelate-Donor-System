@@ -3,9 +3,21 @@
 class Users extends CI_Controller
 {
 
-    public function current_users(){
+    public function current_users($offset=0){
+
+        //pagination config
+        $config['base_url'] = base_url().'users/current_users/';
+        $config['total_rows'] = $this->db->count_all('employee');
+        $config['per_page'] = 7;
+        $config['uri_segment'] = 7;
+        $config['attributes'] = array('class' => 'pagination-link');
+
+//            init pagination
+        $this->pagination->initialize($config);
+
+
         $data['title']= 'Current Users';
-        $data['users']=$this->user_model->get_users();
+        $data['users']=$this->user_model->get_users($config['per_page'],$offset);
 
         $this->load->view('template/header');
         $this->load->view('users/current_users',$data);
@@ -66,7 +78,7 @@ class Users extends CI_Controller
         }
     }
 
-    //login
+    //user login
 
     public function login()
     {
@@ -76,7 +88,7 @@ class Users extends CI_Controller
 
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('template/header');
-            $this->load->view('users/login', $data);
+            $this->load->view('template/homepage2');
             $this->load->view('template/footer');
         } else {
             //get username
@@ -85,16 +97,17 @@ class Users extends CI_Controller
             $password = md5($this->input->post('employee_password'));
             //loggin user
 
-            $employee_id = $this->user_model->login($employee_username, $password);
+            $data = $this->user_model->login($employee_username, $password);
             //$this->user_model->update_lastlogin($employee_id);
 
-
-            if ($employee_id) {
+            if ($data) {
                 //create the session
                 //die('SUCCESS');
+
                 $user_data = array(
-                    'employee_id'=>$employee_id,
-                    'employee_username'=>$employee_username,
+                    'employee_id'=>$data['employee_id'],
+                    'employee_occupation'=>$data['employee_occupation'],
+                    'employee_username'=>$data['employee_username'],
                     'logged_in'=>true
                 );
 
@@ -242,7 +255,7 @@ class Users extends CI_Controller
         //set message
         $this->session->set_flashdata('profile_updated','Your profile has been updated');
 
-        redirect('users/register');
+        redirect('users/current_users');
     }
 
     //current_users view
@@ -279,7 +292,7 @@ class Users extends CI_Controller
 
         $data['users']=$this->user_model->check_block_users();
         if (empty($data['users'])){
-            show_404();
+            redirect('users/current_users');
         }
 
         $this->load->view('template/header');
@@ -288,13 +301,24 @@ class Users extends CI_Controller
 
     }
 //    unblock user
-    public function unblock($employee_id= NULL){
-        if($this->user_model->unblock_user($employee_id)){
+    public function unblock_user(){
+        $employee_id = $this->input->post('employeeId');
+        $result=$this->user_model->unblock_user($employee_id);
+        if($result){
             echo "success";
+        }
+        else{
+            echo $result;
         }
 //        redirect('users/current_users');
 
     }
 
+
+
+//    forget password
+    public function change_password($employee_id=NULL){
+
+    }
 }
 ?>

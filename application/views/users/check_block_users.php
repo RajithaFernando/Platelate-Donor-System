@@ -19,7 +19,7 @@
         </th>
     </tr>
     </thead>
-    <tbody>
+    <tbody id="unblock">
     <?php foreach ($users as $user) : ?>
         <tr>
             <td>
@@ -33,7 +33,7 @@
                 <?php echo $user['employee_teleNo'] ?>
             </td>
             <td>
-                <button class="btn btn-warning"  id="unblock_btn"> Unblock </button>
+                <button class="btn btn-warning btn-unblock"  data-id="<?php echo $user['employee_id'] ?>"> Unblock </button>
             </td>
 
         </tr>
@@ -42,31 +42,34 @@
 </table>
 <!--ajax function-->
 <script>
-    $("#unblock_btn").click(function(){
+    $("#unblock").on('click','.btn-unblock',(function(){
 //        alert("anvmb");
+        var id = $(this).data('id');
         $.ajax({
             type:"post",
-            url:"<?php echo site_url('/users/check_block_users/'.$user['employee_id'])?>",
+            url:"<?php echo base_url('/users/unblock_user/')?>",
+            data:{'employeeId':id},
             success:function(data){
-                console.log("hh");
+                //console.log(data);
                 if(data=="success"){
-                    alert("successfully recorded.");
-                    window.scrollTo(0,0);
+                    alert("successfully unblocked.");
+                    $('#btn-unblock').attr('disabled',true);
+                    //window.scrollTo(0,0);
 
 
                 }
                 else{
                     alert("something wrong.");
-                    $('#unblock_btn').attr('disabled',false);
+                    $('#btn-unblock').attr('disabled',true);
                 }
             }
         });
 
-    });
-    document.getElementById("unblock_btn").onclick = function() {
+    }));
+    /*document.getElementById("unblock_btn").onclick = function() {
         //disable
         this.disabled = true;
 
         //do some validation stuff
-    }
+    }*/
 </script>

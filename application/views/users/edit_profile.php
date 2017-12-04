@@ -47,6 +47,12 @@
 
 </div>
 <?php form_close();?>
+
+
+<div class="text-md-left">
+    <a class="d-block" href="<?php echo base_url()?>/users/change_password">Forgot Password?</a>
+</div>
+
 <script>
 
 </script>
