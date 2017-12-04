@@ -6,7 +6,7 @@ class Donor_model extends CI_Model{
     }
 
     public function insertDonordata(){
-<<<<<<< HEAD
+
         $take = $this->input->post('donorAvailable');
         $response = 0;
         if(take =='anyday'){
