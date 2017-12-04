@@ -10,27 +10,27 @@
 <div class="container">
 
 <ul>
-  <li><a href="<?php echo base_url()?>/donors/donor_profile"> 
+  <li>
     <div class="row equipo-item">
-    <div class="col-md-2 separador-vertical"><center><img src="<?php echo base_url('assets/images/media/user.png');?>" class="img-responsive center-block" style="width: 100px; height: 100px;"></center></div> 
+    <div class="col-md-3 separador-vertical"><img src="//placehold.it/500x500" class="img-responsive center-block" style="width: 100px; height: 100px;"></div> 
     <div class="col-md-9">
     <h2 class="titulo-equipo">Sumudu Hansani</h2>
     <p class="texto-equipo">
       rhfghdfhg
     </p>  
     </div>
-    </div></a>
+    </div>
   </li>
-  <li><a href="<?php echo base_url()?>/donors/donor_profile"> 
+  <li>
     <div class="row equipo-item">
-    <div class="col-md-2 separador-vertical"><center><img src="<?php echo base_url('assets/images/media/user.png');?>" class="img-responsive center-block" style="width: 100px; height: 100px;"></center></div> 
+    <div class="col-md-3 separador-vertical"><img src="//placehold.it/500x500" class="img-responsive center-block" style="width: 100px; height: 100px;"></div> 
     <div class="col-md-9">
     <h2 class="titulo-equipo">Wathsala Chathurani</h2>
     <p class="texto-equipo">
       gfhgbjhbjhb
     </p>  
     </div>
-    </div></a>
+    </div>
   </li>
 </ul>
 
@@ -41,31 +41,26 @@
 
 </div>
 <style type="text/css">
-  *{
-    margin: 0px;
-    padding: 0px;
-  }
-
   .container{
     color: white;
   }
   .container ul li{
     border: 1px solid white ;
-    padding: 5px;
+    padding: 10px;
     border-radius:10px;
     margin-bottom:25px;
   }
   .container ul li:hover{
     border: 1px solid red ;
-    padding: 8px;
+    padding: 10px;
     border-radius:10px;
     margin-bottom:25px;
     background-color: green;
     transition: linear all 0.40s;
   }
   .separador-vertical{
-  border-right:2px solid #bfbdbd;
-  width: 10px;
+  border-right:1px solid #bfbdbd;
+  width: 100px;
   height: 100px;
   }
   

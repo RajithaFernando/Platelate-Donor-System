@@ -7,7 +7,7 @@
 <footer class="sticky-footer">
     <div class="container">
         <div class="text-center">
-            <small>Copyright &copy;  pdmsMaharagama.com 2017</small>
+            <small>Copyright &copy; Your Website 2017</small>
         </div>
     </div>
 </footer>
@@ -57,6 +57,25 @@
 <script src="<?php echo base_url('assets/js/sb-admin.min.js');?>"></script>
 <script src="<?php echo base_url('assets/js/employee.js');?>"></script>
 
+<!-- Toggle between fixed and static navbar-->
+<!--<script>
+    $('#toggleNavPosition').click(function() {
+        $('body').toggleClass('fixed-nav');
+        $('nav').toggleClass('fixed-top static-top');
+    });
+
+
+
+<!-- Toggle between dark and light navbar-->
+<!--<script>
+    $('#toggleNavColor').click(function() {
+        $('nav').toggleClass('navbar-dark navbar-light');
+        $('nav').toggleClass('bg-dark bg-light');
+        $('body').toggleClass('bg-dark bg-light');
+    });
+</script>
+
+-->-->
 
 
 

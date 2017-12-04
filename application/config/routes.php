@@ -17,13 +17,12 @@ $route['users/update']='users/update';
 $route['users/update_other']='users/update_other';
 $route['users/edit']='users/edit';
 $route['users/block/(:any)']='users/block/$1';
-//$route['users/unblock/(:any)']='users/unblock/$1';
-$route['users/unblock_user']='users/unblock_user';
+$route['users/unblock/(:any)']='users/unblock/$1';
 $route['users/(:any)']='users/view/$1';
 
-$route['charts/get_linegraph']='charts/get_linegraph';
-$route['donors/add_points']='donors/add_points';
-//$route['donors/add_points/(:any)']='donors/add_points/$1';
+
+
+$route['donors/add_points/(:any)']='donors/add_points/$1';
 $route['donors/search_donor']= 'donors/search_donor';
 $route['donors/view_donor']='donors/view_donor';
 
