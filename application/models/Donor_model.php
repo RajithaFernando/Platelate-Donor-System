@@ -25,9 +25,7 @@ class Donor_model extends CI_Model{
 
         //data insert in to the database
         
-=======
         //data insert
->>>>>>> sumudu
         $data = array(
             'donorid' => $this->input->post('donorid',TRUE),
             'donorFname' => $this->input->post('donorFname',TRUE),
@@ -84,13 +82,13 @@ class Donor_model extends CI_Model{
         $query = $this->db->get();
         return $query->result();
     }
-<<<<<<< HEAD
+
 
 
 //add point to donor according to their response type
-=======
+
 //add poin to donor according to their response type
->>>>>>> sumudu
+
     public function  add_points($donorId){
         $responsetype=$this->input->post('donorResponse');
         /*$this->db->select('donorResponsetime');
