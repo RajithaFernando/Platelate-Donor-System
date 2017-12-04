@@ -28,7 +28,7 @@ class Users extends CI_Controller
 
     public function register()
     {
-        $data['title'] = 'User Registration';
+        $data['title'] = 'Registration';
         $this->form_validation->set_rules('employee_firstname', 'Firstname', 'required');
         $this->form_validation->set_rules('employee_lastname', 'Lastname', 'required');
         $this->form_validation->set_rules('employee_gender', 'Gender', 'required');
@@ -87,7 +87,8 @@ class Users extends CI_Controller
         $this->form_validation->set_rules('employee_password', 'Password', 'required');
 
         if ($this->form_validation->run() === FALSE) {
-            $this->load->view('pages/home');
+            $this->load->view('template/header');
+            $this->load->view('template/homepage2');
             $this->load->view('template/footer');
         } else {
             //get username
@@ -129,7 +130,7 @@ class Users extends CI_Controller
     }
     public function dashboard(){
         $this->load->view('template/header');
-        $this->load->view('template/dashboard');
+        $this->load->view('template/adminSideNav');
         $this->load->view('template/footer');
     }
     //log user out
@@ -232,7 +233,7 @@ class Users extends CI_Controller
         //set message
         $this->session->set_flashdata('profile_updated','Your profile has been updated');
 
-        redirect('users/current_users');
+        redirect('home');
     }
     //update user other
     public function update_other(){

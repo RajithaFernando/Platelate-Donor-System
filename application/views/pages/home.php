@@ -86,8 +86,12 @@
             </div><!-- end left -->
             <ul class="nav navbar-nav navbar-right" style="width : 100px;">
                 <!-- <button type ="button" class="dropdown-toggle" data-toggle="dropdown" class="tpbut" style=" font-size: 17px;"><i class="fa fa-lock"></i>Login</button> -->
+                    
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><button style="width: 80px; height: 43px;"><b>Login</b></button></a>
+
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <button style="width: 80px; height: 43px;"><b>Login</b></button></a>
                         <ul id="login-dp" class="dropdown-menu">
                             <div class="" style="width:300px; height: 250px; padding: 10px; padding-top: 50px;">
                                 <?php echo form_open('users/login'); ?>
@@ -108,7 +112,7 @@
                             </div>
                         </ul>
                     </li>
-      </ul>    
+            </ul>    
 </div>
             </div><!-- end right -->
 
