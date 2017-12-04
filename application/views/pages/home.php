@@ -1,8 +1,6 @@
 <!doctype html>
-<!--[if IE 7 ]>    <html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en-gb" class="isie ie8 oldie no-js"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en-gb" class="isie ie9 no-js"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en-gb" class="no-js"> <!--<![endif]-->
+
+<html lang="en-gb" class="no-js"> 
 
 <head>
     <title>Maharagama blood bank </title>
@@ -26,10 +24,7 @@
     <link href='http://fonts.googleapis.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
 
 
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
+    
     <!-- ######### CSS STYLES ######### -->
 
     <link rel="stylesheet" href="<?php echo base_url('assets2/css/reset.css');?>" type="text/css" />
@@ -82,17 +77,21 @@
 
 <div class="site_wrapper">
 
-    <div class="top_nav" style="padding: 14px 16px;  background-color: #330000;">
+    <div class="top_nav" style="padding: 14px 16px;  background-color:#404040;">
         <div class="container">
 
             <div class="left">
 
-                <a href="mailto:info@yourdomain.com"><i class="fa fa-envelope"></i>pdms@gmail.com</a> <i class="fa fa-phone-square"></i>&nbsp; +94-011-2850 253
+               <!-- <a href="mailto:info@yourdomain.com"><i class="fa fa-envelope" style= "font-size=40px;"></i>pdms@gmail.com</a> <i class="fa fa-phone-square"></i>&nbsp; +94-011-2850 253-->
             </div><!-- end left -->
             <ul class="nav navbar-nav navbar-right" style="width : 100px;">
                 <!-- <button type ="button" class="dropdown-toggle" data-toggle="dropdown" class="tpbut" style=" font-size: 17px;"><i class="fa fa-lock"></i>Login</button> -->
+                    
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><button style="width: 80px; height: 43px;"><b>Login</b></button></a>
+
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <button style="width: 80px; height: 43px;"><b>Login</b></button></a>
                         <ul id="login-dp" class="dropdown-menu">
                             <div class="" style="width:300px; height: 250px; padding: 10px; padding-top: 50px;">
                                 <?php echo form_open('users/login'); ?>
@@ -113,7 +112,7 @@
                             </div>
                         </ul>
                     </li>
-      </ul>    
+            </ul>    
 </div>
             </div><!-- end right -->
 
@@ -183,7 +182,7 @@
             <div class="one_fourth_less animate" data-anim-type="fadeIn" data-anim-delay="400">
 
                 <img src="<?php echo base_url(); ?>assets2/js/image/mission-and-vision-NEW-3-2.jpg" alt="" class="rimg" /> <h4 style="color:#FFF63F; font-size:30px;">Our Mission</h4>
-                <p style="color:maroon; font-size:18px;">To provide comprehensive care through evidence based best practices ensuring patients safety, research education and training.</p>
+                <p style="color:maroon; font-size:18px;">Our mission on you is to provide comprehensive care through evidence based best practices ensuring patients safety, research education and training. Further more to protect your life from cancers and feel you more safer.</p>
                 
 
             </div><!-- end section -->
@@ -191,7 +190,7 @@
             <div class="one_fourth_less active animate" data-anim-type="fadeIn" data-anim-delay="500">
 
                 <img src="<?php echo base_url(); ?>assets2/js/image/hqdefault.jpg" alt="" class="rimg" /> <h4 style="color:#FFF63F; font-size:30px;">History</h4>
-                <p style="color:maroon; font-size:18px;">The National Cancer Institute of Maharagama, Sri Lanka was established in 1956 as a radiation treatment center for cancer victims, which consisted of three radiation therapy unit with ten wards for in wards patients.</p>
+                <p style="color:maroon; font-size:18px;">The National Cancer Institute of Maharagama, was established in 1956 as a radiation treatment center for cancer victims, which consisted of three radiation therapy unit with ten wards for in wards patients.This is a quick playback of who we are.</p>
                 
 
             </div><!-- end section -->
@@ -210,23 +209,7 @@
     
 
 
-    
- <div class="clearfix"></div>
-
-
-    <div class="client_logos animate" data-anim-type="fadeIn" data-anim-delay="100">
-        <div class="container">
-
-            <img src="http://placehold.it/180x50" alt="" />
-            <img src="http://placehold.it/180x50" alt="" />
-            <img src="http://placehold.it/180x50" alt="" />
-            <img src="http://placehold.it/180x50" alt="" />
-            <img src="http://placehold.it/180x50" alt="" />
-            <img src="http://placehold.it/180x50" alt="" />
-
-        </div>
-    </div><!-- end client logos -->
-
+ 
 
     <div class="clearfix"></div>
 
@@ -273,7 +256,9 @@
 
             <div class="one_fourth last animate" data-anim-type="fadeInUp" data-anim-delay="400">
 
+              <!-- Google Map Connection code part by iframe -->
 
+                
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10576.307385525843!2d79.
                 92368511573365!3d6.841151007124166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25075423f1c03%
                 3A0xc24046c99d1423e4!2z4La04LeS4LeF4LeS4Laa4LePIOC2u-C3neC3hOC2vSwg4La44LeE4La74Lac4La4!5e0!3m2!1ssi!2slk!
@@ -292,7 +277,7 @@
 
                 <div class="one_half animate" data-anim-type="fadeInRight" data-anim-delay="300">
 
-                    Copyright © 2017 pdmsMaharagama.com. All rights reserved.  <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
+            Copyright © 2017 pdmsMaharagama.com. All rights reserved.<a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
 
                 </div>
 
@@ -304,10 +289,7 @@
                         <li class="animate" data-anim-type="zoomIn" data-anim-delay="300"><a href="#"><i class="fa fa-google-plus"></i></a></li>
                         <li class="animate" data-anim-type="zoomIn" data-anim-delay="300"><a href="#"><i class="fa fa-linkedin"></i></a></li>
                         <li class="animate" data-anim-type="zoomIn" data-anim-delay="300"><a href="#"><i class="fa fa-skype"></i></a></li>
-                        <li class="animate" data-anim-type="zoomIn" data-anim-delay="300"><a href="#"><i class="fa fa-flickr"></i></a></li>
-                        <li class="animate" data-anim-type="zoomIn" data-anim-delay="300"><a href="#"><i class="fa fa-html5"></i></a></li>
-                        <li class="animate" data-anim-type="zoomIn" data-anim-delay="300"><a href="#"><i class="fa fa-youtube"></i></a></li>
-                        <li class="animate" data-anim-type="zoomIn" data-anim-delay="300"><a href="#"><i class="fa fa-rss"></i></a></li>
+                     
                     </ul>
 
                 </div>
