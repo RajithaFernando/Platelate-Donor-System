@@ -3,21 +3,9 @@
 class Users extends CI_Controller
 {
 
-    public function current_users($offset=0){
-
-        //pagination config
-        $config['base_url'] = base_url().'users/current_users/';
-        $config['total_rows'] = $this->db->count_all('employee');
-        $config['per_page'] = 7;
-        $config['uri_segment'] = 7;
-        $config['attributes'] = array('class' => 'pagination-link');
-
-//            init pagination
-        $this->pagination->initialize($config);
-
-
+    public function current_users(){
         $data['title']= 'Current Users';
-        $data['users']=$this->user_model->get_users($config['per_page'],$offset);
+        $data['users']=$this->user_model->get_users();
 
         $this->load->view('template/header');
         $this->load->view('users/current_users',$data);
@@ -28,7 +16,7 @@ class Users extends CI_Controller
 
     public function register()
     {
-        $data['title'] = 'User Registration';
+        $data['title'] = 'Registration';
         $this->form_validation->set_rules('employee_firstname', 'Firstname', 'required');
         $this->form_validation->set_rules('employee_lastname', 'Lastname', 'required');
         $this->form_validation->set_rules('employee_gender', 'Gender', 'required');
@@ -78,7 +66,7 @@ class Users extends CI_Controller
         }
     }
 
-    //user login
+    //login
 
     public function login()
     {
@@ -87,7 +75,8 @@ class Users extends CI_Controller
         $this->form_validation->set_rules('employee_password', 'Password', 'required');
 
         if ($this->form_validation->run() === FALSE) {
-            $this->load->view('pages/home');
+            $this->load->view('template/header');
+            $this->load->view('users/login', $data);
             $this->load->view('template/footer');
         } else {
             //get username
@@ -96,17 +85,16 @@ class Users extends CI_Controller
             $password = md5($this->input->post('employee_password'));
             //loggin user
 
-            $data = $this->user_model->login($employee_username, $password);
+            $employee_id = $this->user_model->login($employee_username, $password);
             //$this->user_model->update_lastlogin($employee_id);
 
-            if ($data) {
+
+            if ($employee_id) {
                 //create the session
                 //die('SUCCESS');
-
                 $user_data = array(
-                    'employee_id'=>$data['employee_id'],
-                    'employee_occupation'=>$data['employee_occupation'],
-                    'employee_username'=>$data['employee_username'],
+                    'employee_id'=>$employee_id,
+                    'employee_username'=>$employee_username,
                     'logged_in'=>true
                 );
 
@@ -129,7 +117,7 @@ class Users extends CI_Controller
     }
     public function dashboard(){
         $this->load->view('template/header');
-        $this->load->view('template/dashboard');
+        $this->load->view('template/adminSideNav');
         $this->load->view('template/footer');
     }
     //log user out
@@ -232,7 +220,7 @@ class Users extends CI_Controller
         //set message
         $this->session->set_flashdata('profile_updated','Your profile has been updated');
 
-        redirect('users/current_users');
+        redirect('home');
     }
     //update user other
     public function update_other(){
@@ -254,7 +242,7 @@ class Users extends CI_Controller
         //set message
         $this->session->set_flashdata('profile_updated','Your profile has been updated');
 
-        redirect('users/current_users');
+        redirect('users/register');
     }
 
     //current_users view
@@ -291,7 +279,7 @@ class Users extends CI_Controller
 
         $data['users']=$this->user_model->check_block_users();
         if (empty($data['users'])){
-            redirect('users/current_users');
+            show_404();
         }
 
         $this->load->view('template/header');
@@ -300,24 +288,13 @@ class Users extends CI_Controller
 
     }
 //    unblock user
-    public function unblock_user(){
-        $employee_id = $this->input->post('employeeId');
-        $result=$this->user_model->unblock_user($employee_id);
-        if($result){
+    public function unblock($employee_id= NULL){
+        if($this->user_model->unblock_user($employee_id)){
             echo "success";
-        }
-        else{
-            echo $result;
         }
 //        redirect('users/current_users');
 
     }
 
-
-
-//    forget password
-    public function change_password($employee_id=NULL){
-
-    }
 }
 ?>

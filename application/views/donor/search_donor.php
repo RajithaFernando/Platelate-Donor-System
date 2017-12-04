@@ -47,7 +47,7 @@
                     url: "http://localhost/pdmsMaharagama/index.php/donors/suggest_donors",
                     cache: false,
                     data:'search='+$("#search").val(),
-                    dataType: 'json',
+//                    dataType: 'json',
                     success: function(response){
                         $('#finalResult').html("");
                         var obj = JSON.parse(response);

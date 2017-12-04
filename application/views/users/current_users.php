@@ -23,11 +23,6 @@
     <hr>
 <?php endforeach;?>
 
-<div class="pagination-links">
-    <?php echo $this->pagination->create_links();?>
-</div>
-
-
 <div class="modal fade" id="block" role="dialog">
     <div class="modal-dialog">
         <!--                modal content-->

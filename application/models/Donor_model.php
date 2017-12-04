@@ -6,7 +6,7 @@ class Donor_model extends CI_Model{
     }
 
     public function insertDonordata(){
-        //data insert in to the database
+        //data insert
         $data = array(
             'donorid' => $this->input->post('donorid',TRUE),
             'donorFname' => $this->input->post('donorFname',TRUE),
@@ -15,7 +15,7 @@ class Donor_model extends CI_Model{
             'donorNIC' => $this->input->post('donorNIC',TRUE),
             'donorGender' => $this->input->post('donorGender',TRUE),
             'donorAddress' => $this->input->post('donorAddress',TRUE),
-            //'donorOccupation' => $this->input->post('donorOccupation',TRUE),
+            'donorOccupation' => $this->input->post('donorOccupation',TRUE),
             'donorEmail' => $this->input->post('donorEmail',TRUE),
             'donorDOB' => $this->input->post('donorDOB',TRUE),
             'donorHeight' => $this->input->post('donorHeight',TRUE),
@@ -62,8 +62,6 @@ class Donor_model extends CI_Model{
         $query = $this->db->get();
         return $query->result();
     }
-
-
 //add poin to donor according to their response type
     public function  add_points($donorId){
         $responsetype=$this->input->post('donorResponse');

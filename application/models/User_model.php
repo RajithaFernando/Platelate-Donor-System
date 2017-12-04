@@ -24,11 +24,8 @@ class User_model extends CI_Model {
         return $this->db->insert('employee', $data);
     }
 //retrieve user
-    public function get_users($limit=FALSE,$offset=FALSE){
+    public function get_users(){
         //$this->db->oder_by('employee_id','DESC');
-        if ($limit){
-            $this->db->limit($limit,$offset);
-        }
         $query=$this->db->get_where('employee',array('employeeIs_allowed'=>0));
         return $query->result_array();
 
@@ -68,8 +65,7 @@ class User_model extends CI_Model {
 
         if ($result->num_rows()==1){
 
-//            return $result->row(0)->employee_id;
-            return $result->row_array();
+            return $result->row(0)->employee_id;
 
         }
         else{
@@ -116,14 +112,12 @@ class User_model extends CI_Model {
 
 //    unblock users
     public function unblock_user($employee_id){
-        /*$data = array(
+        $data = array(
             'employeeIs_allowed'=>0
         );
         $this->db->where('employee_id',$employee_id);
-        $query=$this->db->update('employee',$data);
-        */
-        $query=$this->db->query("UPDATE employee SET employeeIs_allowed=0 WHERE employee_id='$employee_id';");
-        return $query;
+        $this->db->update('employee',$data);
+        return;
     }
 
 }

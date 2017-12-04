@@ -34,8 +34,8 @@
         xmlhttp.send();
     </script>-->
 </head>
+
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
-<?php if ($this->session->userdata('logged_in')):?>
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" style="background-color: #330000;">
@@ -150,10 +150,18 @@
                 </a>
             </li>
         </ul>
-<!--side nave arrow-->
-            <ul class="navbar-nav ml-auto">
+
+        <ul class="navbar-nav sidenav-toggler">
+            <li class="nav-item">
+                <a class="nav-link text-center" id="sidenavToggler">
+                    <i class="fa fa-fw fa-angle-left"></i>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
 <!--            search bar-->
-            <!--<li class="nav-item">
+           <li class="nav-item">
                 <form class="form-inline my-2 my-lg-0 mr-lg-2">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for...">
@@ -165,8 +173,14 @@
                     </div>
                 </form>
             </li>
-            -->
+            <!--<ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php /*echo base_url()*/?>/users/login">
+                        <i class="fa fa-fw fa-sign-out"></i>
+                        Login</a>
+                </li>
             </ul>
+-->
             <ul class="navbar-nav ml-auto">
                 <?php echo $this->session->userdata('employee_username')?>
                     <li class="nav-item">
@@ -176,24 +190,14 @@
                     </li>
             </ul>
 
+
+
+        </ul>
         <?php endif;?>
 
     </div>
 
 </nav>
-<?php endif;?>
-<!--side nave toggel script-->
-<script>
-    function openNav() {
-        document.getElementById("sidenavToggler").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-    }
-
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
-    }
-</script>
 
 <div class="content-wrapper" style="background-color: #EFEFF0">
 
