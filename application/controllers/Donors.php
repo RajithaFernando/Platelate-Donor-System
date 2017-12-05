@@ -9,8 +9,8 @@ class Donors extends CI_Controller{
         $data['title']= 'Donors Registration';
         $this->form_validation->set_rules('donorid', 'Donor Id', 'required');
         $this->form_validation->set_rules('donorFname', 'First Name', 'required');
-        $this->form_validation->set_rules('donorMname', 'Middle Name', 'required');
-        $this->form_validation->set_rules('donorLname', 'Last Name', 'required');
+        //$this->form_validation->set_rules('donorMname', 'Middle Name', 'required');
+        //$this->form_validation->set_rules('donorLname', 'Last Name', 'required');
         $this->form_validation->set_rules('donorNIC', 'NIC', 'required|max_length[10]');
         $this->form_validation->set_rules('donorGender', 'Gender', 'required');
         $this->form_validation->set_rules('donorAddress', 'Address', 'required');

@@ -39,7 +39,7 @@
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" style="background-color: #330000;">
-    <a class="navbar-brand" href="<?php echo base_url();?>/">PDMS</a>
+    <a class="navbar-brand" href="<?php echo base_url();?>/">PLATLET DONOR MANAGEMENT SYSTEM</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -168,13 +168,14 @@
             -->
             </ul>
             <ul class="navbar-nav ml-auto">
-                <h4 style="color: #EFEFF0;">
+                <h4 style = "color: white;">
                     <?php echo $this->session->userdata('employee_username')?>
                 </h4>
+                
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
                             <i class="fa fa-fw fa-sign-out"></i>
-                            Logout</a>
+                            <b>Logout</a>
                     </li>
             </ul>
 
