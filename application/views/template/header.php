@@ -114,7 +114,7 @@
                         <a href="<?php echo base_url()?>/donors/view_donor">Donor select by blood group</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url()?>/donors/deffer_donor"> Check differ Donors</a>
+                        <a href="<?php echo base_url()?>/differdonors"> Check differ Donors</a>
                     </li>
                      <li>
                         <a href="<?php echo base_url()?>/donors/donor_profile">Donor Profile</a>

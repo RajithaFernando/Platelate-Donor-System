@@ -40,7 +40,7 @@
             <td>
                 <div class="form-group " data-toggle="validator">
                     
-                    <a class="btn btn-primary btn-response" data-id="<?php echo $donor->donorId; ?>">sss</a>
+                    <a class="btn btn-primary btn-response" data-id="<?php echo $donor->donorId; ?>"><?php echo $donor->donorStatus; ?></a>
                 </div>
 
 
