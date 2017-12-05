@@ -6,7 +6,28 @@ class Donor_model extends CI_Model{
     }
 
     public function insertDonordata(){
+
+        $take = $this->input->post('donorAvailable');
+        $response = 0;
+        if(take =='anyday'){
+            $response = 15;
+        }
+        else if(take=='weekday'){
+            $response = 10;
+        }
+        else{
+            $response = 5;
+        }
+
+
+
+
+
         //data insert in to the database
+        
+
+        //data insert
+
         $data = array(
             'donorid' => $this->input->post('donorid',TRUE),
             'donorFname' => $this->input->post('donorFname',TRUE),
@@ -20,7 +41,8 @@ class Donor_model extends CI_Model{
             'donorDOB' => $this->input->post('donorDOB',TRUE),
             'donorHeight' => $this->input->post('donorHeight',TRUE),
             'donorAvailable' => $this->input->post('donorAvailable',TRUE),
-            'donorBloodGroup' => $this->input->post('donorBloodGroup',TRUE)
+            'donorBloodGroup' => $this->input->post('donorBloodGroup',TRUE),
+            'donorResponsetime'=>$response
 
 
 
@@ -62,9 +84,8 @@ class Donor_model extends CI_Model{
         $query = $this->db->get();
         return $query->result();
     }
-
-
 //add poin to donor according to their response type
+
     public function  add_points($donorId){
         $responsetype=$this->input->post('donorResponse');
         /*$this->db->select('donorResponsetime');
