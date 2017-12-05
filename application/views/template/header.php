@@ -61,12 +61,20 @@
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a class="nav-link" href="#">
-                    <i class="fa fa-fw fa-table"></i>
+                <a class="nav-link" href="<?php echo base_url()?>/donors/search_donor">
+                    <i class="fa fa fa-search"></i>
                     <span class="nav-link-text">
-                Tables</span>
+                Scearch Donor by NIC</span>
                 </a>
             </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+                <a class="nav-link" href="<?php echo base_url()?>/donors/view_donor">
+                    <i class="fa fa fa-search"></i>
+                    <span class="nav-link-text">
+                Scearch Donor by <br>Blood Group</span>
+                </a>
+            </li>
+
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-wrench"></i>
@@ -85,6 +93,7 @@
                     </li>
                 </ul>
             </li>
+
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-file"></i>
@@ -92,10 +101,6 @@
                 Donors</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseExamplePages">
-                    <li>
-                        <a href="<?php echo base_url()?>/donors/search_donor">Search Donor </a>
-                    </li>
-
                     <li>
                         <a href="<?php echo base_url()?>/donors/registerDonor">Donor Registration</a>
                     </li>
@@ -109,7 +114,7 @@
                         <a href="<?php echo base_url()?>/donors/view_donor">Donor select by blood group</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url()?>/donors/deffer_donor"> Check Donors</a>
+                        <a href="<?php echo base_url()?>/donors/deffer_donor"> Check differ Donors</a>
                     </li>
                      <li>
                         <a href="<?php echo base_url()?>/donors/donor_profile">Donor Profile</a>
