@@ -43,7 +43,7 @@ class Donors extends CI_Controller{
         //$data['donors']=$this->donor_model->get_donors();
 
         $this->load->view('template/header');
-        $this->load->view('donor/selecte_donors',$data);
+        $this->load->view('donor/selecte_donor',$data);
         $this->load->view('template/footer');
 
     }
@@ -61,7 +61,7 @@ class Donors extends CI_Controller{
 
         $data['donors']=$this->donor_model->get_donors($bloodGroup);
         $this->load->view('template/header');
-        $this->load->view('donor/selecte_donors');
+        $this->load->view('donor/selecte_donor');
         $this->load->view('donor/select_donors_part2',$data);
         $this->load->view('template/footer');
 

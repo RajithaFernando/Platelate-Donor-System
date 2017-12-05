@@ -262,9 +262,9 @@
             </div>
 
             <div class="onecol_sixty last animate" data-anim-type="fadeIn" data-anim-delay="500">
-    	<span><em>Choose from Different Layouts and Templates</em>
-		<b>Start Creating a Whole Great</b>
-		<strong>New Layout.</strong></span>
+        <span><em>Choose from Different Layouts and Templates</em>
+        <b>Start Creating a Whole Great</b>
+        <strong>New Layout.</strong></span>
                 <p class="bigtfont">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour randomised words enerators onthe Internet tend to repea predefined chunks as necessary making words combine with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable generated Lorem Ipsum is therefore always.</p>
                 <br /><br /><br />
                 <a href="#" class="button three">Get Started Now!</a>
