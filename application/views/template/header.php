@@ -71,7 +71,7 @@
                 <a class="nav-link" href="<?php echo base_url()?>/donors/view_donor">
                     <i class="fa fa fa-search"></i>
                     <span class="nav-link-text">
-                Scearch Donor by <br>Blood Group</span>
+                    Scearch Donor by <br>  Blood Group</span>
                 </a>
             </li>
 
