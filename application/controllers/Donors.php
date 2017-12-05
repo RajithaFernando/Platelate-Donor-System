@@ -68,7 +68,7 @@ class Donors extends CI_Controller{
     }
 
 
-//    load search donor page
+//    load search donor page to find donors using NIC.
     public function search_donor(){
         $data['title']="Search Donor";
         $this->load->view('template/header');
@@ -76,7 +76,7 @@ class Donors extends CI_Controller{
         $this->load->view('template/footer');
     }
 
-//Suggetions donors
+//  Suggestions donors by NIC
     public function suggest_donors(){
         $search = $this->input->post('search');
         $query = $this->donor_model->get_donor($search);
