@@ -29,19 +29,12 @@
     </div>
     <div class="form-group">
         <label>NIC</label>
-        <input type="text" class="form-control" name="employee_NIC" value="<?php echo $user['employee_NIC'];?>">
+        <input type="text" class="form-control" name="employee_NIC" value="<?php echo $user['employee_NIC'];?>"readonly>
     </div>
 
     <div class="form-group">
         <label>Occupation</label>
-        <select id="occupation" name="employee_occupation" required>
-            <option value="">Select Occupation</option>
-            <option value="Admin">Admin</option>
-            <option value="Doctor">Doctor</option>
-            <option value="Nurse">Nurse</option>
-            <option value="PHI">PHI</option>
-            <option value="Machine_operator">Machine Operator</option>
-        </select>
+        <input type="text" class="form-control" name="employee_occupation" value="<?php echo $user['employee_occupation'];?>"readonly>
     </div>
     <button type="submit" class="btn btn-primary " name="">Submit</button>
 

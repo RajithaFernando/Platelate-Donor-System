@@ -46,8 +46,8 @@
     <div class="collapse navbar-collapse" id="navbarResponsive" >
         <?php if ($this->session->userdata('logged_in')):?>
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-            <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="#">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <a class="nav-link" href="<?php echo base_url()?>/users/dashboard">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">
                 Dashboard</span>
@@ -168,7 +168,9 @@
             -->
             </ul>
             <ul class="navbar-nav ml-auto">
-                <?php echo $this->session->userdata('employee_username')?>
+                <h4 style="color: #EFEFF0;">
+                    <?php echo $this->session->userdata('employee_username')?>
+                </h4>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
                             <i class="fa fa-fw fa-sign-out"></i>
