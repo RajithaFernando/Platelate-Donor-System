@@ -168,11 +168,14 @@
             -->
             </ul>
             <ul class="navbar-nav ml-auto">
-                <?php echo $this->session->userdata('employee_username')?>
+                <h4 style = "color: white;">
+                    <?php echo $this->session->userdata('employee_username')?>
+                </h4>
+                
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
                             <i class="fa fa-fw fa-sign-out"></i>
-                            Logout</a>
+                            <b>Logout</a>
                     </li>
             </ul>
 
