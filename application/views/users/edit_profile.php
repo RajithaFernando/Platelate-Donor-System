@@ -80,7 +80,7 @@
             </form>
             <!--        --><?php //form_close();?>
             <div class="text-md-left">
-                <a class="d-block" href="<?php echo base_url()?>/users/change_password">Reset Password?</a>
+                <a class="d-block" href="<?php echo base_url()?>/passwords/recover_password">Reset Password?</a>
             </div>
         </div>
     </div>
