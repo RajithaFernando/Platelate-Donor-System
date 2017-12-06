@@ -5,9 +5,10 @@
 <!--validation -->
 <?php echo validation_errors();?>
 <?php echo form_open('donors/select');?>
-    <div class="col-md-6 col-md-offset-3">
-        <div class="form-group">
-            <label>Blood Group</label>
+<div class="form-group">
+    <div class="form-row ">
+        <div class="col-md-2 form-inline"style="border: 10px">
+            <label>Blood Group                :</label>
             <select name="bloodGroup" id="bloodgroup" selected="None">
                 <option value="None">None</option>
                 <option value="A+">A+</option>
@@ -21,10 +22,9 @@
             </select>
 
         </div>
-        <div class="from-group">
+        <div class="col-md-2 form-inline">
             <button type="submit" class="btn btn-primary pull-left" >Search </button>
         </div>
     </div>
-<br>
-<br>
+</div>
 <?php echo form_close();?>
