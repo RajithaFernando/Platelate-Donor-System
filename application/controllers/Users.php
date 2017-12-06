@@ -233,28 +233,26 @@ class Users extends CI_Controller
 
 
     }
-    //update user
+//    current login user update
     public function update(){
         //check login
         if (!$this->session->userdata('logged_in')){
             redirect('users/login');
         }
+        $data['title']='Edit Profile';
         $employee_id=$this->session->userdata('employee_id');
         $this->form_validation->set_rules('employee_firstname', 'Firstname', 'required');
         $this->form_validation->set_rules('employee_lastname', 'Lastname', 'required');
-        $this->form_validation->set_rules('employee_gender', 'Gender', 'required');
         $this->form_validation->set_rules('employee_teleNo', 'Telephone', 'required|max_length[10]|min_length[10]');
-        $this->form_validation->set_rules('employee_NIC', 'NIC', 'trim|required|min_length[10]|max_length[12]');
-        $this->form_validation->set_rules('employee_occupation', 'Occupation', 'required');
-        $this->form_validation->set_rules('employee_email', 'Email', 'required|valid_email|callback_check_email_exists');
-
-
-        $this->user_model->update_user($employee_id);
-
-        //set message
-        $this->session->set_flashdata('profile_updated','Your profile has been updated');
-
-        redirect('users/current_users');
+        $this->form_validation->set_rules('employee_email', 'Email', 'required|valid_email|callback_check_email_exists2');
+        if ($this->form_validation->run() === FALSE) {
+            echo validation_errors();
+        } else {
+            $result=$this->user_model->update_user($employee_id);
+            if ($result){
+                echo "success";
+            }
+        }
     }
     //update user other
     public function update_other(){
