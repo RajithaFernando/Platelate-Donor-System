@@ -21,6 +21,7 @@ $route['users/block/(:any)']='users/block/$1';
 $route['users/unblock/(:any)']='users/unblock/$1';
 $route['users/(:any)']='users/view/$1';
 
+$route['passwords/recover_password']='passwords/recover_password';
 
 $route['differdonors']='differdonors';
 
