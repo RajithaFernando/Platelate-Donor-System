@@ -61,9 +61,9 @@ class Donor_model extends CI_Model{
             $this->db->order_by('donor.donorResponsetime','ASC');
             $this->db->order_by('donor.donorDistance','DESC');
             $this->db->join('telephoneno','telephoneno.donorId=donor.donorId','left');
-            $this->db->join('donorstatus','donorstatus.donorId=donor.donorId','left');
+            //$this->db->join('donorstatus','donorstatus.donorId=donor.donorId','left');
 //            *****donor should check in donor or ststus table
-            $this->db->where('donorstatus.donorStatusType',$approve);
+            $this->db->where('donorStatus',$approve);
             $this->db->where('nextDonationDate <=',$now);
             $this->db->where('donorBloodGroup',$bloodGroup);
             $query=$this->db->get('donor');

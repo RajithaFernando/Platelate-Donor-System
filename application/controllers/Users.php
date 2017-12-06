@@ -41,7 +41,7 @@ class Users extends CI_Controller
         $this->form_validation->set_rules('employee_lastname', 'Lastname', 'required');
         $this->form_validation->set_rules('employee_gender', 'Gender', 'required');
         $this->form_validation->set_rules('employee_teleNo', 'Telephone', 'required|max_length[10]|min_length[10]');
-        $this->form_validation->set_rules('employee_NIC', 'NIC', 'trim|required|min_length[10]|max_length[12]');
+        $this->form_validation->set_rules('employee_NIC', 'NIC', 'trim|required|callback_check_nic_validation');
         $this->form_validation->set_rules('employee_occupation', 'Occupation', 'required');
         $this->form_validation->set_rules('employee_email', 'Email', 'required|valid_email|callback_check_email_exists');
         $this->form_validation->set_rules('employee_username', 'Username', 'trim|required|callback_check_username_exists');
@@ -265,7 +265,7 @@ class Users extends CI_Controller
         $this->form_validation->set_rules('employee_lastname', 'Lastname', 'required');
         $this->form_validation->set_rules('employee_gender', 'Gender', 'required');
         $this->form_validation->set_rules('employee_teleNo', 'Telephone', 'required|max_length[10]|min_length[10]');
-        $this->form_validation->set_rules('employee_NIC', 'NIC', 'trim|required|min_length[10]|max_length[12]');
+        $this->form_validation->set_rules('employee_NIC', 'NIC', 'trim|required|callback_check_nic_validation');
         $this->form_validation->set_rules('employee_occupation', 'Occupation', 'required');
         $this->form_validation->set_rules('employee_email', 'Email', 'required|valid_email|callback_check_email_exists');
 
@@ -333,10 +333,19 @@ class Users extends CI_Controller
 
     }
 
+//    validate nic for new and old
+    public function check_nic_validation($nic){
+        $this->form_validation->set_message('check_nic_validation', 'NIC length should be 10 or 12.');
 
-
-//    forget password
-    public function change_password($employee_id=NULL){
+        if ($nic.length()==10){
+            return true;
+        }
+        elseif($nic.length()==12){
+            return true;
+        }
+        else{
+            return false;
+        }
 
     }
 }
