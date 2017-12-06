@@ -83,7 +83,7 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
-                        <a href="<?php echo base_url()?>/users/register">Employee Registration</a>
+                        <a href="<?php echo base_url()?>/users/register_page">Employee Registration</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url()?>/users/current_users">Current Employee</a>

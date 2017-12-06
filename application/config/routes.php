@@ -16,6 +16,7 @@ $route['users/register']='users/register';
 $route['users/update']='users/update';
 $route['users/update_other']='users/update_other';
 $route['users/edit']='users/edit';
+$route['users/register_page']='users/register_page';
 $route['users/block/(:any)']='users/block/$1';
 $route['users/unblock/(:any)']='users/unblock/$1';
 $route['users/(:any)']='users/view/$1';

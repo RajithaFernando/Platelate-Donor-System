@@ -26,6 +26,14 @@ class Users extends CI_Controller
 
     }
 
+    public function register_page(){
+        $data['title'] = 'User Registration';
+        $this->load->view('template/header');
+        $this->load->view('users/register', $data);
+        $this->load->view('template/footer');
+
+    }
+
     public function register()
     {
         $data['title'] = 'User Registration';
@@ -41,19 +49,20 @@ class Users extends CI_Controller
         $this->form_validation->set_rules('employee_password2', 'Confirm Password', 'matches[employee_password]');
 
         if ($this->form_validation->run() === FALSE) {
-            $this->load->view('template/header');
-            $this->load->view('users/register', $data);
-            $this->load->view('template/footer');
+            echo validation_errors();
+
         } else {
             //die('Continue');
             //Encrypte password
             $enc_password = md5($this->input->post('employee_password'));
-            $this->user_model->register($enc_password);
-
-            //set message
+            $result=$this->user_model->register($enc_password);
+            if ($result){
+                echo "success";
+            }
+            /*//set message
             $this->session->set_flashdata('user_registered', 'User are now registered and can log in');
 
-            redirect('users/register');
+            redirect('users/register');*/
         }
     }
     // Check if username exists
@@ -77,6 +86,19 @@ class Users extends CI_Controller
             return false;
         }
     }
+
+    public function check_email_exist02($employee_email){
+        $employee_id=$this->session->usersdata('employee_id');
+        $this->form_validation->set_message('check_email_exists2', 'That email  is taken.Please choose a different one');
+        $empoyee_id2=$this->user_model->check_email_exists2($employee_email);
+        if ($employee_id==$empoyee_id2){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
 
     //user login
 

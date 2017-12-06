@@ -58,6 +58,17 @@ class User_model extends CI_Model {
             return false;
         }
     }
+
+    public function check_email_exists2($employee_email){
+        $query = $this->db->get_where('employee', array('employee_email' => $employee_email));
+        if(empty($query->row_array())){
+            return true;
+        } else {
+            return $query->row(0)->employee_id;
+        }
+    }
+
+
 //    login user
     public function login($employee_username,$password){
         //validate
