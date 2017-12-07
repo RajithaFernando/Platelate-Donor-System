@@ -19,7 +19,7 @@ $route['users/edit']='users/edit';
 $route['users/register_page']='users/register_page';
 $route['users/block']='users/block';
 $route['users/get_user']='users/get_user';
-$route['users/unblock/(:any)']='users/unblock/$1';
+$route['users/unblock_user']='users/unblock_user';
 $route['users/change_password/(:any)']='users/change_password/$1';
 $route['users/(:any)']='users/view/$1';
 

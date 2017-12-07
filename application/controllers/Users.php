@@ -322,7 +322,7 @@ class Users extends CI_Controller
     }
 //    unblock user
     public function unblock_user(){
-        $employee_id = $this->input->post('employeeId');
+        $employee_id = $this->input->post('employee_id');
         $result=$this->user_model->unblock_user($employee_id);
         if($result){
             echo "success";

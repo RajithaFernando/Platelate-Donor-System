@@ -55,7 +55,7 @@
                             <?php echo $user['employee_teleNo'] ?>
                         </td>
                         <td>
-                            <button class="btn btn-warning btn-sm"  id="unblock_btn"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Unblock </button>
+                            <button value="<?php echo $user['employee_id'] ?>" class="btn btn-warning btn-sm unblockuser"  id="<?php echo $user['employee_id'] ?>"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Unblock </button>
                         </td>
 
                     </tr>
@@ -77,33 +77,32 @@
         </div>
     </div>
 <?php endif;?>
-<!--ajax function-->
-<script>
-    $("#unblock_btn").click(function(){
-//        alert("anvmb");
-        $.ajax({
-            type:"post",
-            url:"<?php echo site_url('/users/check_block_users/'.$user['employee_id'])?>",
-            success:function(data){
-                console.log(data);
-                if(data=="success"){
-                    alert("successfully recorded.");
-                    window.scrollTo(0,0);
+        <!--ajax function-->
 
 
-                }
-                else{
-                    alert("something wrong.");
-                    $('#unblock_btn').attr('disabled',false);
-                }
-            }
-        });
+        <script>
+            $(document).on('click','.unblockuser',function(){
+                var employee_id = $(this).attr('id');
+                //alert(employee_id);
+                $.ajax({
+                    type:"post",
+                    url:"<?php echo site_url('/users/unblock_user');?>",
+                    data:{'employee_id':employee_id},
+                    success:function(data){
+                        //console.log(data);
+                        if(data=="success"){
+                            alert("successfully recorded.");
+                            location.reload();
+                            window.scrollTo(0,0);
+                        }
+                        else{
+                            alert("something wrong. :)))) check this");
+                            location.reload();
 
-    });
-    document.getElementById("unblock_btn").onclick = function() {
-        //disable
-        this.disabled = true;
+                            //$('#unblock_btn').attr('disabled',false);
+                        }
+                    }
+                });
 
-        //do some validation stuff
-    }
-</script>
+            });
+        </script>
