@@ -359,5 +359,13 @@ class Users extends CI_Controller
         }
     }
 
+//    change password
+    public function change_password($employee_id=NULL){
+        $data['user']=$this->user_model->get_user($employee_id);
+        $this->load->view('template/header');
+        $this->load->view('users/reset_password',$data);
+        $this->load->view('template/footer');
+
+    }
 }
 ?>

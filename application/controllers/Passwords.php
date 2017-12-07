@@ -25,27 +25,14 @@ class Passwords extends CI_Controller{
         $this->load->password_model->change_password($user_id,$new_password);
 
     }
-    public function change_passwordbyuser(){
+    public function reset_password(){
         $new_password = md5($this->input->post('password'));
+
         $user_id=$this->input->post('employee_id');
-        $this->load->password_model->change_password($user_id,$new_password);
 
+        $result = $this->password_model->change_password($user_id,$new_password);
+        if ($result){
+            echo "success";
+        }
     }
-    /*public function  sendEmail($naar=0,$onderwerp=0,$msg=0)
-        {
-            $CI =& get_instance();
-
-                $CI->load->library('email');
-                //or autoload it from /application/config/autoload.php
-            $to=;
-
-                $CI->email->from('pdmas@maharagama.com', 'test');
-                $CI->email->to($to);
-                $CI->email->subject($onderwerp);
-                $CI->email->message("Test bericht ".$msg);
-
-                $CI->email->send();
-
-    }*/
-
 }

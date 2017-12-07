@@ -20,9 +20,11 @@ $route['users/register_page']='users/register_page';
 $route['users/block']='users/block';
 $route['users/get_user']='users/get_user';
 $route['users/unblock/(:any)']='users/unblock/$1';
+$route['users/change_password/(:any)']='users/change_password/$1';
 $route['users/(:any)']='users/view/$1';
 
 $route['passwords/recover_password']='passwords/recover_password';
+$route['passwords/reset_password']='passwords/reset_password';
 
 $route['differdonors']='differdonors';
 
