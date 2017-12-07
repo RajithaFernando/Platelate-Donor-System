@@ -244,7 +244,7 @@ class Users extends CI_Controller
         $this->form_validation->set_rules('employee_firstname', 'Firstname', 'required');
         $this->form_validation->set_rules('employee_lastname', 'Lastname', 'required');
         $this->form_validation->set_rules('employee_teleNo', 'Telephone', 'required|max_length[10]|min_length[10]');
-        $this->form_validation->set_rules('employee_email', 'Email', 'required|valid_email|callback_check_email_exists2');
+        $this->form_validation->set_rules('employee_email', 'Email', 'required|valid_email');
         if ($this->form_validation->run() === FALSE) {
             echo validation_errors();
         } else {
@@ -289,7 +289,8 @@ class Users extends CI_Controller
         $this->load->view('template/footer');
     }
 //    block users
-    public function block($employee_id= NULL){
+    public function block(){
+        $employee_id=$this->input->post('employee_id');
         $data['user']=$this->user_model->get_user($employee_id);
 
         $this->user_model->block_user($employee_id);
@@ -348,5 +349,15 @@ class Users extends CI_Controller
         }
 
     }
+    //    getting user by id
+    public function get_user(){
+        $employee_id=$this->input->post('employee_id');
+        $user=$this->user_model->get_user($employee_id);
+        if($user){
+//            ********
+            echo json_encode($user);
+        }
+    }
+
 }
 ?>
