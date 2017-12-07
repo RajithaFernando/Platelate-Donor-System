@@ -102,4 +102,14 @@ class Donors extends CI_Controller{
         $this->load->view('template/footer');
     }
 
+    //get donor details by id
+    public function get_donor_by_donor_id(){
+        $donorId = $this->input->post('donorId');
+        $result = $this->donor_model->get_donor_by_donor_id($donorId);
+        if ($result){
+            echo json_encode($result);
+        }
+    }
+
+
 }

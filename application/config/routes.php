@@ -27,7 +27,7 @@ $route['passwords/recover_password']='passwords/recover_password';
 $route['differdonors']='differdonors';
 
 
-
+$route['donors/get_donor_by_donor_id']='donors/get_donor_by_donor_id';
 $route['donors/add_points/(:any)']='donors/add_points/$1';
 $route['donors/search_donor']= 'donors/search_donor';
 $route['donors/view_donor']='donors/view_donor';

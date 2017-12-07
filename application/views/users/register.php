@@ -27,7 +27,7 @@
     </div>
     <div class="form-group">
         <label class="control-label" for="employee_teleNo">Telephone No</label>
-        <input type="text" class="form-control" name="employee_teleNo" data-length="10" required>
+        <input type="text" class="form-control" name="employee_teleNo" id="employee_teleNo" data-length="10" required>
     </div>
 
     <div class="form-group">
@@ -70,7 +70,7 @@
 
     <div class="form-group">
         <label>Confirm password</label>
-        <input type="password" class="form-control" name="employee_password2" id="employeee_password2" data-match="#employee_password" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
+        <input type="password" class="form-control" name="employee_password2" id="employee_password2" data-match="#employee_password" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
         <div class="help-block with-errors"></div>
     </div>
     <div class="form-group">

@@ -58,8 +58,8 @@ class Donor_model extends CI_Model{
 //        get current date to compare 14 days
             $now = date('Y-m-d');
             $approve='approve';
-            $this->db->order_by('donor.donorResponsetime','ASC');
-            $this->db->order_by('donor.donorDistance','DESC');
+            $this->db->order_by('donor.donorResponsetime','DESC');
+            $this->db->order_by('donor.donorDistance','ASC');
             $this->db->join('telephoneno','telephoneno.donorId=donor.donorId','left');
             //$this->db->join('donorstatus','donorstatus.donorId=donor.donorId','left');
 //            *****donor should check in donor or ststus table
@@ -88,7 +88,7 @@ class Donor_model extends CI_Model{
         /*$this->db->select('donorResponsetime');
         $previousvalue =$this->db->get_where('donor',array('donorId'=>$donorId));*/
 
-        if ($responsetype=="response"){
+        if ($responsetype=="responsed"){
             $query=$this->db->query("UPDATE donor SET donorResponsetime = (donorResponsetime+2) WHERE donorId='$donorId';");
             return $query;
             /*            $data = array(
@@ -103,7 +103,7 @@ class Donor_model extends CI_Model{
             return $query;
 
         }
-        elseif($responsetype=="not_response"){
+        elseif($responsetype=="not_responsed"){
             $query=$this->db->query("UPDATE donor SET donorResponsetime = (donorResponsetime-2) WHERE donorId='$donorId';");
             return $query;
 
@@ -113,4 +113,15 @@ class Donor_model extends CI_Model{
         }
 
     }
+
+
+
+
+    //    get donor result by donor id
+    public function get_donor_by_donor_id($donorId){
+        $query=$this->db->get_where('donor',array('donorId'=>$donorId));
+        return $query->row_array();
+
+    }
+
 }

@@ -337,11 +337,11 @@ class Users extends CI_Controller
 //    validate nic for new and old
     public function check_nic_validation($nic){
         $this->form_validation->set_message('check_nic_validation', 'NIC length should be 10 or 12.');
-
-        if ($nic.length()==10){
+            $len=strlen($nic);
+        if ($len==10){
             return true;
         }
-        elseif($nic.length()==12){
+        elseif($len==12){
             return true;
         }
         else{
