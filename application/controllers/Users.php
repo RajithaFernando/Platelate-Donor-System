@@ -119,11 +119,12 @@ class Users extends CI_Controller
             //loggin user
 
             $data = $this->user_model->login($employee_username, $password);
-            //$this->user_model->update_lastlogin($employee_id);
 
             if ($data) {
                 //create the session
                 //die('SUCCESS');
+                $employee_id=$data['employee_id'];
+                $this->user_model->update_lastlogin($employee_id);
 
                 $user_data = array(
                     'employee_id'=>$data['employee_id'],

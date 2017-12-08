@@ -13,7 +13,7 @@
     <div class="form-group">
         <label class="control-label" for="employee_firstname">First Name</label>
         <input class="form-control"  data-error="Please enter name field." id="employee_firstname" name="employee_firstname" placeholder="First Name"  type="text" required />
-        <div class="help-block with-errors"></div>
+
     </div>
     <div class="form-group">
         <label class="control-label" for="employee_lastname">Last Name</label>

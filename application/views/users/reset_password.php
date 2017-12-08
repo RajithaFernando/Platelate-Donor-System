@@ -50,14 +50,19 @@
                 alert("Passwords do not match.");
                 return false;
             }
+            else if ((password =="")&&( confirmPassword=="") ){
+                alert("Passwords fields can not be empty .");
+                return false;
+            }
             else {
                 var employee_id = $('#employee_id').val();
                 var password = $('#password').val();
+                //alert(password);
                 $.ajax({
                     type: 'post',
                     url: '<?php echo base_url()?>/passwords/reset_password',
-                    data: {'employee_id':employee_id, 'password':password},
-                    success: function (data) {
+                    data: {'employee_id':employee_id,'password':password},
+                    success: function(data) {
                         if (data == "success") {
                             alert('password successfully updated');
                             $('#password').val("");

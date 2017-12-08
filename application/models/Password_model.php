@@ -7,12 +7,7 @@ class Password_model extends CI_Model {
     }
 
     public function change_password($user_id,$password){
-        $data=array(
-            'employee_password'=>$password
-        );
-
-        $this->db->where('employee_id',$user_id);
-        $query= $this->db->update('employee',$data);
+        $query=$this->db->query("UPDATE employee SET employee_password='.$password.' WHERE employee_id='.$user_id.';");
         return $query;
 
     }

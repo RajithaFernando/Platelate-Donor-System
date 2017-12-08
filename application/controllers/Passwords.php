@@ -26,12 +26,11 @@ class Passwords extends CI_Controller{
 
     }
     public function reset_password(){
+        $this->load->model('Password_model');
         $new_password = md5($this->input->post('password'));
-
         $user_id=$this->input->post('employee_id');
-
-        $result = $this->password_model->change_password($user_id,$new_password);
-        if ($result){
+        //$result = $this->password_model->change_password($user_id,$new_password);
+        if ($this->password_model->change_password($user_id,$new_password)){
             echo "success";
         }
     }

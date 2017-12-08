@@ -17,11 +17,7 @@
     <!-- this styles only adds some repairs on idevices  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google fonts - witch you want to use - (rest you can just remove) -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
+   
 
 
     
@@ -77,26 +73,38 @@
 
 <div class="site_wrapper">
 
-    <div class="top_nav" style="padding: 14px 16px;  background-color:#404040;">
+<div class="top_nav" style="padding: 14px 16px; background-color:#404040; height:80px;">
+
+
         <div class="container">
 
-            <div class="left">
+        
 
-               <!-- <a href="mailto:info@yourdomain.com"><i class="fa fa-envelope" style= "font-size=40px;"></i>pdms@gmail.com</a> <i class="fa fa-phone-square"></i>&nbsp; +94-011-2850 253-->
-            </div><!-- end left -->
-            <ul class="nav navbar-nav navbar-right" style="width : 100px;">
-                <!-- <button type ="button" class="dropdown-toggle" data-toggle="dropdown" class="tpbut" style=" font-size: 17px;"><i class="fa fa-lock"></i>Login</button> -->
+
+  <div class="topnav" id="myTopnav">
+    
+ <a href="#about"><button  style="width: 80px; height: 43px; margin-left:900px;position:relative; left:60px; border-radius:5px;"><b>About</b></button></a>
+
+  <a href="#contact"><button style="width: 80px; height: 43px; position:relative; left:68px; border-radius:5px;"><b>Contact</b></button></a>
+
+  
+  </div>
+
+            
+            <ul class="nav navbar-nav navbar-right" style="width : 50px;">
+
                     
                     <li class="dropdown">
 
 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <button style="width: 80px; height: 43px;"><b>Login</b></button></a>
-                        <ul id="login-dp" class="dropdown-menu">
+
+                            <button style="width: 80px; height: 43px; position:relative; top:-58px; border-radius:5px;"><b>Login</b></button></a>
+                             <ul id="login-dp" class="dropdown-menu">
                             <div class="" style="width:300px; height: 250px; padding: 10px; padding-top: 50px;">
                                 <?php echo form_open('users/login'); ?>
                                 <div class="col-md-12">
-                                    <h3 class="text-center"><b>Please Sign In
+                                    <h3 class="text-center" style="font-size:30px;"><b>Please Sign In
                                         <!-- <?php echo $title; ?> -->
                                     </h3>
                                     <div class="form-group">
@@ -124,7 +132,7 @@
 
     <!-- masterslider -->
     <div class="slidermar">
-        <h2><b style="float:right; margin-right:100px; color:maroon; font-size:40px;">Maharagama Cancer Hospital Blood Bank</b></h2>
+        <h2><b style="float:right; margin-right:100px; color:maroon; font-size:50px; position:relative; left:68px;">Maharagama Cancer Hospital Blood Bank</b></h2>
 
         <div class="master-slider ms-skin-default" id="masterslider">
 
@@ -134,11 +142,7 @@
 
                 <img  src="<?php echo base_url();?>/assets2/js/masterslider/51-1000x300.jpg"  alt=""/>
                 
-
-
-
-
-            </div><!-- end slide 1 -->
+        </div><!-- end slide 1 -->
 
 
             <div class="ms-slide slide-2" data-delay="3">
@@ -160,12 +164,13 @@
 
 
             </div><!-- end slide 3 -->
-
+            <a name="about"></a>
         </div>
     </div>
     <!-- end of masterslider -->
+    
 
-    <div class="clearfix divider_line margin_top10 margin_bottom10"></div>
+    <div class="clearfix divider_line margin_top7 margin_bottom8"></div>
 
 
     <div class="featured_section2">
@@ -204,6 +209,7 @@
 
         </div>
     </div><!-- end featured section 2 -->
+    
 
 
     
@@ -213,16 +219,18 @@
 
     <div class="clearfix"></div>
 
-
+   
     <footer class="footer">
+        
         <div class="container">
-            <h5 style="color:#8B2323; font-size:40px; margin-top:-40px; margin-bottom:40px;">Contact Us</h5>
+          
+            <h5 style="color:red; font-size:40px; margin-top:-40px; margin-bottom:40px;">Contact Us</h5>
 
           
 
             <div class="one_fourth animate" data-anim-type="fadeInUp" data-anim-delay="200">
                 <div class="qlinks">
-
+                    <a name="contact"></a>
                     <h4 style="color:yellow;">Blood Bank</h4>
 
                     <ul class="faddress">
@@ -252,7 +260,7 @@
                 </div>
             </div><!-- end links -->
 
-            <h5 style="color:yellow;">Hospital Location Map</h5>
+            <h5 style="color:yellow; font-size:25px;">Hospital Location Map</h5>
 
             <div class="one_fourth last animate" data-anim-type="fadeInUp" data-anim-delay="400">
 
@@ -262,7 +270,7 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10576.307385525843!2d79.
                 92368511573365!3d6.841151007124166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25075423f1c03%
                 3A0xc24046c99d1423e4!2z4La04LeS4LeF4LeS4Laa4LePIOC2u-C3neC3hOC2vSwg4La44LeE4La74Lac4La4!5e0!3m2!1ssi!2slk!
-                4v1509014866315" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>"
+                4v1509014866315" width="700" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>"
 
             </div><!-- end flickr -->
 
@@ -275,9 +283,9 @@
 
                 <div class="clearfix divider_dashed10"></div>
 
-                <div class="one_half animate" data-anim-type="fadeInRight" data-anim-delay="300">
+                <div class="one_half animate" data-anim-type="fadeInRight" data-anim-delay="300" style="color:white;">
 
-            Copyright © 2017 pdmsMaharagama.com. All rights reserved.<a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
+            Copyright © 2017 pdmsMaharagama.com. All rights reserved.
 
                 </div>
 
@@ -327,7 +335,7 @@
 
         slider.setup('masterslider' , {
             width:1400,    // slider standard width
-            height:680,   // slider standard height
+            height:460,   // slider standard height
             space:0,
             speed:45,
             layout:'fullwidth',
@@ -349,6 +357,22 @@
         hashWatch: true,
         pauseMedia: true,
         responsiveSwitch: 'tablist',
+        saveState: sessionStorage,
+    });
+
+</script>
+
+<script type="text/javascript">
+    $()
+</script>
+<script src="<?php echo base_url('assets2/js/aninum/jquery.animateNumber.min.js');?>"></script>
+<script src="<?php echo base_url('assets2/js/carouselowl/owl.carousel.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets2/js/universal/custom.js');?>"></script>
+
+</body>
+</html>
+<script>
+responsiveSwitch: 'tablist',
         saveState: sessionStorage,
     });
 

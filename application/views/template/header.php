@@ -33,13 +33,20 @@
         xmlhttp.open("GET","../sms/send_sms",true); // first try `../index.php/example` ( extension depends if you enable/disable url rewrite in apache.conf ) , if this won't work then try base_url/index.php/example ( where you can specify base_url by static or with CodeIgniter helpher function )
         xmlhttp.send();
     </script>-->
+
+      <style >
+  #exampleAccordion li:hover{
+    background-color:#5e5c58;
+  }
+  </style>
+
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 <?php if ($this->session->userdata('logged_in')):?>
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" style="background-color: #330000;">
-    <a class="navbar-brand" href="<?php echo base_url();?>/">PLATLET DONOR MANAGEMENT SYSTEM</a>
+    <a class="navbar-brand" href="<?php echo base_url();?>/"><b style="font-size:20px;"><img src="<?php echo base_url(); ?>assets2/js/masterslider/1.png" style ="width:40px; hight:20px; border-radius:70px;">   PLATELET DONOR MANAGEMENT SYSTEM</b></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -55,7 +62,7 @@
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
                 <a class="nav-link" href="<?php echo base_url()?>/users/edit">
-                    <i class="fa fa-fw fa-area-chart"></i>
+                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                     <span class="nav-link-text">
                 Edit Profile</span>
                 </a>
@@ -77,71 +84,71 @@
 
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-wrench"></i>
+                    <i class="fa fa-user-plus" aria-hidden="true"></i>
                     <span class="nav-link-text">
                 Employee</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
-                        <a href="<?php echo base_url()?>/users/register_page">Employee Registration</a>
+                        <a href="<?php echo base_url()?>/users/register_page"><i class="fa fa-circle-o" aria-hidden="true"></i> Employee Registration</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url()?>/users/current_users">Current Employee</a>
+                        <a href="<?php echo base_url()?>/users/current_users"><i class="fa fa-circle-o" aria-hidden="true"></i> Current Employee</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url()?>/users/check_block_users">Unauthorized Employee</a>
+                        <a href="<?php echo base_url()?>/users/check_block_users"><i class="fa fa-circle-o" aria-hidden="true"></i> Unauthorized Employee</a>
                     </li>
                 </ul>
             </li>
 
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-file"></i>
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                     <span class="nav-link-text">
                 Donors</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseExamplePages">
                     <li>
-                        <a href="<?php echo base_url()?>/donors/registerDonor">Donor Registration</a>
+                        <a href="<?php echo base_url()?>/donors/registerDonor"><i class="fa fa-circle-o" aria-hidden="true"></i>  Donor Registration</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url()?>/donorapprovals">Donor Approval list</a>
+                        <a href="<?php echo base_url()?>/donorapprovals"><i class="fa fa-circle-o" aria-hidden="true"></i>  Donor Approval list</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url()?>/donation/add_donation">Donation</a>
+                        <a href="<?php echo base_url()?>/donation/add_donation"><i class="fa fa-circle-o" aria-hidden="true"></i>  Donation</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url()?>/donors/view_donor">Donor select by blood group</a>
+                        <a href="<?php echo base_url()?>/donors/view_donor"><i class="fa fa-circle-o" aria-hidden="true"></i>  Donor select by blood group</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url()?>/differdonors"> Check differ Donors</a>
+                        <a href="<?php echo base_url()?>/differdonors"><i class="fa fa-circle-o" aria-hidden="true"></i>  Check differ Donors</a>
                     </li>
                      <li>
-                        <a href="<?php echo base_url()?>/donors/donor_profile">Donor Profile</a>
+                        <a href="<?php echo base_url()?>/donors/donor_profile"><i class="fa fa-circle-o" aria-hidden="true"></i>  Donor Profile</a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-sitemap"></i>
+                    <i class="fa fa-file-text-o" aria-hidden="true"></i>
                     <span class="nav-link-text">
                 Report</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseMulti">
                     <li>
-                        <a href="#">Donor deffer letter</a>
+                        <a href="#"><i class="fa fa-circle-o" aria-hidden="true"></i> Donor deffer letter</a>
                     </li>
                     <li>
-                        <a href="#">Donation Report</a>
+                        <a href="#"><i class="fa fa-circle-o" aria-hidden="true"></i> Donation Report</a>
                     </li>
                     <li>
-                        <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
+                        <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2"><i class="fa fa-circle-o" aria-hidden="true"></i> Third Level</a>
                         <ul class="sidenav-third-level collapse" id="collapseMulti2">
                             <li>
-                                <a href="#">Donor monthly report</a>
+                                <a href="#"> <i class="fa fa-square-o" aria-hidden="true"></i> Donor monthly report</a>
                             </li>
                             <li>
-                                <a href="#">Machine report</a>
+                                <a href="#"><i class="fa fa-square-o" aria-hidden="true"></i> Machine report</a>
                             </li>
                         </ul>
                     </li>

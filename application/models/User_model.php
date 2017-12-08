@@ -93,7 +93,8 @@ class User_model extends CI_Model {
             'lemployeelast_login'=> now()
         );
         $this->db->where('employee_id',$employee_id);
-        return $this->db->update('employee',$data);
+        $query= $this->db->update('employee',$data);
+        return $query;
 
     }
     //update profile
