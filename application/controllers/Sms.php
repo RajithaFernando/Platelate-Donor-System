@@ -15,7 +15,7 @@ class Sms extends  CI_Controller {
 
     public function  send_sms(){
         $password_sms = "7742";
-        $from = "94718257822";
+        $from ="94718257822";
         $donor="717896343";
         $this->sms_model->send($from,$donor,"this is text massage",$password_sms);
         /*$donors = $this->sms_model->get_eligible_donors();

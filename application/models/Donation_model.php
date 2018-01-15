@@ -7,8 +7,8 @@ class Donation_model extends CI_Model
         // parent::__construct();
         $this->load->database();
     }
-
-    public function donation_view()
+//add donation
+    public function add_donation()
     {
         $data = array(
             'donationId' => $this->input->post('donationId'),
@@ -22,12 +22,29 @@ class Donation_model extends CI_Model
             'donorId' => $this->input->post('donorId'),
             'MachineKitSerialNo' => $this->input->post('MachineKitSerialNo'),
             'MachineKitDOE' => $this->input->post('MachineKitDOE'),
-            'donorHeight' => $this->input->post('donorHeight'),
             'donorWeight' => $this->input->post('donorWeight'),
-            'machineNo' => $this->input->post('machineNo'),
-            'donationPCV' => $this->input->post('donationPCV')
+            'machineName' => $this->input->post('machineName'),
+            'donorHeight' => $this->input->post('donorHeight')
+
         );
         return $this->db->insert('donation', $data);
+    }
+
+//    get last donation details
+    public function get_last_donation($donation_id){
+
+        $this->db->select('*');
+        $this->db->where('donationId',$donation_id);
+        $result=$this->db->get('donation');
+        return $result->result_array();
+
+    }
+//    get last donation id according to some donors
+    public function get_donation_id($donor_id){
+
+        $query=$this->db->query("SELECT MAX(donationId) FROM donation WHERE donorId = '$donor_id';");
+        return $query;
+
     }
 }
 ?>

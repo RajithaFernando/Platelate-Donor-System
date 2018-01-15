@@ -1,30 +1,15 @@
-<?php 
+<?php
 
 
 class differdonor_model extends CI_Model{
-		 public function selectDiffData()
-		 {
-
-		 	$this->db->where('donorStatus', 'p_differ');
-		 	$this->db->or_where('donorStatus', 't_differ');
-
-$query=$this->db->get('donor');
-
-// print_r($query->result());
-return $query->result();
-}
+    public function selectDiffData()
+    {
+        $query=$this->db->query("SELECT donor.donorId,donor.donorStatus,donorstatus.donorDefferReason ,donorstatus.donorEligibleDate,donor.donorNIC,donor.donorFname,donor.donorLname FROM donor LEFT JOIN donorstatus ON donorstatus.donorId = donor.donorId WHERE donorStatus = 't_deffer' OR donorStatus= 'p_deffer'  GROUP BY donor.donorId ORDER BY donorstatus.donorStatusId DESC");
+        //$query=$this->db->get();
+        return $query->result();
+    }
 
 
 
 
 }
-
-
-
-
-
-
-
-
-
- ?>

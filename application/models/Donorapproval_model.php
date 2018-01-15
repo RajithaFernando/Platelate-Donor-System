@@ -1,43 +1,67 @@
-<?php  
-	class Donorapproval_model extends CI_Model{
-		 public function __construct (){
-		 	//parent::__construct();
-		 	$this->load->database();
-		 	
-		 } 
-		public function load_donors_registered_for_donation(){
+<?php
+class Donorapproval_model extends CI_Model{
+    public function __construct (){
+        parent::__construct();
+        $this->load->database();
 
-			$query=$this->db->query("SELECT donor.donorId, donor.donorFname, donor.donorLname, donor.donorNIC, donor.donorGender, donor.donorBloodGroup, donorstatus.donorStatusType, donorstatus.donorStatusId FROM donor INNER JOIN donorstatus ON donor.donorId = donorstatus.donorId AND donorstatus.donorStatusType='current';");
-			return $query->result_array();
+    }
+    public function load_donors_registered_for_donation($limit=FALSE,$offset=FALSE){
 
-			//$this->db->select('donorId');
+        if ($limit){
+            $this->db->limit($limit,$offset);
+        }
+        $query=$this->db->get_where('donor',array('donorStatus'=>'current'));
+        return $query->result_array();
 
-			/*$query=$this->db->get_where('donorstatus',array('donorStatusType'=>'current'));
-			return $query->result();
-			$q1=$this->db->select('donorFname','donorLname','donorNIC','donorGender','donorBloodGroup')
-					->where_in('donor', $data['registered_donors_id'])
-					->get();*/
+/*        $query=$this->db->query("SELECT * from donor WHERE donorStatus='current';");
 
-			/*$query=$this->db->select('donor.donorFname','donor.donorLname','donorstatus.donorStatusType','donorstatus.donorId')
-						->from('donor')
-						->join('donorstatus','donor.donorId = donorstatus.donorId')
-						->where('donorstatus.donorStatusType','current')
-						->get();*/
+        return $query->result_array();*/
 
-			//$this->db->where('donorStatusType','current');
-			//$query = $this->db->get('donorstatus');
-			//return $query->result();
-			//return $q->result();
 
- 		}
+    }
+    public function getCountdonors(){
+        $status ="current";
+        $this->db->select("COUNT(*)as num_row");
+//        $this->db->from('donor');
+        //$this->db->where('donorStatus','current');
+        $this->db->order_by('donorId');
+        $query=$this->db->get_where('donor',array('donorStatus'=>$status));
+        $result = $query->result();
+        return $result[0]->num_row;
+    }
 
- 		public function update_donor_status(){
- 			$data1 = array(
- 				'donorStatusType' =>$this->input->post('status'),
- 				'donorDefferReason' =>$this->input->post('defer_reason'),
- 				'donorEligibleDate' =>$this->input->post('donorEligibleDate'),
- 				);
- 		}
-	}
+    public function load_donor_details($donorid_row){
+        //$this->db->where('donorId',$donorid_row);
+        // $query=$this->db->get_where('donor',array('donorId'=>$donorid_row));
+        // return $query->row_array();
+        $query=$this->db->query("SELECT donorId, donorFname, donorLname, donorNIC, donorGender, donorBloodGroup, donorStatus FROM donor WHERE donorId='$donorid_row'");
+
+        return $query->row_array();
+
+    }
+
+
+    public function update_donor_status($donorId){
+
+        $data1 = array(
+            'donorId' =>$this->input->post('donorID',TRUE),
+            'donorStatusType' =>$this->input->post('approval',TRUE),
+            'donorDefferReason' =>$this->input->post('defer_reason',TRUE),
+            'donorEligibleDate' =>$this->input->post('donorEligibleDate',TRUE),
+        );
+
+
+
+        $this->db->insert('donorstatus', $data1);
+
+        return $donorId;
+
+    }
+
+
+
+
+}
+
 
 ?>

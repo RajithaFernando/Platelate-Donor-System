@@ -1,132 +1,166 @@
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="login_style.css">
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="login_effect.js"></script>
-</head>
-   
-<body>
+<hr>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="<?php echo base_url()?>/users/dashboard">Dashboard</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="<?php echo base_url()?>/donors/donor_profile_list">Donors</a>
+    </li>
+    <li class="breadcrumb-item active">Donor Profile</li>
+</ol>
+<div class="col-md-12" style="text-align: center; margin-top: 10px;">
+    <legend><b>Donor Profile</b></legend>
+</div>
+<div class="row">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-5" style="padding-top: 40px;
+        margin-left: 40px;
+        position: fixed;
+        top: 150px;
+        height: 100%;
+        border-radius: 0;
+        border: none;
+        /*overflow-y: auto;*/">
+            <div class="text-center" style="margin-left: -300px;">
+                <img src="<?php echo base_url('assets/images/media/user.png');?>" class="avatar img-circle" alt="avatar" style="width: 150px; height: 150px;">
+            </div>
 
-<!-- <center>
- <input type="button" id="show_login" value="Show Login">
- <div id = "loginform">
-  <form method = "post" action = "">
-    <div class="coverpadx"></div>
-   <p>Join TalkersCode And get Quick Access To Our Tutorials,Questions,Web Tricks And Many More</p>
-   <input type = "image" id = "close_login" src = "images/close.png">
-   <input type = "text" id = "login" placeholder = "Email Id" name = "uid">
-   <input type = "password" id = "password" name = "upass" placeholder = "***">
-   <input type = "submit" id = "dologin" value = "Login">
-  </form>
- </div>
-</center> -->
-  <div class="container">
-    <h1>User Profile</h1>
-    <hr>
-  <div class="row">
-      <!-- left column -->
-      <div class="col-md-3">
-        <div class="text-center">
-          <img src="<?php echo base_url('assets/images/media/user.png');?>" class="avatar img-circle" alt="avatar" style="width: 150px; height: 150px;">
-          <!-- <h6>Upload a different photo...</h6>
-          
-          <input type="file" class="form-control"> -->
-        </div>
-        <div class="col-md-3" >
-          <ul>
-            <li>About</li>
-            <li>Donation Details</li>
-          </ul>
-        </div>
-      </div>
-      
+            <div class="text-change" style="margin-left: -80px;">
+                <ul style="list-style-type: none; ">
+                    <!-- <li style="top: 150px;"><a href="#top" style="text-decoration: none;"><font color="black"><center>About</center></font></a></li>
 
-      <!-- edit form column -->
-      <div class="col-md-9">
-        <!-- <div class="alert alert-info alert-dismissable">
-          <a class="panel-close close" data-dismiss="alert">×</a> 
-          <i class="fa fa-coffee"></i>
-          This is an <strong>.alert</strong>. Use this to show important messages to the user.
-        </div> -->
-        <h3>Sumudu Hansani</h3>
-        
-        <form class="form-horizontal" role="form">
-          
-          <div class="coverpad"></div>
-          <div class="coverpadx">
-            
+                    <li style="top: 600px;"><a href="#donation" style="text-decoration: none;"><font color="black">Donation Details</font></a></li> -->
+                    <li class="change"><a href="<?php echo base_url()?>Donors/view_update_donor/<?php echo $donor["0"]['donorId']; ?>" style="text-decoration:none;"><font color="#3478e5"><center>Change Profile></center></font></a></li>
+                    <!--                <li class="change"><a href="--><?php //echo base_url()?><!--donation/get_last_donation/--><?php //echo $donor["0"]['donorId']; ?><!--" style="text-decoration:none;"><font color="#3478e5"><center>View Last donation></center></font></a></li>-->
+                    <li class="change"><a href="<?php echo base_url()?>donors/view_donation_history/<?php echo $donor["0"]['donorId']; ?>" style="text-decoration:none;"><font color="#3478e5"><center>Donation history></center></font></a></li>
+
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="col-md-7" style="margin-left: 350px;">
+
             <form class="form-horizontal" role="form">
-          
-          
-          <div class="form-group">
-            <label for="exampleInputEmail1">NIC Number</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="NIC Number" name="donorNIC" disabled>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Gender</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Gender" name="donorGender" disabled>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Address</label>
-            <input type="address" class="form-control" id="exampleInputEmail1" placeholder="Address" name="donorAddress" disabled>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Occupation</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Occupation" name="donorOccupation" disabled>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email Address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email Address" name="donorEmail" disabled>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Date Of Birth</label>
-            <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Date Of Birth" name="donorDOB" disabled>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Height</label>
-            <input type="double" class="form-control" id="exampleInputEmail1" placeholder="Height" name="donorHeight" disabled>
-        </div>
+                <div class="coverpad"></div>
+                <div class="coverpadx">
 
+                    <form class="form-horizontal" role="form">
 
+                        <?php foreach($donor as $donor1){ ?>
+                        <h3><?php echo $donor1['donorFname']." ".$donor1['donorMname']." ".$donor1['donorLname']; ?></h3>
+                        <!-- <label style="font-size: 20px;"><b>About</b></label><br> -->
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">NIC Number</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $donor1['donorNIC']; ?>" name="donorNIC" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Gender</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $donor1['donorGender']; ?>" name="donorGender" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Address</label>
+                            <input type="address" class="form-control" id="exampleInputEmail1" value="<?php echo $donor1['donorAddress']; ?>" name="donorAddress" disabled>
+                        </div>
+                        <div class="form-group" id="about">
+                            <label for="exampleInputEmail1">Distance</label>
+                            <input type="address" class="form-control" id="exampleInputEmail1" value="<?php echo $donor1['donorDistance']; ?> KM" name="donorAddress" disabled>
+                        </div>
 
-        <div class="form-group">
-            <label>Available Times</label><br>
-            <input type="radio" class="availableTimes" value="weekday" name="donorAvailable" disabled><label for="weekday" class="light">Week day</label><br>
-            <input type="radio" class="availableTimes" value="weekend" name="donorAvailable" disabled><label for="weekend" class="light">week end</label><br>
-            <input type="radio" class="availableTimes" value="anyday" name="donorAvailable" disabled><label for="anyday" class="light">Any day</label>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email Address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" value="<?php echo $donor1['donorEmail']; ?>" name="donorEmail" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Date Of Birth</label>
+                            <input type="date" class="form-control" id="exampleInputEmail1" value="<?php echo $donor1['donorDOB']; ?>" name="donorDOB" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Height</label>
+                            <input type="double" class="form-control" id="exampleInputEmail1" value="<?php echo $donor1['donorHeight']; ?>" name="donorHeight" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Blood Group</label>
+                            <input type="address" class="form-control" id="exampleInputEmail1" value="<?php echo $donor1['donorBloodGroup']; ?>" name="donorAddress" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>Available Times</label><br>
+                            <input type="double" class="form-control" id="exampleInputEmail1" value="<?php echo $donor1['donorAvailable']; ?>" name="donorHeight" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>Donor Status</label><br>
+                            <input type="text" class="form-control" id="donorStatus" value="<?php echo $donor1['donorStatus']; ?>" name="donorStatus" disabled>
+                        </div>
+                        <!-- <label style="font-size: 20px;"><b>Last Donation Details</b></label><br>
+    -->
+                </div>
+                <a href="#top" style="text-decoration: none; font-size: 20px; margin-left: 750px;"><font color="blue">Top</font></a>
+
+                <?php } ?>
+            </form>
 
         </div>
-          </div>
-
         </form>
-        
-        </div>
 
-        </form>
-        
-      </div>
-  </div>
+    </div>
+</div>
 </div>
 <hr>
 </body>
 <style type="text/css">
-  /*.coverpad{
-    left: 100px;
-    top: 60px;
-    background: white;
-    height: 360px;
-    width: 850px;
-    position: absolute;
-    display: none;
-  }*/
-  /*.coverpadx{
-    left: 50px;
-    top: 120px;
-    background: white;
-    height: 100%;
-    width: 750px;
-    position: absolute;
-    -webkit-box-shadow: 0 3px 8px rgba(0,0,0,.25);
-  }*/
+
+    .container ul li{
+        text-align: center;
+        border: 1px solid white ;
+        padding-top: 0px;
+        border-radius:0px;
+        margin-bottom:5px;
+        width: 200px;
+    }
+    .container ul li:hover{
+        border: 1px solid white ;
+        padding-top: 0px;
+        border-radius:0px;
+        margin-bottom:5px;
+        width: 100px;
+        background: green;
+    }
+
+
+    .change{
+        text-align: center;
+        border: 1px solid white ;
+        padding-top: 0px;
+        border-radius:0px;
+        margin-bottom:5px;
+        width: 200px;
+
+    }
+
+    .change:hover{
+        border: 1px solid white ;
+        padding-top: 0px;
+        border-radius:5px;
+        margin-bottom:5px;
+        width: 200px;
+        background: #a5a9af;
+
+    }
+
+    .container{
+        color: white;
+    }
+
+
+    .vertical-separate:hover{
+        padding: 8px;
+        border-radius:10px;
+        margin-bottom:25px;
+        background-color:  #5EFB6E;
+        transition: linear all 0.1s;
+
+    }
+
+
 </style>
-</html>

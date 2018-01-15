@@ -12,6 +12,7 @@
     <title>Pdms</title>
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css');?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/bootstrap/css/style.css');?>" rel="stylesheet">
 <!--    <link href="--><?php //echo base_url('assets/css/bootstrap.min.css');?><!--" rel="stylesheet">-->
 
     <!-- Custom fonts for this template -->
@@ -22,17 +23,21 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url('assets/css/sb-admin.css');?>" rel="stylesheet">
-<!--    <script>
-        var xmlhttp=new XMLHttpRequest();
-        xmlhttp.onreadystatechange=function(){
-            if (xmlhttp.readyState==4 && xmlhttp.status==200){
-                alert(xmlhttp.responseText);
-                console.log(xmlhttp.responseText);// you will see OKKK in console
+
+    <script type="text/javascript" language="javascript" src="http://www.technicalkeeda.com/js/javascripts/plugin/jquery.js"></script>
+    <script type="text/javascript" src="http://www.technicalkeeda.com/js/javascripts/plugin/json2.js"></script>
+
+    <!--    <script>
+            var xmlhttp=new XMLHttpRequest();
+            xmlhttp.onreadystatechange=function(){
+                if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                    alert(xmlhttp.responseText);
+                    console.log(xmlhttp.responseText);// you will see OKKK in console
+                }
             }
-        }
-        xmlhttp.open("GET","../sms/send_sms",true); // first try `../index.php/example` ( extension depends if you enable/disable url rewrite in apache.conf ) , if this won't work then try base_url/index.php/example ( where you can specify base_url by static or with CodeIgniter helpher function )
-        xmlhttp.send();
-    </script>-->
+            xmlhttp.open("GET","../sms/send_sms",true); // first try `../index.php/example` ( extension depends if you enable/disable url rewrite in apache.conf ) , if this won't work then try base_url/index.php/example ( where you can specify base_url by static or with CodeIgniter helpher function )
+            xmlhttp.send();
+        </script>-->
 
       <style >
   #exampleAccordion li:hover{
@@ -45,12 +50,13 @@
 <?php if ($this->session->userdata('logged_in')):?>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" style="background-color: #330000;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="<?php echo base_url();?>/"><b style="font-size:20px;"><img src="<?php echo base_url(); ?>assets2/js/masterslider/1.png" style ="width:40px; hight:20px; border-radius:70px;">   PLATELET DONOR MANAGEMENT SYSTEM</b></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive" >
+<!--        allowed to access when user login-->
         <?php if ($this->session->userdata('logged_in')):?>
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
@@ -60,45 +66,52 @@
                 Dashboard</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-                <a class="nav-link" href="<?php echo base_url()?>/users/edit">
+<!--            users can edit their profile-->
+            <!--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                <a class="nav-link" href="<?php /*echo base_url()*/?>/users/edit">
                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                     <span class="nav-link-text">
                 Edit Profile</span>
                 </a>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a class="nav-link" href="<?php echo base_url()?>/donors/search_donor">
-                    <i class="fa fa fa-search"></i>
-                    <span class="nav-link-text">
-                Scearch Donor by NIC</span>
-                </a>
-            </li>
+            </li>-->
+<!--            only admin can access employee registration with employee module-->
+            <?php if ($this->session->userdata('employee_occupation')=="Admin"): ?>
+
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                        <span class="nav-link-text">
+                Employee</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseComponents">
+                        <li>
+                            <a href="<?php echo base_url()?>/users/register_page"><i class="fa fa-circle-o" aria-hidden="true"></i> Employee Registration</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url()?>/users/current_users"><i class="fa fa-circle-o" aria-hidden="true"></i> Current Employees</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url()?>/users/check_block_users"><i class="fa fa-circle-o" aria-hidden="true"></i> Blocked Employee</a>
+                        </li>
+                    </ul>
+                </li>
+            <?php endif;?>
+
+<!--donor search by blood group-->
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
                 <a class="nav-link" href="<?php echo base_url()?>/donors/view_donor">
                     <i class="fa fa fa-search"></i>
                     <span class="nav-link-text">
-                    Scearch Donor by <br>  Blood Group</span>
+                    Search Donor by <br>  Blood Group</span>
                 </a>
             </li>
-
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-                    <i class="fa fa-user-plus" aria-hidden="true"></i>
+<!--            donor search by NIC-->
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+                <a class="nav-link" href="<?php echo base_url()?>/donors/search_donor">
+                    <i class="fa fa fa-search"></i>
                     <span class="nav-link-text">
-                Employee</span>
+                Search Donor by NIC</span>
                 </a>
-                <ul class="sidenav-second-level collapse" id="collapseComponents">
-                    <li>
-                        <a href="<?php echo base_url()?>/users/register_page"><i class="fa fa-circle-o" aria-hidden="true"></i> Employee Registration</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url()?>/users/current_users"><i class="fa fa-circle-o" aria-hidden="true"></i> Current Employee</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url()?>/users/check_block_users"><i class="fa fa-circle-o" aria-hidden="true"></i> Unauthorized Employee</a>
-                    </li>
-                </ul>
             </li>
 
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
@@ -111,21 +124,30 @@
                     <li>
                         <a href="<?php echo base_url()?>/donors/registerDonor"><i class="fa fa-circle-o" aria-hidden="true"></i>  Donor Registration</a>
                     </li>
+<!--                    give permission only doctors and admint to access-->
+                    <?php if (($this->session->userdata('employee_occupation')=="Admin")||($this->session->userdata('employee_occupation')=="Doctor")): ?>
+
                     <li>
-                        <a href="<?php echo base_url()?>/donorapprovals"><i class="fa fa-circle-o" aria-hidden="true"></i>  Donor Approval list</a>
+                        <a href="<?php echo base_url()?>/donorapprovals/load_donors"><i class="fa fa-circle-o" aria-hidden="true"></i>  Donor Approval list</a>
                     </li>
+                        <li>
+                            <a href="<?php echo base_url()?>donor_waitinglist/load_donors"><i class="fa fa-circle-o" aria-hidden="true"></i> Waiting Donations list</a>
+                        </li>
                     <li>
                         <a href="<?php echo base_url()?>/donation/add_donation"><i class="fa fa-circle-o" aria-hidden="true"></i>  Donation</a>
                     </li>
-                    <li>
-                        <a href="<?php echo base_url()?>/donors/view_donor"><i class="fa fa-circle-o" aria-hidden="true"></i>  Donor select by blood group</a>
+                    <!--<li>
+                        <a href="<?php /*echo base_url()*/?>/donors/view_donor"><i class="fa fa-circle-o" aria-hidden="true"></i>  Donor select by blood group</a>
                     </li>
-                    <li>
+                    -->
+                        <li>
                         <a href="<?php echo base_url()?>/differdonors"><i class="fa fa-circle-o" aria-hidden="true"></i>  Check differ Donors</a>
                     </li>
                      <li>
-                        <a href="<?php echo base_url()?>/donors/donor_profile"><i class="fa fa-circle-o" aria-hidden="true"></i>  Donor Profile</a>
+                        <a href="<?php echo base_url()?>/donors/donor_profile_list"><i class="fa fa-circle-o" aria-hidden="true"></i>  Donor Profile</a>
                     </li>
+                    <?php endif;?>
+
                 </ul>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
@@ -136,12 +158,12 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseMulti">
                     <li>
-                        <a href="#"><i class="fa fa-circle-o" aria-hidden="true"></i> Donor deffer letter</a>
+                        <a href="<?php echo base_url()?>/Pdf_Controller/generate_pdf_report"><i class="fa fa-circle-o" aria-hidden="true"></i> Donor deffer letter</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-circle-o" aria-hidden="true"></i> Donation Report</a>
+                        <a href="<?php echo base_url()?>/SummaryPdf_Controller/generate_summarypdf_report"><i class="fa fa-circle-o" aria-hidden="true"></i> Donation Summery Report</a>
                     </li>
-                    <li>
+                    <!--<li>
                         <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2"><i class="fa fa-circle-o" aria-hidden="true"></i> Third Level</a>
                         <ul class="sidenav-third-level collapse" id="collapseMulti2">
                             <li>
@@ -151,53 +173,124 @@
                                 <a href="#"><i class="fa fa-square-o" aria-hidden="true"></i> Machine report</a>
                             </li>
                         </ul>
-                    </li>
+                    </li>-->
                 </ul>
             </li>
+<!--           only admin can register new machine to system-->
+            <?php if ($this->session->userdata('employee_occupation')=="Admin"): ?>
+
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="<?php echo base_url()?>/Machine/load">
                     <i class="fa fa-fw fa-link"></i>
                     <span class="nav-link-text">
-                Link</span>
+                Machine Details</span>
                 </a>
             </li>
+            <?php endif;?>
         </ul>
-<!--side nave arrow-->
-            <ul class="navbar-nav ml-auto">
-<!--            search bar-->
-            <!--<li class="nav-item">
-                <form class="form-inline my-2 my-lg-0 mr-lg-2">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                  <button class="btn btn-primary" type="button">
-                    <i class="fa fa-search"></i>
-                  </button>
-                </span>
-                    </div>
-                </form>
-            </li>
-            -->
+            <!--side nave arrow-->
+            <ul class="navbar-nav sidenav-toggler">
+                <li class="nav-item">
+                    <a class="nav-link text-center" id="sidenavToggler">
+                        <i class="fa fa-fw fa-angle-left"></i>
+                    </a>
+                </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <h4 style = "color: white;">
-                    <?php echo $this->session->userdata('employee_username')?>
-                </h4>
-                
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-                            <i class="fa fa-fw fa-sign-out"></i>
-                            <b>Logout</a>
+                <?php if (($this->session->userdata('employee_occupation')=="Admin")||($this->session->userdata('employee_occupation')=="Doctor")): ?>
+
+                    <li class="nav-item " style="width: auto;">
+                        <a class="nav-link  mr-lg-3" id="messagesDropdown" href="<?php echo base_url()?>/donorapprovals/load_donors" >
+                            <span class="badge badge-default" >Waiting donors</span>
+                            <span class="badge badge-success indicator" id="notification">
+                            </span>
+                        </a>
                     </li>
+                <?php endif;?>
+                <li class="nav-item">
+                    <a class="nav-link  mr-lg-3" id="messagesDropdown" href="<?php echo base_url()?>donor_waitinglist/load_donors" >
+                        <span class="badge badge-default" >Waiting donation</span>
+                        <span class="badge badge-warning indicator" style="background-color: #81D8D0;" id="notification_donation">
+                        </span>
+                    </a>
+                </li>
+                <!--                search donor -->
+                <li class="nav-item">
+<!--                    <div class="dropdown" id="dropdownMenu">-->
+                        <form class="form-inline my-2 my-lg-0 mr-lg-2">
+                        <div class="input-group" >
+                            <input class="form-control" type="text" id="search2" name="search2" placeholder="Search by NIC...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                        </form>
+<!--                    <div id="finalResult" class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+                        <ul id="finalResult">
+
+                        </ul>
+<!--                    </div>-->
+<!--                    </div>-->
+                </li>
+                <li class="nav-item dropdown" style="padding-right: 50px;">
+                    <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <?php echo $this->session->userdata('employee_username')?>
+                    </a>
+                        <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+                            <h6 class="dropdown-header"><?php echo $this->session->userdata('employee_occupation')?></h6>
+                            <h6 class="dropdown-header">Manage Account:</h6>
+                            <div class="dropdown-divider"></div>
+                            <a href="<?php echo base_url();?>/users/dashboard" style="color: #0D3349;">&nbsp&nbsp&nbsp&nbsp&nbsp<i class="fa fa-tachometer" ></i>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Dashbord</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="<?php echo base_url();?>/users/edit" style="color: #0D3349;">&nbsp&nbsp&nbsp&nbsp&nbsp<i class="fa fa-pencil-square-o" ></i>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspEdit profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a data-toggle="modal" data-target="#exampleModal">&nbsp&nbsp&nbsp&nbsp&nbsp<i class="fa fa-fw fa-power-off"></i>&nbsp&nbsp&nbsp&nbsp&nbsp Logout</a>
+                        </div>
+                </li>
             </ul>
-
         <?php endif;?>
-
     </div>
-
 </nav>
 <?php endif;?>
 <!--side nave toggel script-->
+<script>
+    notification
+
+    function notification()
+    {
+        $.ajax({//updating the stasus to replied in quotation table
+            type:"post",
+            url:"<?php echo base_url('Donorapprovals/update_notification');?>",
+            success:function(data){
+                if(data>0){
+                    $('#notification').html(data);
+                }
+            }
+        });
+    }
+    setInterval(notification, 1*1000);
+</script>
+<script>
+    notification_donation
+
+    function notification_donation()
+    {
+        $.ajax({//updating the stasus to replied in quotation table
+            type:"post",
+            url:"<?php echo base_url('Donor_waitinglist/update_notification');?>",
+            success:function(data){
+                if(data>0){
+                    $('#notification_donation').html(data);
+                }
+            }
+        });
+    }
+    setInterval(notification_donation, 1*1000);
+</script>
+
+
 <script>
     function openNav() {
         document.getElementById("sidenavToggler").style.width = "250px";
@@ -210,9 +303,58 @@
     }
 </script>
 
-<div class="content-wrapper" style="background-color: #EFEFF0">
+<script>
+    $(document).ready(function(){
+        $("#search2").keyup(function() {
+            if ($("#search2").val().length > 2) {
+                $.ajax({
+                    type: "post",
+                    url: "<?php echo base_url()?>/donors/suggest_donors",
+                    cache: false,
+                    data: 'search=' + $("#search2").val(),
+//                    dataType: 'json',
+                    success: function (response) {
+                        //console.log(response);
+                        $('#finalResult').html("");
+                        var obj = JSON.parse(response);
+                        if (obj.length > 2) {
+                            try {
+                                var items = [];
+                                $.each(obj, function (i, val) {
+                                    items.push($('<li> <a href="<?php echo base_url()?>/donors/donor_profile/'+val.donorId+'">'+val.donorFname + " " + val.donorLname +"    "+val.donorNIC +'</a></li>'));
+                                });
+                                $('#finalResult').append.apply($('#finalResult'), items);
+                            } catch (e) {
+                                alert('Exception while request..');
+                            }
+                        } else {
+                            $('#finalResult').html($('<li/>').text("No Donor Found"));
+                        }
+
+                    },
+                    error: function () {
+                        alert('Error while request..');
+                    }
+                });
+            }
+            return false;
+        });
+
+        $(function(){
+            $('navbar a').click(function(){
+                speed = 200;
+                i=$(this).index();
+
+            });
+        });
+    });
+</script>
+
+
+<div class="content-wrapper"  style="background-color: #e1e8ed;">
 
     <div class="container-fluid">
+<!--       messages load here-->
         <?php //$this->load->view('template/adminSideNav');?>
         <?php  if ($this->session->flashdata('user_registered')):?>
             <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>';?>
@@ -237,5 +379,8 @@
             <?php echo '<p class="alert alert-success">'.$this->session->flashdata('profile_updated').'</p>';?>
         <?php endif; ?>
 
+        <?php  if ($this->session->flashdata('get_last_donation')):?>
+            <?php echo '<p class="alert alert-success">'.$this->session->flashdata('get_last_donation').'</p>';?>
+        <?php endif; ?>
 
 

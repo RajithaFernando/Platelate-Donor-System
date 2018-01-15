@@ -13,7 +13,7 @@ class Charts extends  CI_Controller
         $this->load->model('chart_model');
         $this->load->library('form_validation');
     }
-
+//create line graph
     public function get_linegraph(){
         $this->load->model('chart_model');
         $results = $this->chart_model->get_linegraph();

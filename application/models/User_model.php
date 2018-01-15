@@ -8,6 +8,7 @@ class User_model extends CI_Model {
     public function register($enc_password)
     {
         //user data array
+        $image=base_url("uploads/user.png");
         $data = array(
             'employee_firstname' => $this->input->post('employee_firstname'),
             'employee_lastname' => $this->input->post('employee_lastname'),
@@ -17,7 +18,8 @@ class User_model extends CI_Model {
             'employee_occupation' => $this->input->post('employee_occupation'),
             'employee_email' => $this->input->post('employee_email'),
             'employee_username' => $this->input->post('employee_username'),
-            'employee_password' => $enc_password
+            'employee_password' => $enc_password,
+            'Employee_image'=> $image
 
         );
         //insert data
@@ -32,6 +34,16 @@ class User_model extends CI_Model {
         $query=$this->db->get_where('employee',array('employeeIs_allowed'=>0));
         return $query->result_array();
 
+    }
+//    getting block users count
+    public function getCountblockUser(){
+        $this->db->select("COUNT(*)as num_row");
+        $this->db->from('employee');
+        $this->db->where('employeeIs_allowed',1);
+        $this->db->order_by('employee_id');
+        $query=$this->db->get();
+        $result = $query->result();
+        return $result[0]->num_row;
     }
     public function get_user($employee_id){
         $query=$this->db->get_where('employee',array('employee_id'=>$employee_id));
@@ -119,7 +131,10 @@ class User_model extends CI_Model {
         return $this->db->update('employee',$data);
     }
 //    check blocked users
-    public function check_block_users(){
+    public function check_block_users($limit=FALSE,$offset=FALSE){
+        if ($limit){
+            $this->db->limit($limit,$offset);
+        }
         $query=$this->db->get_where('employee',array('employeeIs_allowed'=>1));
         return $query->result_array();
 
@@ -138,4 +153,32 @@ class User_model extends CI_Model {
         return $query;
     }
 
+
+    /*public function change_password($user_id,$new_password){
+        $query=$this->db->query("UPDATE employee SET employee_password='$new_password' WHERE employee_id='$user_id';");
+        return $query;
+    }*/
+//upload image
+    public function upload_image($path,$id){
+        $img=$path['image'] ;
+        $sql = "UPDATE employee SET Employee_image='$img'  WHERE employee_id='$id'";
+        $this->db->query($sql); // store image path in db
+        //echo "gfhg";
+
+
+    }
+
+    public function get_image($id){
+        $sql="SELECT Employee_image FROM employee WHERE employee_id='$id'";
+        $result=$this->db->query($sql);
+        //var_dump($result);
+        if($result->num_rows()==1){
+            return $result->result_array();
+            //echo "hello";
+        }
+        else{
+            return false;
+            //echo "hello1111";
+        }
+    }
 }

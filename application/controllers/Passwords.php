@@ -20,18 +20,26 @@ class Passwords extends CI_Controller{
         redirect('pages');
 
     }
-    public function change_password($user_id,$password){
+    public function change_password_for_mail($user_id,$password){
         $new_password = md5($password);
         $this->load->password_model->change_password($user_id,$new_password);
 
     }
+//    reset password
     public function reset_password(){
-        $this->load->model('Password_model');
-        $new_password = md5($this->input->post('password'));
+        if (!$this->session->userdata('logged_in')){
+            redirect('users/login');
+        }
+        $this->load->model('password_model');
+        $password = $this->input->post('password');
+
+        //$new_password=md5($password);
         $user_id=$this->input->post('employee_id');
-        //$result = $this->password_model->change_password($user_id,$new_password);
-        if ($this->password_model->change_password($user_id,$new_password)){
+        //echo $user_id;
+        $result = $this->password_model->change_password($user_id,$password);
+        if ($result == true){
             echo "success";
         }
+
     }
 }
