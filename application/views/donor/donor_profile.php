@@ -33,7 +33,7 @@
                     <li style="top: 600px;"><a href="#donation" style="text-decoration: none;"><font color="black">Donation Details</font></a></li> -->
                     <li class="change"><a href="<?php echo base_url()?>Donors/view_update_donor/<?php echo $donor["0"]['donorId']; ?>" style="text-decoration:none;"><font color="#3478e5"><center>Change Profile></center></font></a></li>
                     <!--                <li class="change"><a href="--><?php //echo base_url()?><!--donation/get_last_donation/--><?php //echo $donor["0"]['donorId']; ?><!--" style="text-decoration:none;"><font color="#3478e5"><center>View Last donation></center></font></a></li>-->
-                    <li class="change"><a href="<?php echo base_url()?>donors/view_donation_history/<?php echo $donor["0"]['donorId']; ?>" style="text-decoration:none;"><font color="#3478e5"><center>Donation history></center></font></a></li>
+                    <li class="change"><a href="<?php echo site_url()?>/donors/view_donation_history/<?php echo $donor["0"]['donorId']; ?>" style="text-decoration:none;"><font color="#3478e5"><center>Donation history></center></font></a></li>
 
                 </ul>
             </div>

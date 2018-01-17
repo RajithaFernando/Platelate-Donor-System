@@ -42,12 +42,13 @@ class Donorapproval_model extends CI_Model{
 
 
     public function update_donor_status($donorId){
-
+        $now = date('Y-m-d');
         $data1 = array(
             'donorId' =>$this->input->post('donorID',TRUE),
             'donorStatusType' =>$this->input->post('approval',TRUE),
             'donorDefferReason' =>$this->input->post('defer_reason',TRUE),
             'donorEligibleDate' =>$this->input->post('donorEligibleDate',TRUE),
+            'entered_date'=>$now,
         );
 
 

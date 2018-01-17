@@ -46,5 +46,16 @@ class Donation_model extends CI_Model
         return $query;
 
     }
+    public function get_machine(){
+        $this->db->select('*');
+        $query = $this->db->get('machine_details');
+        return $query->result_array();
+    }
+
+    public function get_donationby_id($donationId){
+        $query=$this->db->get_where('donation',array('donationId'=>$donationId));
+        return $query->row_array();
+
+    }
 }
 ?>

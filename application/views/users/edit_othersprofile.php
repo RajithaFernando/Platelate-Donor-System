@@ -10,12 +10,11 @@
 
 <!--validation -->
 <?php echo validation_errors();?>
-<div style="float: left;width: 65%;">
-    <br>
-    <br>
-    <?php echo form_open('users/update_other');?>
-        <div class="card col-sm-offset-7"  style="border: ridge; border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px;" >
+<div style="float: left;width: 65%; margin-top: 20px;">
+        <div class="card col-sm-offset-7"  style="background-color: #F3F3F3; " >
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<legend style="text-align: center;"><h3><b><?= $title; ?></b></h3></legend>
+            <?php echo form_open('users/update_other');?>
+
             <div class="form-group">
                 <div class="col-md-5">
                     <label>User id</label>
@@ -71,13 +70,14 @@
                     </div>
                 </div>
             </div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary btn-lg active" style=" border-radius: 15px; background: #336699;" name="">Submit</button>
-            <button type="reset" class="btn btn-primary btn-lg" name="" style=" border-radius: 15px; background: #ff4d4d;">Cancle</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-success btn-md active" style=" " name="">Submit</button>
+<!--            <button type="reset" class="btn btn-primary btn-lg" name="" style=" border-radius: 15px; background: #ff4d4d;">Cancle</button>-->
             <br>
             <br>
         </div>
+            <?php form_close();?>
+
         </div>
-    <?php form_close();?>
 
     <div class="col-sm-10">
         <div class="text-md-left">
@@ -87,30 +87,27 @@
 
 </div>
 <!--password reset form-->
-<div id="rest_pass" style="float: right;width: 35%;">
-    <br>
-    <br>
-    <br>
+<div id="rest_pass" style="float: right;width: 35%; margin-top: 20px;">
     <div class="card-body">
 
     <h4><legend>Reset password</legend></h4>
         <hr>
         <div id="reset_password">
-        <?php echo form_open('/passwords/reset_password')?>
-            <input type="text" class="form-control" name="employee_id" value="<?php echo $user['employee_id'];?>" hidden>
+        <?php echo form_open_multipart('/passwords/reset_password');?>
+            <input type="text" class="form-control" id="otheremployee_id" name="otheremployee_id" value="<?php echo $user['employee_id'];?>" hidden>
             <div class="form-group">
                 <div class="form-row">
                     <div class="col-md-6">
                         <label for="exampleInputPassword1">Password</label>
-                        <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password" name="password">
+                        <input class="form-control" id="password" type="password" placeholder="Password" name="password">
                     </div>
                     <div class="col-md-6">
                         <label for="exampleConfirmPassword">Confirm password</label>
-                        <input class="form-control" id="exampleConfirmPassword" type="password" placeholder="Confirm password" name="password2">
+                        <input class="form-control" id="password2" type="password" placeholder="Confirm password" name="password2">
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Reset</button>
+            <button type="button" id="resetbtn" class="btn btn-success">Reset</button>
             <?php form_close();?>
         </div>
     </div>
@@ -121,9 +118,6 @@
         <label>Join date:<?php echo $user['emp_registered_at'];?></label>
         <br>
         <label>Occupation  : <?php echo $user['employee_occupation'];?></label>
-    </div>
-</div>
-        </div>
     </div>
 </div>
 <!-- Bootstrap core JavaScript-->
@@ -138,4 +132,46 @@
             jQuery('#reset_password').toggle('show');
         });
     });
+
+
+    $(document).ready(function() {
+
+        $("#resetbtn").click(function(){
+//            check password equals
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("password2").value;
+            if (password != confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            else if ((password =="")&&( confirmPassword=="") ){
+                alert("Passwords fields can not be empty .");
+                return false;
+            }
+            else {
+                var employee_id = $('#otheremployee_id').val();
+                var password = $('#password').val();
+                //alert(password);
+                $.ajax({
+                    type: 'post',
+                    url: '<?php echo base_url()?>/passwords/reset_password',
+                    //reset_password',
+                    data: {'employee_id':employee_id,'password':password},
+                    success: function(data) {
+                        console.log(data);
+                        if ($.trim(data) == "success") {
+                            alert('password successfully updated');
+                            $('#password').val("");
+                            $('#password2').val("");
+                        }
+                        else {
+                            alert('something error');
+                        }
+                    }
+                });
+            }
+        });
+    });
+
+
 </script>

@@ -59,7 +59,7 @@
 <div class="col-md 12" style="text-align: center; margin-top: 15px;">
     <legend><h3>Users</h3></legend>
 </div>
-<div style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);border-radius: 5px; transition: 0.3s;">
+<div style="background-color: #F3F3F3; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);border-radius: 5px; transition: 0.3s; padding-top: 20px;">
     <div class="row detail" style="text-align: center;margin-left: 100px; margin-top: 10px; ">
     <div class="col-md-11">
         <table class="table table-hover table-responsive table-striped table-bordered">

@@ -118,13 +118,12 @@
                 <div class="col-md-2 form-inline">
                     <label for="machineName" class="control-label">Machine Name:</label></td></div>
                 <div class="col-md-4 form-inline">
-                    <select name="machineName" >
-                        <option></option>
-                        <option>Hemonetics</option>
-                        <option>Amicus</option>
-                        <option>Spectra Optia</option>
-
+                    <select name="category_id" class="form-control">
+                        <?php foreach ($machines as $machine): ?>
+                            <option value="<?php echo $machine['machine_name'];?>"><?php echo $machine['machine_name']?></option>
+                        <?php endforeach;?>
                     </select>
+
                 </div>
 
             </div>

@@ -175,6 +175,43 @@ class Donor_model extends CI_Model{
         return ($query->result_array());
 
     }
+    //    load approve donor profile
+    public function load_donor_profile_approve(){
+        $this->db->select('*');
+        $this->db->from('donor');
+        $this->db->where(array('donorStatus' => "approve" ));
+        $query = $this->db->get();
+        return ($query->result_array());
+
+    }
+//    load current donor profile
+    public function load_donor_profile_current(){
+        $this->db->select('*');
+        $this->db->from('donor');
+        $this->db->where(array('donorStatus' => "current" ));
+        $query = $this->db->get();
+        return ($query->result_array());
+
+    }
+//    load pdeffer donor profile
+    public function load_donor_profile_pdeffer(){
+        $this->db->select('*');
+        $this->db->from('donor');
+        $this->db->where(array('donorStatus' => "p_deffer" ));
+        $query = $this->db->get();
+        return ($query->result_array());
+
+    }
+//    load tdeffer donor profile
+    public function load_donor_profile_tdeffer(){
+        $this->db->select('*');
+        $this->db->from('donor');
+        $this->db->where(array('donorStatus' => "t_deffer" ));
+        $query = $this->db->get();
+        return ($query->result_array());
+
+    }
+
 //    donor update
     public function donor_update($donor){
 
@@ -241,13 +278,31 @@ class Donor_model extends CI_Model{
         $this->load->database();
         $this->db->select('*');
         $this->db->order_by('donationDate','DESC');
-        $this->db->from('donation');
-        // $this->db->join('donor','doanation.donorId=donor.donorId');
-        // $this->db->join('telephoneno','donor.donorId=telephoneno.donorId');
         $this->db->where('donorId',$donor);
-        $query=$this->db->get();
+        $query=$this->db->get('donation');
         return $query->result_array();
     }
+    public function get_donor_profile($para){
 
+        $this->db->select('*');
+        $this->db->where('donorId',$para);
+        $result=$this->db->get('donor');
+        return $result->row_array();
+    }
+
+    public function change_status($donor_id,$status){
+        $now = date('Y-m-d');
+
+        $data = array(
+            'donorId'=>$donor_id,
+            'donorStatusType'=>$status,
+            'entered_date'=>$now
+        );
+        $this->db->insert('donorstatus', $data);
+
+        return $donor_id;
+
+
+    }
 
 }

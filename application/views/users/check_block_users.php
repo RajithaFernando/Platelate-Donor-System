@@ -123,7 +123,8 @@
                     success:function(data){
                         //console.log(data);
                         if($.trim(data)=="success"){
-                            alert("successfully recorded.");
+                            $("<div id=\"alert\" class=\"alert alert-success col-md-12 col-md-offset-1\"><strong>Success!</strong>  Unblocked user  successfully.</div>").insertAfter('#pheader');
+//                            alert("successfully recorded.");
                             location.reload();
                             window.scrollTo(0,0);
                         }

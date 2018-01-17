@@ -78,6 +78,10 @@ class Donors extends CI_Controller{
         }
         $data['title']="Search Donor";
         $data['maindonors']=$this->donor_model->load_donor_profile();
+        $data['maindonors_approve']=$this->donor_model->load_donor_profile_approve();
+        $data['maindonors_current']=$this->donor_model->load_donor_profile_current();
+        $data['maindonors_pdeffer']=$this->donor_model->load_donor_profile_pdeffer();
+        $data['maindonors_tdeffer']=$this->donor_model->load_donor_profile_tdeffer();
         $this->load->view('template/header');
         $this->load->view('donor/search_donor',$data);
         $this->load->view('template/footer');
@@ -287,22 +291,32 @@ class Donors extends CI_Controller{
         return true;
     }
 //view donation history
-    public function view_donation_history($para){
+    public function view_donation_history($para=NULL){
         //check  whether user is login
         if (!$this->session->userdata('logged_in')){
             redirect('');
         }
         $donor=$para;
         $this->load->model('Donor_model');
-        $query=$this->Donor_model->donation_history($donor);
-        $data1['donation']=null;
-        if($query){
-            $data1['donation']=$query;
+        $data1['donation']=$this->Donor_model->donation_history($donor);
+        $data1['donor']=$this->Donor_model->get_donor_profile($para);
+//        $data1['donation']=null;
+//        if($query){
+//            $data1['donation']=$query;
 
-        }
+//        }
         $this->load->view('template/header');
         $this->load->view('donation/donor_last_donation_view',$data1);
         $this->load->view('template/footer');
+
+    }
+    public function change_status(){
+        $donor_id = $this->input->post('donor_id');
+        $status =$this->input->post('status');
+        $result = $this->donor_model->change_status($donor_id,$status);
+        if ($result){
+            echo "success";
+        }
 
     }
 

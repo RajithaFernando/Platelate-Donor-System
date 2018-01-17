@@ -11,7 +11,8 @@ class Password_model extends CI_Model {
         return $query;
 
     }
-    public function get_user_by_email($email){
+    public function get_user_by_email(){
+        $email="sumudunissanka@gmail.com";
         $this->db->select('*');
         $this->db->where('employee_email',$email);
         $result = $this->db->get('employee');

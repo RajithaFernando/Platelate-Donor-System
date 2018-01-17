@@ -106,10 +106,10 @@
 		        		<input type="radio" class='c' value="sent_to_donation" onclick="javascript:status();" name="approval" id="ApproveCheck">
 		        		<label for="ApproveCheck" class="control-label" required>Approve for Donation</label>
 		        	
-		        	  	<input type="radio" class="c" value="p_differ" onclick="javascript:status();" name="approval" id="PermanentdefferCheck" required>
+		        	  	<input type="radio" class="c" value="p_deffer" onclick="javascript:status();" name="approval" id="PermanentdefferCheck" required>
 		        		<label for="PermanentdefferCheck">Defer Permanently</label>
 
-		        		<input type="radio" class='c' value="t_differ" onclick="javascript:status();" name="approval" id="TemporarydefferCheck" required>
+		        		<input type="radio" class='c' value="t_deffer" onclick="javascript:status();" name="approval" id="TemporarydefferCheck" required>
 		        		<label for="TemporarydefferCheck">Defer Temporarily </label>
 		        		<div class="error-handler-help"></div>
 

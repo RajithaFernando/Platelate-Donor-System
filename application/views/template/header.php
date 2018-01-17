@@ -27,19 +27,17 @@
     <script type="text/javascript" language="javascript" src="http://www.technicalkeeda.com/js/javascripts/plugin/jquery.js"></script>
     <script type="text/javascript" src="http://www.technicalkeeda.com/js/javascripts/plugin/json2.js"></script>
 
-    <!--    <script>
-            var xmlhttp=new XMLHttpRequest();
-            xmlhttp.onreadystatechange=function(){
-                if (xmlhttp.readyState==4 && xmlhttp.status==200){
-                    alert(xmlhttp.responseText);
-                    console.log(xmlhttp.responseText);// you will see OKKK in console
-                }
-            }
-            xmlhttp.open("GET","../sms/send_sms",true); // first try `../index.php/example` ( extension depends if you enable/disable url rewrite in apache.conf ) , if this won't work then try base_url/index.php/example ( where you can specify base_url by static or with CodeIgniter helpher function )
-            xmlhttp.send();
-        </script>-->
-
       <style >
+          .loader
+          {
+              position: fixed;
+              left: 0px;
+              top: 0px;
+              width: 100%;
+              height: 100%;
+              z-index: 9999;
+              background: url('<?php echo base_url()?>/assets/images/preloader.gif') 50% 50% no-repeat rgb(249,249,249);
+          }
   #exampleAccordion li:hover{
     background-color:#5e5c58;
   }
@@ -349,7 +347,13 @@
         });
     });
 </script>
-
+<script type="text/javascript">
+    $(window).load(function() {
+        $(".loader").fadeOut(5000);
+    })
+</script>
+<div class="loader">
+</div>
 
 <div class="content-wrapper"  style="background-color: #e1e8ed;">
 

@@ -18,7 +18,7 @@
             <h4 class="page-title"><b><?= $title; ?></b></h4>
     </div>
 
-    <form METHOD="post" data-toggle="validator" role="form" action=" ">
+    <form METHOD="post" data-toggle="validator" role="form" action="<?php echo base_url()?>/users/register ">
 
     <?php form_open('users/register')?>
     <div class="col-md-12" style="background-color: #F3F3F3; padding: 15px; margin-right:10px; margin-left: 10px;margin-top: 22px; padding-left:20px; padding-bottom: 20px; padding-right: 20px; padding-top: 20px;">

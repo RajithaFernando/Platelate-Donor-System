@@ -109,8 +109,12 @@ Class Donor_waitinglist extends CI_Controller{
         }
         $this->load->model('Donor_model');
         $this->load->model('Donor_waitinglist_model');
+        $this->load->model('Donation_model');
+
         $data['donor']=$this->donor_model->get_donor_by_donor_id($donor_id);
         $data['sent_to_donate_donors'] = $this->Donor_waitinglist_model->load_donors_sent_to_donation();
+        $data['machines']=$this->donation_model->get_machine();
+
         $this->load->view('template/header');
         $this->load->view('donation/donation2',$data);
         $this->load->view('template/footer');

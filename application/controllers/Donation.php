@@ -26,7 +26,7 @@ class Donation extends CI_Controller
         $this->form_validation->set_rules('donorWeight', 'Weight of donor', 'required|numeric|greater_than_equal_to[50]');
         $this->form_validation->set_rules('machineName', 'Machine Name:', 'required');
         $this->form_validation->set_rules('donorHeight', 'Height of donor', 'required|numeric');
-
+        $data['machines']=$this->donation_model->get_machine();
 
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('template/header');
@@ -54,6 +54,17 @@ class Donation extends CI_Controller
             return false;
         }
 
+    }
+    public function get_donation_byid(){
+        //check  whether user is login
+        if (!$this->session->userdata('logged_in')){
+            redirect('');
+        }
+        $donationId = $this->input->post('donationId');
+        $result = $this->donation_model->get_donationby_id($donationId);
+        if ($result){
+            echo json_encode($result);
+        }
     }
 
 }

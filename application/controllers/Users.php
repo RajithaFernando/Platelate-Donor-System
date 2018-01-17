@@ -132,8 +132,7 @@ class Users extends CI_Controller
         $this->form_validation->set_rules('employee_password', 'Password', 'required');
 
         if ($this->form_validation->run() === FALSE) {
-            $this->load->view('pages/home');
-            $this->load->view('template/footer');
+            redirect('');
         } else {
             //get username
             $employee_username = $this->input->post('employee_username');
@@ -169,7 +168,7 @@ class Users extends CI_Controller
                 //set fail message
                 $this->session->set_flashdata('login_failed', 'You are logged into fail');
 
-                redirect('users/login');
+                redirect('');
             }
         }
     }
@@ -243,7 +242,7 @@ class Users extends CI_Controller
     public function edit(){
         //check  whether user is login
         if (!$this->session->userdata('logged_in')){
-            redirect('users/login');
+            redirect('');
         }
 //        $employee_password = $_SESSION['employee_id'];
         $employee_id =$this->session->userdata('employee_id');
